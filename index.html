@@ -6,14 +6,16 @@
     <style>
         body {
             background-color: #E6E6FA; /* Pastel Lavender */
-            /* This is a classic 90s grid tile pattern from the archives */
-            background-image: url('https://web.archive.org/web/20091027053229im_/http://geocities.com/Tokyo/Flats/7594/bg_grid.gif');
+            /* Bulletproof CSS-only repeating retro tile pattern */
+            background-image: 
+                linear-gradient(90deg, rgba(0,128,128,0.04) 1px, transparent 1px),
+                linear-gradient(rgba(0,128,128,0.04) 1px, transparent 1px);
+            background-size: 20px 20px;
             color: #4A4A4A;
             font-family: "Trebuchet MS", "Lucida Grande", "Arial", sans-serif;
             padding: 30px;
         }
 
-        /* Old-school Windows style beveled box wrappers */
         .window-box {
             background-color: #FFFFFF;
             border-top: 3px solid #FFF;
@@ -24,9 +26,8 @@
             margin-bottom: 20px;
         }
 
-        /* Retro Title Banner Blue/Teal Gradient simulation */
         .title-bar {
-            background: linear-gradient(90deg, #008080, #20B2AA); /* Teal gradient */
+            background: linear-gradient(90deg, #008080, #20B2AA); 
             color: #FFFFFF;
             padding: 6px 10px;
             font-weight: bold;
@@ -36,7 +37,6 @@
             text-align: left;
         }
 
-        /* 90s Button: Flat grey with intense double-bevel look */
         .retro-btn {
             display: inline-block;
             background-color: #D3D3D3;
@@ -51,16 +51,32 @@
             border-right: 2px solid #555555;
             border-bottom: 2px solid #555555;
         }
-        
-        .retro-btn:active {
-            border-top: 2px solid #555555;
-            border-left: 2px solid #555555;
-            border-right: 2px solid #FFFFFF;
-            border-bottom: 2px solid #FFFFFF;
+
+        /* Pure CSS Under Construction Banner fallback */
+        .construction-box {
+            background-color: #FFE4E1;
+            border: 2px dashed #FF1493;
+            padding: 10px;
+            color: #FF1493;
+            font-weight: bold;
+            font-size: 13px;
+            margin: 15px 0;
         }
 
-        a:link { color: #FF1493; text-decoration: underline; }   /* Deep Pink */
-        a:visited { color: #8A2BE2; } /* Blue Violet */
+        /* Retro counter styling box */
+        .hit-counter {
+            background-color: #000000;
+            color: #39FF14; /* Neon Green */
+            font-family: "Courier New", monospace;
+            font-size: 18px;
+            padding: 4px 8px;
+            letter-spacing: 3px;
+            border: 2px inset #888;
+            display: inline-block;
+        }
+
+        a:link { color: #FF1493; text-decoration: underline; }   
+        a:visited { color: #8A2BE2; } 
         
         hr {
             border: none;
@@ -73,31 +89,26 @@
 <body>
 
 <center>
-    <!-- Top Decorative Banner Section -->
     <table width="750" cellpadding="0" cellspacing="0" border="0">
         <tr>
             <td align="center">
-                <img src="https://web.archive.org/web/20090830052309im_/http://geocities.com/heartland/plains/6591/welc.gif" alt="Welcome to our page">
-                <br>
+                <span style="font-size: 32px;">✨ 💍 ✨</span>
                 <h1 style="color: #008080; font-size: 28px; margin: 10px 0;">
                     <i>The Official Wedding Hub for Andy Dunn & Hannah Lang</i>
                 </h1>
                 <p style="font-size: 14px; margin-top: 0;">Best viewed in Netscape Navigator with a color display</p>
-                <img src="https://web.archive.org/web/20091027081735im_/http://geocities.com/SiliconValley/Way/1402/line_rainbow.gif" width="100%" height="6" alt="divider">
-                <br><br>
+                <hr>
             </td>
         </tr>
     </table>
 
-    <!-- Main Layout Table split into Navigation Sidebar and Main Content -->
     <table width="750" cellpadding="0" cellspacing="10" border="0">
         <tr>
-            <!-- Left Sidebar Navigation Window -->
+            <!-- Left Sidebar Navigation -->
             <td width="220" valign="top">
                 <div class="window-box">
                     <div class="title-bar">✦ NAVIGATION</div>
                     <center>
-                        <!-- Beveled Interactive Placeholder Buttons -->
                         <a href="#welcome" class="retro-btn" style="width: 140px;">Home Sweet Home</a>
                         <a href="#details" class="retro-btn" style="width: 140px;">When & Where</a>
                         <a href="#rsvp" class="retro-btn" style="width: 140px;">RSVP / Guestbook</a>
@@ -105,13 +116,13 @@
                     </center>
                     <br>
                     <center>
-                        <img src="https://web.archive.org/web/20091027080517im_/http://geocities.com/SiliconValley/Haven/5001/envelope.gif" alt="Email Us"><br>
+                        <span style="font-size: 20px;">✉️</span><br>
                         <span style="font-size: 11px;">Questions? Drop us a line!</span>
                     </center>
                 </div>
             </td>
 
-            <!-- Right Main Content Window -->
+            <!-- Right Main Content -->
             <td width="530" valign="top">
                 <div class="window-box">
                     <div class="title-bar">✦ CELEBRATE WITH US!</div>
@@ -155,9 +166,10 @@
                     <h3>Gift Registries</h3>
                     <p>We are currently pulling together our registry lists. When finalized, links to our storefronts will appear here as clickable shortcuts.</p>
                     
-                    <br>
                     <center>
-                        <img src="https://web.archive.org/web/20091027031303im_/http://geocities.com/Athens/Aegean/2857/construction.gif" alt="Under Construction Graphic">
+                        <div class="construction-box">
+                            ⚠️ SITE UNDER CONSTRUCTION • NEW DETAILS ADDED WEEKLY ⚠️
+                        </div>
                     </center>
                 </div>
             </td>
@@ -172,8 +184,8 @@
                 <font size="2" color="#666666">
                     Andy & Hannah Wedding Web Headquarters © 2026<br>
                     You are awesome visitor number:
-                </font><br>
-                <img src="https://web.archive.org/web/20091027053336im_/http://geocities.com/TimesSquare/Alley/1963/counter.gif" alt="Hit Counter">
+                </font><br><br>
+                <div class="hit-counter">0001337</div>
             </td>
         </tr>
     </table>

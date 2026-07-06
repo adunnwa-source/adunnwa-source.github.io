@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wedding FAQ - Hannah & Andy</title>
+  <style>
+    /* Custom Retro Cursor Setup */
+    html, body, a, button {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto;
+    }
+    
+    body {
+      background-image: url('imagine_cloud_blue.jpg');
+      background-repeat: repeat;
+      background-color: #a3c2e0;
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      font-size: 13px;
+      color: #0F172A; /* Deep Navy Text */
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Top Blink Banner Alert */
+    .blink-container {
+      background-color: #0F172A;
+      color: #F8FAFC;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      padding: 8px 0;
+      text-align: center;
+      border-bottom: 3px double #F8FAFC;
+    }
+
+    .blink-text {
+      animation: retro-blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes retro-blink {
+      to { visibility: hidden; }
+    }
+
+    /* Main Container Box */
+    .main-container {
+      background-color: #F8FAFC; 
+      border: 2px solid;
+      border-color: #fff #808080 #808080 #fff;
+      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15);
+      width: 650px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    /* Header Box */
+    .header-box {
+      text-align: center;
+      background-color: #E2E8F0; 
+      border: 2px solid;
+      border-color: #808080 #fff #fff #808080;
+      padding: 15px;
+      margin-bottom: 25px;
+    }
+
+    .header-box h1 {
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      margin: 0;
+      font-size: 24px;
+      color: #BE123C; /* Deep Rose */
+    }
+
+    /* FAQ Q&A Layout Blocks */
+    .faq-item {
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      background-color: #fcfcfc;
+      border: 1px dashed #64748B;
+    }
+
+    .faq-question {
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      font-size: 14px;
+      font-weight: bold;
+      color: #BE123C;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    .faq-answer {
+      line-height: 1.5;
+      margin: 0;
+      color: #0F172A;
+    }
+
+    /* Back Button Link Style */
+    .back-btn-container {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      font-weight: bold;
+      color: #0F172A;
+      text-decoration: none;
+      background-color: #E2E8F0;
+      padding: 6px 16px;
+      border: 2px solid;
+      border-color: #fff #808080 #808080 #fff;
+    }
+
+    .back-btn:hover {
+      background-color: #BE123C;
+      color: #FFF;
+      border-color: #808080 #fff #fff #808080;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #CBD5E1;
+      border-bottom: 1px solid #fff;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Banner consistent with home page -->
+  <div class="blink-container">
+    <span class="blink-text">WEDDING FAQ</span>
+  </div>
+
+  <div class="main-container">
+    
+    <div class="header-box">
+      <h1>Frequently Asked Questions</h1>
+      <p style="margin: 5px 0 0 0; font-style: italic;">Everything you need to know before the big day!</p>
+    </div>
+
+    <!-- FAQ Item 1 -->
+    <div class="faq-item">
+      <p class="faq-question">Q: When should I arrive?</p>
+      <p class="faq-answer">
+        The ceremony will begin promptly at 5:00 PM on Friday, September 24, 2027. We recommend arriving 15-30 minutes early to find your seat.
+      </p>
+    </div>
+
+    <!-- FAQ Item 2 -->
+    <div class="faq-item">
+      <p class="faq-question">Q: Where is the venue located?</p>
+      <p class="faq-answer">
+        Both our ceremony and reception will be held at the <strong>American Visionary Art Museum (AVAM)</strong> in Baltimore, Maryland. 
+      </p>
+    </div>
+
+    <!-- FAQ Item 3 -->
+    <div class="faq-item">
+      <p class="faq-question">Q: What is the dress code?</p>
+      <p class="faq-answer">
+        We would love to see our family and friends get dressed up with us! The dress code is semi-formal / cocktail attire.
+      </p>
+    </div>
+
+    <!-- FAQ Item 4 -->
+    <div class="faq-item">
+      <p class="faq-question">Q: Can I take photos during the ceremony?</p>
+      <p class="faq-answer">
+        We are having an "unplugged" ceremony. We kindly ask that all phones and cameras be put away so you can be fully present with us. You're welcome to take as many photos as you want during the reception!
+      </p>
+    </div>
+
+    <hr>
+
+    <!-- Navigation Return Home Button -->
+    <div class="back-btn-container">
+      <a href="index.html" class="back-btn">⬅ BACK TO HOME</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

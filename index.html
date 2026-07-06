@@ -13,34 +13,45 @@
       /* Tiled Cloud Background Integration */
       background-image: url('imagine_cloud_blue.jpg');
       background-repeat: repeat;
-      background-color: #a3c2e0; /* Fallback blue while image loads */
+      background-color: #a3c2e0; /* Fallback blue */
       font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-size: 13px;
-      color: #000;
+      color: #0F172A; /* Palette 1: Deep Navy Text */
       margin: 0;
       padding: 0;
     }
 
-    /* Full-width Rolling Right-to-Left Headline Banner */
-    .marquee-container {
-      background-color: #000;
-      color: #fff;
+    /* Full-width Blinking Text Banner Alert */
+    .blink-container {
+      background-color: #0F172A; /* Palette 1: Deep Navy */
+      color: #F8FAFC; /* Palette 1: Ghost White Text */
       font-family: "Comic Sans MS", "Comic Sans", cursive;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
-      padding: 6px 0;
-      overflow: hidden;
-      white-space: nowrap;
-      border-bottom: 3px double #fff;
+      letter-spacing: 2px;
+      padding: 8px 0;
+      text-align: center;
+      border-bottom: 3px double #F8FAFC;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    /* Main Structured Wrapper Box */
+    /* Pure CSS Blinking Animation */
+    .blink-text {
+      animation: retro-blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes retro-blink {
+      to {
+        visibility: hidden;
+      }
+    }
+
+    /* Main Structured Wrapper Box - Palette 1: Ghost White */
     .main-container {
-      background-color: #f3f3f3;
+      background-color: #F8FAFC; 
       border: 2px solid;
       border-color: #fff #808080 #808080 #fff;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15);
       width: 650px;
       margin: 30px auto;
       padding: 20px;
@@ -63,12 +74,13 @@
       padding: 10px;
     }
 
-    /* Framed Detail Box - Aligned to the Right */
+    /* Framed Detail Box - Palette 1: Muted Slate */
     .details-box {
       flex: 1 1 auto;
       text-align: center;
-      background-color: #e6e6e6;
-      border: 2px inset #fff;
+      background-color: #E2E8F0; 
+      border: 2px solid;
+      border-color: #808080 #fff #fff #808080; /* Inset box look */
       padding: 15px;
     }
 
@@ -76,7 +88,7 @@
       font-family: "Comic Sans MS", "Comic Sans", cursive;
       margin: 0 0 8px 0;
       font-size: 20px;
-      color: #800000;
+      color: #BE123C; /* Palette 1: Deep Rose Accent */
     }
 
     /* Lowcinema-inspired Dynamic/Fuzzy Hover Link Effect */
@@ -85,7 +97,7 @@
       text-align: center;
       margin: 10px 15px;
       text-decoration: none;
-      color: #000;
+      color: #0F172A; /* Palette 1: Deep Navy */
       font-family: "Comic Sans MS", "Comic Sans", cursive;
       font-size: 13px;
       font-weight: bold;
@@ -103,10 +115,10 @@
       image-rendering: pixelated; 
     }
 
-    /* Distinct soft retro block shades for the new navigation items */
-    .thumb-rsvp { background-color: #b25d5d; }
-    .thumb-travel { background-color: #5db27e; }
-    .thumb-faq { background-color: #5d8bb2; }
+    /* Cohesive Slate/Navy shades for navigation items */
+    .thumb-rsvp { background-color: #BE123C; }    /* Deep Rose */
+    .thumb-travel { background-color: #64748B; }  /* Slate Gray */
+    .thumb-faq { background-color: #475569; }     /* Darker Slate */
 
     /* The Fuzzy Link Animation */
     .retro-link-container:hover .retro-link-thumb {
@@ -116,26 +128,26 @@
 
     .retro-link-container:hover span {
       text-decoration: underline;
-      color: #800000;
+      color: #BE123C; /* Palette 1: Deep Rose Accent */
     }
 
     /* Vintage Compressed Digital Photo Placeholder */
     .photo-frame {
       width: 320px;
       height: 240px;
-      background-color: #444;
-      border: 3px inset #fff;
+      background-color: #1E293B; /* Palette 1: Slate Core */
+      border: 3px inset #E2E8F0;
       margin: 25px auto;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
-      box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
+      box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
     }
 
     .photo-placeholder {
-      color: #00ff00;
+      color: #38BDF8; /* Sky Blue terminal font color */
       font-family: Courier, monospace;
       text-align: center;
       font-size: 11px;
@@ -144,7 +156,7 @@
 
     hr {
       border: none;
-      border-top: 1px solid #808080;
+      border-top: 1px solid #CBD5E1;
       border-bottom: 1px solid #fff;
       margin: 20px 0;
     }
@@ -152,11 +164,9 @@
 </head>
 <body>
 
-  <!-- Full-Width Rolling Marquee (Right to Left) -->
-  <div class="marquee-container">
-    <marquee direction="left" scrollamount="5">
-      WE'RE GETTING MARRIED *** BALTIMORE, MD *** SEPT. 24, 2027 *** WE'RE GETTING MARRIED *** BALTIMORE, MD *** SEPT. 24, 2027
-    </marquee>
+  <!-- Full-Width Blinking Banner -->
+  <div class="blink-container">
+    <span class="blink-text">WE'RE GETTING MARRIED!!!</span>
   </div>
 
   <div class="main-container">
@@ -170,9 +180,9 @@
       <div class="details-box">
         <h1>We're Getting Married!</h1>
         <p style="margin: 4px 0; font-size: 14px; font-weight: bold;">Friday, September 24, 2027</p>
-        <p style="margin: 4px 0; font-size: 13px; font-weight: bold; color: #800000;">Ceremony Starts at 5:00 PM</p>
-        <p style="margin: 4px 0; font-size: 12px; color: #333;">Baltimore, Maryland</p>
-        <p style="margin: 8px 0 0 0; font-size: 11px; color: #555; font-style: italic;">
+        <p style="margin: 4px 0; font-size: 13px; font-weight: bold; color: #BE123C;">Ceremony Starts at 5:00 PM</p>
+        <p style="margin: 4px 0; font-size: 12px;">Baltimore, Maryland</p>
+        <p style="margin: 8px 0 0 0; font-size: 11px; color: #475569; font-style: italic;">
           <strong>Venue:</strong> American Visionary Art Museum (AVAM)
         </p>
       </div>
@@ -186,13 +196,13 @@
       </div>
     </div>
 
-    <p style="text-align: center; font-style: italic; margin: 20px 0; color: #444;">
+    <p style="text-align: center; font-style: italic; margin: 20px 0; color: #334155;">
       Welcome to our wedding website! We can't wait to celebrate with you.
     </p>
 
     <hr>
 
-    <!-- Updated Navigation Links -->
+    <!-- Navigation Links -->
     <div style="text-align: center;">
       <a href="#" class="retro-link-container">
         <div class="retro-link-thumb thumb-rsvp"></div>

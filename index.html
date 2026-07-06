@@ -59,20 +59,24 @@
 
     /* Side-by-Side Flex Split */
     .top-split-layout {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top */
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
 
-    .left-logo-column {
-      flex: 0 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-    }
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Space between title image and lovebirds */
+  }
+
+  .title-image {
+    max-width: 250px; /* Adjust this to fit your preference */
+    height: auto;
+  }
 
     /* Framed Detail Box - Palette 1: Muted Slate */
     .details-box {
@@ -172,20 +176,21 @@
   <div class="main-container">
     
     <!-- Side-by-Side Logo & Info Box Layout -->
-    <div class="top-split-layout">
-      <div class="left-logo-column">
-        <img src="lovebirdstop.gif" alt="Love Birds" border="0">
-      </div>
-      
-      <div class="details-box">
-        <h1>Save the Date!</h1>
-        <p style="margin: 4px 0; font-size: 14px; font-weight: bold;">Friday, September 24, 2027</p>
-        <p style="margin: 4px 0; font-size: 12px;">Baltimore, Maryland</p>
-        <p style="margin: 8px 0 0 0; font-size: 11px; color: #475569; font-style: italic;">
-          <strong>Venue:</strong> The American Visionary Art Museum
-        </p>
-      </div>
-    </div>
+<div class="top-split-layout">
+  <div class="left-column">
+    <img src="title_image.png" alt="Hannah & Andy" class="title-image">
+    <img src="lovebirdstop.gif" alt="Love Birds" border="0">
+  </div>
+  
+  <div class="details-box">
+    <h1>We're Getting Married!</h1>
+    <p style="margin: 4px 0; font-size: 14px; font-weight: bold;">Save the Date: Sept. 24, 2027</p>
+    <p style="margin: 4px 0; font-size: 12px;">Baltimore, Maryland</p>
+    <p style="margin: 8px 0 0 0; font-size: 11px; color: #475569; font-style: italic;">
+      <strong>Venue:</strong> American Visionary Art Museum
+    </p>
+  </div>
+</div>      
 
     <!-- Vintage Camera Photo Placeholder -->
     <div class="photo-frame">

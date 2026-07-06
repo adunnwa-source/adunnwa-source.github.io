@@ -10,7 +10,10 @@
     }
     
     body {
-      background-color: #e6e6e6; 
+      /* Tiled Cloud Background Integration */
+      background-image: url('imagine_cloud_blue.jpg');
+      background-repeat: repeat;
+      background-color: #a3c2e0; /* Fallback blue while image loads */
       font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-size: 13px;
       color: #000;
@@ -37,7 +40,7 @@
       background-color: #f3f3f3;
       border: 2px solid;
       border-color: #fff #808080 #808080 #fff;
-      box-shadow: 1px 1px 0 0 #0a0a0a;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
       width: 650px;
       margin: 30px auto;
       padding: 20px;
@@ -178,7 +181,7 @@
     <!-- Vintage Camera Photo Placeholder -->
     <div class="photo-frame">
       <div class="photo-placeholder">
-        [ HANNAH_AND_PARTNER.JPG ]<br><br>
+        [ HANNAH_AND_ANDY.JPG ]<br><br>
         (Photo of us goes here)
       </div>
     </div>

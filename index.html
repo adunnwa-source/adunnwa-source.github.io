@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hannah & Partner - Wedding Website</title>
+  <title>Hannah & Andy - Wedding Celebration</title>
   <style>
     /* Custom Retro Cursor Setup */
     html, body, a, button {
@@ -10,60 +10,59 @@
     }
     
     body {
-      background-color: #008080; /* Classic Win95 Teal */
+      background-color: #e6e6e6; /* Soft, muted background instead of intense teal */
       font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       color: #000;
-      margin: 20px;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Windows 95 Window Frame styling */
-    .window {
-      background-color: #c0c0c0;
-      border: 2px solid;
-      border-color: #fff #0a0a0a #0a0a0a #fff;
-      box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
-      width: 600px;
-      margin: 0 auto 20px auto;
-      padding: 3px;
-    }
-
-    .title-bar {
-      background: linear-gradient(90deg, #000080, #1084d0);
+    /* Full-width Rolling Left-to-Right Headline Banner */
+    .marquee-container {
+      background-color: #000;
       color: #fff;
-      padding: 3px 6px;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      font-size: 14px;
       font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 6px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-bottom: 3px double #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .title-bar-text {
-      letter-spacing: 0.5px;
-    }
-
-    .window-body {
-      padding: 15px;
-      background-color: #c0c0c0;
+    /* Subtle boxy frame layout */
+    .main-container {
+      background-color: #f3f3f3;
+      border: 2px solid;
+      border-color: #fff #808080 #808080 #fff;
+      box-shadow: 1px 1px 0 0 #0a0a0a;
+      width: 600px;
+      margin: 30px auto;
+      padding: 20px;
     }
 
     /* Lowcinema-inspired Dynamic/Fuzzy Hover Link Effect */
     .retro-link-container {
       display: inline-block;
       text-align: center;
-      margin: 10px;
+      margin: 15px;
       text-decoration: none;
       color: #000;
+      font-family: "Comic Sans MS", "Comic Sans", cursive; /* Comic sans nav accent */
+      font-size: 14px;
+      font-weight: bold;
     }
 
     .retro-link-thumb {
-      width: 120px;
-      height: 90px;
-      background-color: #808080;
+      width: 130px;
+      height: 95px;
+      background-color: #a0a0a0;
       border: 2px solid;
       border-color: #0a0a0a #fff #fff #0a0a0a;
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
       transition: filter 0.15s ease-in-out, transform 0.15s ease-in-out;
       image-rendering: pixelated; 
     }
@@ -71,26 +70,27 @@
     /* The Fuzzy Link Animation */
     .retro-link-container:hover .retro-link-thumb {
       filter: blur(0.8px) contrast(1.2);
-      transform: scale(0.98);
+      transform: scale(0.97);
     }
 
     .retro-link-container:hover span {
       text-decoration: underline;
-      color: #000080;
+      color: #800000;
     }
 
     /* Vintage Compressed Digital Photo Placeholder */
     .photo-frame {
       width: 320px;
       height: 240px;
-      background-color: #555;
+      background-color: #444;
       border: 3px inset #fff;
-      margin: 20px auto;
+      margin: 25px auto;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
+      box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
     }
 
     .photo-placeholder {
@@ -101,111 +101,87 @@
       padding: 10px;
     }
 
-    /* Guestbook styling */
-    .guestbook-box {
-      background-color: #fff;
+    /* Framed Detail Box */
+    .details-box {
+      text-align: center;
+      background-color: #e6e6e6;
       border: 2px inset #fff;
-      padding: 10px;
-      height: 150px;
-      overflow-y: scroll;
-      margin-top: 10px;
-      font-family: Courier, monospace;
-      font-size: 11px;
+      padding: 20px;
+      margin: 20px 40px;
     }
 
-    .guestbook-entry {
-      border-bottom: 1px dashed #808080;
-      padding: 6px 0;
-    }
-
-    .entry-meta {
-      color: #000080;
-      font-weight: bold;
+    .details-box h1 {
+      font-family: "Comic Sans MS", "Comic Sans", cursive; /* Celebration Header font */
+      margin: 0 0 10px 0;
+      font-size: 22px;
+      color: #800000;
     }
 
     hr {
       border: none;
       border-top: 1px solid #808080;
       border-bottom: 1px solid #fff;
-      margin: 15px 0;
+      margin: 20px 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- Main Window -->
-  <div class="window">
-    <div class="title-bar">
-      <div class="title-bar-text">Hannah & Partner - Wedding Celebration</div>
-    </div>
+  <!-- Full-Width Rolling Marquee (Left to Right) -->
+  <div class="marquee-container">
+    <marquee direction="right" scrollamount="5">
+      WE'RE GETTING MARRIED *** BALTIMORE, MD *** SEPT. 24, 2027 *** WE'RE GETTING MARRIED *** BALTIMORE, MD *** SEPT. 24, 2027
+    </marquee>
+  </div>
+
+  <!-- Main Structured Wrapper Box -->
+  <div class="main-container">
     
-    <div class="window-body">
-      
-      <!-- Centerpiece Logo Asset Link -->
-      <center>
-        <img src="lovebirdstop.gif" alt="Love Birds" border="0" style="margin-bottom: 15px;">
-      </center>
+    <!-- Centerpiece Logo Asset Link -->
+    <center>
+      <img src="lovebirdstop.gif" alt="Love Birds" border="0" style="margin-top: 10px; margin-bottom: 10px;">
+    </center>
 
-      <!-- Vintage Camera Photo Placeholder -->
-      <div class="photo-frame">
-        <div class="photo-placeholder">
-          [ HANNAH_AND_PARTNER.JPG ]<br><br>
-          (Photo of us goes here)
-        </div>
+    <!-- Vintage Camera Photo Placeholder -->
+    <div class="photo-frame">
+      <div class="photo-placeholder">
+        [ HANNAH_AND_PARTNER.JPG ]<br><br>
+        (Photo of us goes here)
       </div>
-
-      <!-- Wedding Details Display -->
-      <div style="text-align: center; background-color: #dfdfdf; border: 2px inset #fff; padding: 15px; margin: 15px 40px;">
-        <h1 style="margin: 0 0 10px 0; font-size: 18px; color: #000080; font-weight: bold;">We're Getting Married!</h1>
-        <p style="margin: 5px 0; font-size: 14px; font-weight: bold;">Fall 2027</p>
-        <p style="margin: 5px 0; font-size: 13px;">Baltimore, Maryland</p>
-        <p style="margin: 10px 0 0 0; font-size: 12px; color: #404040;"><strong>Venue:</strong> American Visionary Art Museum (AVAM)</p>
-      </div>
-
-      <p style="text-align: center; font-style: italic; margin: 15px 0;">
-        Welcome to our wedding website! We can't wait to celebrate with you.
-      </p>
-
-      <hr>
-
-      <!-- Lowcinema style Fuzzy Navigation Links -->
-      <div style="text-align: center;">
-        <a href="#" class="retro-link-container">
-          <div class="retro-link-thumb" style="background: #a52a2a;"></div>
-          <span>Our Story</span>
-        </a>
-        <a href="#" class="retro-link-container">
-          <div class="retro-link-thumb" style="background: #2e8b57;"></div>
-          <span>The Details</span>
-        </a>
-        <a href="#" class="retro-link-container">
-          <div class="retro-link-thumb" style="background: #4682b4;"></div>
-          <span>Photos</span>
-        </a>
-      </div>
-
-      <hr>
-
-      <!-- Classic Guestbook Relic -->
-      <h3 style="margin-bottom: 5px;">📖 Sign Our Guestbook</h3>
-      <p style="margin-top: 0; color: #404040;">Leave a note for the couple in our digital guestbook!</p>
-      
-      <div class="guestbook-box">
-        <div class="guestbook-entry">
-          <span class="entry-meta">Sarah & Mike</span><br>
-          "We are absolutely thrilled for you both! AVAM is such an incredible venue, we can't wait to celebrate in Baltimore next fall!"
-        </div>
-        <div class="guestbook-entry">
-          <span class="entry-meta">Uncle David</span><br>
-          "Counting down the days to Fall 2027! Beautiful website, looking forward to seeing everyone there."
-        </div>
-        <div class="guestbook-entry">
-          <span class="entry-meta">The Lang Family</span><br>
-          "So happy to watch this journey. Sending you both so much love as you plan the big day!"
-        </div>
-      </div>
-
     </div>
+
+    <!-- Clean Structural Details Box -->
+    <div class="details-box">
+      <h1>We're Getting Married!</h1>
+      <p style="margin: 5px 0; font-size: 15px; font-weight: bold;">Friday, September 24, 2027</p>
+      <p style="margin: 5px 0; font-size: 13px; color: #333;">Baltimore, Maryland</p>
+      <p style="margin: 12px 0 0 0; font-size: 12px; color: #555; font-style: italic;">
+        <strong>Venue:</strong> American Visionary Art Museum (AVAM)
+      </p>
+    </div>
+
+    <p style="text-align: center; font-style: italic; margin: 20px 0; color: #444;">
+      Welcome to our wedding website! We can't wait to celebrate with you.
+    </p>
+
+    <hr>
+
+    <!-- Lowcinema style Fuzzy Navigation Links -->
+    <div style="text-align: center;">
+      <a href="#" class="retro-link-container">
+        <div class="retro-link-thumb" style="background: #a52a2a;"></div>
+        <span>Our Story</span>
+      </a>
+      <a href="#" class="retro-link-container">
+        <div class="retro-link-thumb" style="background: #2e8b57;"></div>
+        <span>The Details</span>
+      </a>
+      <a href="#" class="retro-link-container">
+        <div class="retro-link-thumb" style="background: #4682b4;"></div>
+        <span>Photos</span>
+      </a>
+    </div>
+
   </div>
 
 </body>

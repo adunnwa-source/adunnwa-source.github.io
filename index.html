@@ -1,199 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>~*~ Andy & Hannah's Wedding Homepage ~*~</title>
-    <style>
-        body {
-            background-color: #E6E6FA; /* Pastel Lavender */
-            /* Bulletproof CSS-only repeating retro tile pattern */
-            background-image: 
-                linear-gradient(90deg, rgba(0,128,128,0.04) 1px, transparent 1px),
-                linear-gradient(rgba(0,128,128,0.04) 1px, transparent 1px);
-            background-size: 20px 20px;
-            color: #4A4A4A;
-            font-family: "Trebuchet MS", "Lucida Grande", "Arial", sans-serif;
-            padding: 30px;
-        }
+  <meta charset="UTF-8">
+  <title>Welcome to Our 1998 Homepage</title>
+  <style>
+    /* Custom Retro Cursor Setup */
+    html, body, a, button {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto;
+    }
+    
+    body {
+      background-color: #008080; /* Classic Win95 Teal */
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      font-size: 12px;
+      color: #000;
+      margin: 20px;
+    }
 
-        .window-box {
-            background-color: #FFFFFF;
-            border-top: 3px solid #FFF;
-            border-left: 3px solid #FFF;
-            border-right: 3px solid #888888;
-            border-bottom: 3px solid #888888;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
+    /* Windows 95 Window Frame styling */
+    .window {
+      background-color: #c0c0c0;
+      border: 2px solid;
+      border-color: #fff #0a0a0a #0a0a0a #fff;
+      box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
+      width: 600px;
+      margin: 0 auto 20px auto;
+      padding: 3px;
+    }
 
-        .title-bar {
-            background: linear-gradient(90deg, #008080, #20B2AA); 
-            color: #FFFFFF;
-            padding: 6px 10px;
-            font-weight: bold;
-            font-size: 14px;
-            letter-spacing: 1px;
-            margin: -15px -15px 15px -15px;
-            text-align: left;
-        }
+    .title-bar {
+      background: linear-gradient(90deg, #000080, #1084d0);
+      color: #fff;
+      padding: 3px 6px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .retro-btn {
-            display: inline-block;
-            background-color: #D3D3D3;
-            color: #000000 !important;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
-            padding: 8px 16px;
-            margin: 5px;
-            border-top: 2px solid #FFFFFF;
-            border-left: 2px solid #FFFFFF;
-            border-right: 2px solid #555555;
-            border-bottom: 2px solid #555555;
-        }
+    .title-bar-text {
+      letter-spacing: 0.5px;
+    }
 
-        /* Pure CSS Under Construction Banner fallback */
-        .construction-box {
-            background-color: #FFE4E1;
-            border: 2px dashed #FF1493;
-            padding: 10px;
-            color: #FF1493;
-            font-weight: bold;
-            font-size: 13px;
-            margin: 15px 0;
-        }
+    .window-body {
+      padding: 15px;
+      background-color: #c0c0c0;
+    }
 
-        /* Retro counter styling box */
-        .hit-counter {
-            background-color: #000000;
-            color: #39FF14; /* Neon Green */
-            font-family: "Courier New", monospace;
-            font-size: 18px;
-            padding: 4px 8px;
-            letter-spacing: 3px;
-            border: 2px inset #888;
-            display: inline-block;
-        }
+    /* Lowcinema-inspired Dynamic/Fuzzy Hover Link Effect */
+    .retro-link-container {
+      display: inline-block;
+      text-align: center;
+      margin: 10px;
+      text-decoration: none;
+      color: #000;
+    }
 
-        a:link { color: #FF1493; text-decoration: underline; }   
-        a:visited { color: #8A2BE2; } 
-        
-        hr {
-            border: none;
-            border-top: 2px dashed #008080;
-            height: 0;
-            margin: 20px 0;
-        }
-    </style>
+    .retro-link-thumb {
+      width: 120px;
+      height: 90px;
+      background-color: #808080;
+      border: 2px solid;
+      border-color: #0a0a0a #fff #fff #0a0a0a;
+      display: block;
+      margin-bottom: 5px;
+      transition: filter 0.15s ease-in-out, transform 0.15s ease-in-out;
+      /* Ensures crisp low-res look */
+      image-rendering: pixelated; 
+    }
+
+    /* The Fuzzy Link Animation */
+    .retro-link-container:hover .retro-link-thumb {
+      filter: blur(0.8px) contrast(1.2);
+      transform: scale(0.98);
+    }
+
+    .retro-link-container:hover span {
+      text-decoration: underline;
+      color: #000080;
+    }
+
+    /* Vintage Compressed Digital Photo Placeholder */
+    .photo-frame {
+      width: 320px;
+      height: 240px;
+      background-color: #555;
+      border: 3px inset #fff;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-placeholder {
+      color: #00ff00;
+      font-family: Courier, monospace;
+      text-align: center;
+      font-size: 11px;
+      padding: 10px;
+    }
+
+    /* Guestbook styling */
+    .guestbook-box {
+      background-color: #fff;
+      border: 2px inset #fff;
+      padding: 10px;
+      height: 150px;
+      overflow-y: scroll;
+      margin-top: 10px;
+      font-family: Courier, monospace;
+      font-size: 11px;
+    }
+
+    .guestbook-entry {
+      border-bottom: 1px dashed #808080;
+      padding: 6px 0;
+    }
+
+    .entry-meta {
+      color: #000080;
+      font-weight: bold;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #808080;
+      border-bottom: 1px solid #fff;
+      margin: 15px 0;
+    }
+  </style>
 </head>
 <body>
 
-<center>
-    <!-- Top Decorative Banner Section -->
-    <table width="750" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-            <td align="center">
-                <!-- YOUR RETRO IMAGE DROPPED HERE -->
-                <br>
-                <img src="lovebirdstop.gif" alt="Love Birds" border="0">
-                <br>
-                <h1 style="color: #008080; font-size: 28px; margin: 10px 0;">
-                    <i>The Official Wedding Hub for Andy Dunn & Hannah Lang</i>
-                </h1>
-                <p style="font-size: 14px; margin-top: 0;">Best viewed in Netscape Navigator with a color display</p>
-                <hr>
-            </td>
-        </tr>
-    </table>
+  <!-- Main Window -->
+  <div class="window">
+    <div class="title-bar">
+      <div class="title-bar-text">✨ Welcome to Our Homepage v1.0 ✨</div>
+    </div>
+    
+    <div class="window-body">
+      
+      <!-- Centerpiece Logo Asset Link -->
+      <center>
+        <img src="lovebirdstop.gif" alt="Love Birds" border="0" style="margin-bottom: 10px;">
+      </center>
 
-    <table width="750" cellpadding="0" cellspacing="10" border="0">
-        <tr>
-            <!-- Left Sidebar Navigation -->
-            <td width="220" valign="top">
-                <div class="window-box">
-                    <div class="title-bar">✦ NAVIGATION</div>
-                    <center>
-                        <a href="#welcome" class="retro-btn" style="width: 140px;">Home Sweet Home</a>
-                        <a href="#details" class="retro-btn" style="width: 140px;">When & Where</a>
-                        <a href="#rsvp" class="retro-btn" style="width: 140px;">RSVP / Guestbook</a>
-                        <a href="#registry" class="retro-btn" style="width: 140px;">Our Registry</a>
-                    </center>
-                    <br>
-                    <center>
-                        <span style="font-size: 20px;">✉️</span><br>
-                        <span style="font-size: 11px;">Questions? Drop us a line!</span>
-                    </center>
-                </div>
-            </td>
+      <p style="text-align: center; font-size: 14px; font-weight: bold; margin-top: 5px;">
+        Optimized for Netscape Navigator 4.0 & 800x600 Resolution
+      </p>
 
-            <!-- Right Main Content -->
-            <td width="530" valign="top">
-                <div class="window-box">
-                    <div class="title-bar">✦ CELEBRATE WITH US!</div>
-                    
-                    <a name="welcome"></a>
-                    <h3>Welcome to Our Website</h3>
-                    <p>Thanks for stopping by! We wanted to create a simple, straightforward space to share our wedding plans with family and friends without relying on the usual cookie-cutter templates. We are incredibly excited to celebrate with everyone.</p>
-                    
-                    <hr>
-                    
-                    <a name="details"></a>
-                    <h3>The Big Day Logistics</h3>
-                    <p>We are officially locking down our plans for Autumn 2027. Save the date!</p>
-                    
-                    <table width="100%" bgcolor="#F4F0FA" cellpadding="8" style="border: 1px inset #888;">
-                        <tr>
-                            <td><b>📅 WHEN:</b></td>
-                            <td>Friday, September 24, 2027</td>
-                        </tr>
-                        <tr>
-                            <td><b>📍 WHERE:</b></td>
-                            <td>
-                                <b>The American Visionary Art Museum</b><br>
-                                800 Key Highway<br>
-                                Baltimore, MD 21230
-                            </td>
-                        </tr>
-                    </table>
-                    
-                    <p>More detailed schedules, hotel room blocks, and travel recommendations will be hardcoded right here as we get closer to the date.</p>
-                    
-                    <hr>
-                    
-                    <a name="rsvp"></a>
-                    <h3>RSVP & Guestbook</h3>
-                    <p>Our interactive RSVP portal is currently in development. Once open, you will be able to leave us a public message and confirm your attendance right here on the site.</p>
-                    
-                    <hr>
-                    
-                    <a name="registry"></a>
-                    <h3>Gift Registries</h3>
-                    <p>We are currently pulling together our registry lists. When finalized, links to our storefronts will appear here as clickable shortcuts.</p>
-                    
-                    <center>
-                        <div class="construction-box">
-                            ⚠️ SITE UNDER CONSTRUCTION • NEW DETAILS ADDED WEEKLY ⚠️
-                        </div>
-                    </center>
-                </div>
-            </td>
-        </tr>
-    </table>
+      <!-- Vintage Camera Photo Placeholder -->
+      <div class="photo-frame">
+        <div class="photo-placeholder">
+          [ 98_DIGITAL_CAM_PLACEHOLDER.JPG ]<br><br>
+          File size: 14.2 KB<br>
+          Compression: HIGH<br>
+          (Image of us goes here)
+        </div>
+      </div>
 
-    <!-- Footer Counter -->
-    <br>
-    <table width="750" cellpadding="5" border="0">
-        <tr>
-            <td align="center">
-                <font size="2" color="#666666">
-                    Andy & Hannah Wedding Web Headquarters © 2026<br>
-                    You are awesome visitor number:
-                </font><br><br>
-                <div class="hit-counter">0001337</div>
-            </td>
-        </tr>
-    </table>
-</center>
+      <p style="text-align: center; font-style: italic;">
+        "Building a home on the web, one byte at a time."
+      </p>
+
+      <hr>
+
+      <!-- Lowcinema style Fuzzy Navigation Links -->
+      <div style="text-align: center;">
+        <a href="#" class="retro-link-container">
+          <div class="retro-link-thumb" style="background: #a52a2a;"></div>
+          <span>Our Story</span>
+        </a>
+        <a href="#" class="retro-link-container">
+          <div class="retro-link-thumb" style="background: #2e8b57;"></div>
+          <span>The Details</span>
+        </a>
+        <a href="#" class="retro-link-container">
+          <div class="retro-link-thumb" style="background: #4682b4;"></div>
+          <span>Photos</span>
+        </a>
+      </div>
+
+      <hr>
+
+      <!-- Classic Guestbook Relic -->
+      <h3 style="margin-bottom: 5px;">📖 Sign our Guestbook!</h3>
+      <p style="margin-top: 0; color: #404040;">Leave a message so we know you stopped by!</p>
+      
+      <div class="guestbook-box">
+        <div class="guestbook-entry">
+          <span class="entry-meta">CoolCat99</span> - 1998-08-24 14:32<br>
+          "Love the layout! The teal background is exactly what a true webmaster would choose. Dynamic frames are rocking!"
+        </div>
+        <div class="guestbook-entry">
+          <span class="entry-meta">RetroRider</span> - 1998-08-23 09:15<br>
+          "Awesome page! I found this through a webring link. Keep up the great work!"
+        </div>
+        <div class="guestbook-entry">
+          <span class="entry-meta">PixelPerfect</span> - 1998-08-22 18:40<br>
+          "This page loads fast even on my 28.8k modem. Stoked to see the future photos!"
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 </body>
 </html>

@@ -10,7 +10,7 @@
     }
     
     body {
-      background-color: #e6e6e6; /* Soft, muted background instead of intense teal */
+      background-color: #e6e6e6; 
       font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-size: 13px;
       color: #000;
@@ -18,7 +18,7 @@
       padding: 0;
     }
 
-    /* Full-width Rolling Left-to-Right Headline Banner */
+    /* Full-width Rolling Right-to-Left Headline Banner */
     .marquee-container {
       background-color: #000;
       color: #fff;
@@ -32,33 +32,66 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    /* Subtle boxy frame layout */
+    /* Main Structured Wrapper Box */
     .main-container {
       background-color: #f3f3f3;
       border: 2px solid;
       border-color: #fff #808080 #808080 #fff;
       box-shadow: 1px 1px 0 0 #0a0a0a;
-      width: 600px;
+      width: 650px;
       margin: 30px auto;
       padding: 20px;
+    }
+
+    /* Side-by-Side Flex Split */
+    .top-split-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .left-logo-column {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    /* Framed Detail Box - Aligned to the Right */
+    .details-box {
+      flex: 1 1 auto;
+      text-align: center;
+      background-color: #e6e6e6;
+      border: 2px inset #fff;
+      padding: 15px;
+    }
+
+    .details-box h1 {
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      margin: 0 0 8px 0;
+      font-size: 20px;
+      color: #800000;
     }
 
     /* Lowcinema-inspired Dynamic/Fuzzy Hover Link Effect */
     .retro-link-container {
       display: inline-block;
       text-align: center;
-      margin: 15px;
+      margin: 10px 15px;
       text-decoration: none;
       color: #000;
-      font-family: "Comic Sans MS", "Comic Sans", cursive; /* Comic sans nav accent */
-      font-size: 14px;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      font-size: 13px;
       font-weight: bold;
+      width: 140px;
     }
 
     .retro-link-thumb {
-      width: 130px;
+      width: 140px;
       height: 95px;
-      background-color: #a0a0a0;
       border: 2px solid;
       border-color: #0a0a0a #fff #fff #0a0a0a;
       display: block;
@@ -66,6 +99,11 @@
       transition: filter 0.15s ease-in-out, transform 0.15s ease-in-out;
       image-rendering: pixelated; 
     }
+
+    /* Distinct soft retro block shades for the new navigation items */
+    .thumb-rsvp { background-color: #b25d5d; }
+    .thumb-travel { background-color: #5db27e; }
+    .thumb-faq { background-color: #5d8bb2; }
 
     /* The Fuzzy Link Animation */
     .retro-link-container:hover .retro-link-thumb {
@@ -101,22 +139,6 @@
       padding: 10px;
     }
 
-    /* Framed Detail Box */
-    .details-box {
-      text-align: center;
-      background-color: #e6e6e6;
-      border: 2px inset #fff;
-      padding: 20px;
-      margin: 20px 40px;
-    }
-
-    .details-box h1 {
-      font-family: "Comic Sans MS", "Comic Sans", cursive; /* Celebration Header font */
-      margin: 0 0 10px 0;
-      font-size: 22px;
-      color: #800000;
-    }
-
     hr {
       border: none;
       border-top: 1px solid #808080;
@@ -127,20 +149,31 @@
 </head>
 <body>
 
-  <!-- Full-Width Rolling Marquee (Left to Right) -->
+  <!-- Full-Width Rolling Marquee (Right to Left) -->
   <div class="marquee-container">
-    <marquee direction="right" scrollamount="5">
+    <marquee direction="left" scrollamount="5">
       WE'RE GETTING MARRIED *** BALTIMORE, MD *** SEPT. 24, 2027 *** WE'RE GETTING MARRIED *** BALTIMORE, MD *** SEPT. 24, 2027
     </marquee>
   </div>
 
-  <!-- Main Structured Wrapper Box -->
   <div class="main-container">
     
-    <!-- Centerpiece Logo Asset Link -->
-    <center>
-      <img src="lovebirdstop.gif" alt="Love Birds" border="0" style="margin-top: 10px; margin-bottom: 10px;">
-    </center>
+    <!-- Side-by-Side Logo & Info Box Layout -->
+    <div class="top-split-layout">
+      <div class="left-logo-column">
+        <img src="lovebirdstop.gif" alt="Love Birds" border="0">
+      </div>
+      
+      <div class="details-box">
+        <h1>We're Getting Married!</h1>
+        <p style="margin: 4px 0; font-size: 14px; font-weight: bold;">Friday, September 24, 2027</p>
+        <p style="margin: 4px 0; font-size: 13px; font-weight: bold; color: #800000;">Ceremony Starts at 5:00 PM</p>
+        <p style="margin: 4px 0; font-size: 12px; color: #333;">Baltimore, Maryland</p>
+        <p style="margin: 8px 0 0 0; font-size: 11px; color: #555; font-style: italic;">
+          <strong>Venue:</strong> American Visionary Art Museum (AVAM)
+        </p>
+      </div>
+    </div>
 
     <!-- Vintage Camera Photo Placeholder -->
     <div class="photo-frame">
@@ -150,35 +183,25 @@
       </div>
     </div>
 
-    <!-- Clean Structural Details Box -->
-    <div class="details-box">
-      <h1>We're Getting Married!</h1>
-      <p style="margin: 5px 0; font-size: 15px; font-weight: bold;">Friday, September 24, 2027</p>
-      <p style="margin: 5px 0; font-size: 13px; color: #333;">Baltimore, Maryland</p>
-      <p style="margin: 12px 0 0 0; font-size: 12px; color: #555; font-style: italic;">
-        <strong>Venue:</strong> American Visionary Art Museum (AVAM)
-      </p>
-    </div>
-
     <p style="text-align: center; font-style: italic; margin: 20px 0; color: #444;">
       Welcome to our wedding website! We can't wait to celebrate with you.
     </p>
 
     <hr>
 
-    <!-- Lowcinema style Fuzzy Navigation Links -->
+    <!-- Updated Navigation Links -->
     <div style="text-align: center;">
       <a href="#" class="retro-link-container">
-        <div class="retro-link-thumb" style="background: #a52a2a;"></div>
-        <span>Our Story</span>
+        <div class="retro-link-thumb thumb-rsvp"></div>
+        <span>RSVP HERE!</span>
       </a>
       <a href="#" class="retro-link-container">
-        <div class="retro-link-thumb" style="background: #2e8b57;"></div>
-        <span>The Details</span>
+        <div class="retro-link-thumb thumb-travel"></div>
+        <span>TRAVEL DETAILS</span>
       </a>
       <a href="#" class="retro-link-container">
-        <div class="retro-link-thumb" style="background: #4682b4;"></div>
-        <span>Photos</span>
+        <div class="retro-link-thumb thumb-faq"></div>
+        <span>FAQ</span>
       </a>
     </div>
 

@@ -44,6 +44,9 @@
       .blink-text {
         animation: none; /* Disables flashing for motion-sensitive guests */ 
       }
+      .title-image {
+        animation: none !important; /* Disables title spin for motion-sensitive guests */
+      }
     }
 
     @keyframes retro-blink {
@@ -158,6 +161,18 @@
       max-width: 550px; /* Expands larger across the container */
       height: auto;
       display: inline-block;
+      /* Animation to spin 360 degrees exactly once over 1.5 seconds on load */
+      animation: spin-once 1.5s ease-out 1; 
+    }
+
+    /* Keyframes for the single intro spin */
+    @keyframes spin-once {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     /* Framed Detail Box - Palette 1: Muted Slate */

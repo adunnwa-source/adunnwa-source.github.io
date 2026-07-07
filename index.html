@@ -7,7 +7,7 @@
   <style>
     /* Custom Retro Cursor Setup with Standard Fallback */
     html, body, a, button {
-      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; /* [cite: 20] */
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; 
     }
     
     body {
@@ -24,16 +24,16 @@
 
     /* Full-width Blinking Text Banner Alert */
     .blink-container {
-      background-color: #0F172A; /* Palette 1: Deep Navy */ /* [cite: 30] */
-      color: #F8FAFC; /* Palette 1: Ghost White Text */ /* [cite: 31] */
-      font-family: "Comic Sans MS", "Comic Sans", sans-serif; /* [cite: 31] */
-      font-size: 16px; /* [cite: 32] */
-      font-weight: bold; /* [cite: 32] */
-      letter-spacing: 2px; /* [cite: 32] */
-      padding: 8px 0; /* [cite: 32] */
-      text-align: center; /* [cite: 32] */
-      border-bottom: 3px double #F8FAFC; /* [cite: 32] */
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* [cite: 32] */
+      background-color: #0F172A; /* Palette 1: Deep Navy */ 
+      color: #F8FAFC; /* Palette 1: Ghost White Text */ 
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif; 
+      font-size: 16px; 
+      font-weight: bold; 
+      letter-spacing: 2px; 
+      padding: 8px 0; 
+      text-align: center; 
+      border-bottom: 3px double #F8FAFC; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
     }
 
     /* Pure CSS Safe Blinking Animation (Slower, honors accessibility settings) */
@@ -42,7 +42,7 @@
     }
     @media (prefers-reduced-motion: reduce) {
       .blink-text {
-        animation: none; /* Disables flashing for motion-sensitive guests */ /* [cite: 19] */
+        animation: none; /* Disables flashing for motion-sensitive guests */ 
       }
     }
 
@@ -53,13 +53,13 @@
     
     /* Outer Framework Container - Palette 1: Ghost White */
     .main-container {
-      background-color: #F8FAFC; /* [cite: 36] */
-      border: 3px solid; /* [cite: 37] */
-      border-color: #fff #808080 #808080 #fff; /* Inset frame simulation */ /* [cite: 37] */
-      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15); /* [cite: 37] */
+      background-color: #F8FAFC; 
+      border: 3px solid; 
+      border-color: #fff #808080 #808080 #fff; /* Inset frame simulation */ 
+      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15); 
       max-width: 800px;
       width: 95%;
-      margin: 30px auto; /* [cite: 37] */
+      margin: 30px auto; 
       padding: 15px;
     }
 
@@ -72,7 +72,7 @@
     /* Option #2: Vertical Left Sidebar Command Panel */
     .sidebar-panel {
       width: 180px; /* Explicit width constraint */
-      background-color: #E2E8F0; /* Stark, high contrast background */ /* [cite: 44, 73] */
+      background-color: #E2E8F0; /* Stark, high contrast background */ 
       border: 2px inset #fff; /* Recessed look */
       padding: 15px 10px;
       vertical-align: top;
@@ -104,8 +104,8 @@
 
     /* Period-Accurate Un-styled, Blue Underlined Link Targets */
     .sidebar-link {
-      color: #0000EE; /* Standard authentic Blue unvisited link */ /* [cite: 23, 74] */
-      text-decoration: underline; /* [cite: 23, 74] */
+      color: #0000EE; /* Standard authentic Blue unvisited link */ 
+      text-decoration: underline; 
       font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
       font-weight: bold;
@@ -117,7 +117,7 @@
 
     /* Sudden, Jarring Color Swap on Hover */
     .sidebar-link:hover {
-      color: #BE123C !important; /* Palette 1: Deep Rose Accent */ /* [cite: 13] */
+      color: #BE123C !important; /* Palette 1: Deep Rose Accent */ 
     }
 
     /* Animated Pixel Bullet Points placement */
@@ -134,35 +134,59 @@
       vertical-align: top;
     }
 
+    /* Vertically Stacked Content Wrappers */
+    .stacked-header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .lovebirds-wrapper {
+      margin-bottom: 10px;
+    }
+
+    .title-image-wrapper {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
     .title-image {
-      max-width: 100%;
+      width: 100%;
+      max-width: 550px; /* Expands larger across the container */
       height: auto;
+      display: inline-block;
     }
 
     /* Framed Detail Box - Palette 1: Muted Slate */
     .details-box {
+      width: 100%;
+      max-width: 400px; /* Standardized dialog box width */
       text-align: center;
-      background-color: #E2E8F0; /* [cite: 44] */
-      border: 2px solid; /* [cite: 44] */
-      border-color: #808080 #fff #fff #808080; /* Inset box look */ /* [cite: 44] */
-      padding: 12px;
+      background-color: #E2E8F0; 
+      border: 2px solid; 
+      border-color: #808080 #fff #fff #808080; /* Inset box look */ 
+      padding: 15px;
+      box-sizing: border-box;
     }
 
     .details-box h1 {
-      font-family: "Comic Sans MS", "Comic Sans", sans-serif; /* [cite: 46] */
-      margin: 0 0 6px 0; /* [cite: 46] */
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif; 
+      margin: 0 0 6px 0; 
       font-size: 18px;
-      color: #BE123C; /* Palette 1: Deep Rose Accent */ /* [cite: 47] */
+      color: #BE123C; /* Palette 1: Deep Rose Accent */ 
     }
 
     /* Vintage Compressed Digital Photo Placeholder */
     .photo-frame {
       width: 320px;
       max-width: 100%;
-      height: 240px; /* [cite: 57] */
-      background-color: #1E293B; /* Palette 1: Slate Core */ /* [cite: 57] */
-      border: 3px inset #E2E8F0; /* [cite: 57] */
-      margin: 20px auto; /* [cite: 57] */
+      height: 240px; 
+      background-color: #1E293B; /* Palette 1: Slate Core */ 
+      border: 3px inset #E2E8F0; 
+      margin: 20px auto; 
       display: table;
     }
     
@@ -173,10 +197,10 @@
     }
 
     .photo-placeholder {
-      color: #38BDF8; /* Sky Blue terminal font color */ /* [cite: 59] */
-      font-family: Courier, monospace; /* [cite: 59] */
-      font-size: 11px; /* [cite: 60] */
-      padding: 10px; /* [cite: 60] */
+      color: #38BDF8; /* Sky Blue terminal font color */ 
+      font-family: Courier, monospace; 
+      font-size: 11px; 
+      padding: 10px; 
     }
 
     hr {
@@ -217,7 +241,7 @@
         padding-left: 0 !important;
       }
       html, body, a, button {
-        cursor: auto !important; /* Disables problematic tracking rules on touch viewports */ /* [cite: 20] */
+        cursor: auto !important; /* Disables problematic tracking rules on touch viewports */ 
       }
     }
   </style>
@@ -252,32 +276,26 @@
 
         <td class="content-panel">
           
-          <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 15px;">
-            <tr>
-              <td valign="top" style="width: 55%;">
-                <table border="0" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td>
-                      <img src="hannah-andy-title.png" alt="Hannah & Andy" class="title-image">
-                    </td>
-                    <td valign="bottom" style="padding-left: 5px;">
-                      <img src="lovebirdstop.gif" alt="Love Birds Animated GIF" border="0">
-                    </td>
-                  </tr>
-                </table>
-              </td>
-              <td valign="top" style="width: 45%; padding-left: 10px;">
-                <div class="details-box">
-                  <h1>Save the Date:</h1>
-                  <h1>Sept. 24, 2027</h1>
-                  <p style="margin: 4px 0; font-size: 14px;">American Visionary Art Museum</p>
-                  <p style="margin: 6px 0 0 0; font-size: 13px; color: #475569; font-style: italic;">
-                    <br>Baltimore, Maryland
-                  </p>
-                </div>
-              </td>
-            </tr>
-          </table>
+          <div class="stacked-header-container">
+            
+            <div class="lovebirds-wrapper">
+              <img src="lovebirdstop.gif" alt="Love Birds Animated GIF" border="0">
+            </div>
+
+            <div class="title-image-wrapper">
+              <img src="hannah-andy-title.png" alt="Hannah & Andy" class="title-image">
+            </div>
+
+            <div class="details-box">
+              <h1>Save the Date:</h1>
+              <h1>Sept. 24, 2027</h1>
+              <p style="margin: 4px 0; font-size: 14px;">American Visionary Art Museum</p>
+              <p style="margin: 6px 0 0 0; font-size: 13px; color: #475569; font-style: italic;">
+                Baltimore, Maryland
+              </p>
+            </div>
+
+          </div>
           
           <div class="photo-frame">
             <div class="photo-cell">
@@ -292,6 +310,9 @@
           </p>
 
           <hr>
+        </td>
+      </tr>
+    </table>
   </div>
 
 </body>

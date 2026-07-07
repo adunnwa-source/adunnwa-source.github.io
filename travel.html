@@ -194,111 +194,42 @@
       line-height: 1.4;
     }
 
-    /* Authentic 90s MapQuest Simulation Style */
-    .mapquest-box {
-      background-color: #FFFFF0; /* Ivory map page background */
+    /* Custom Retro Map Viewer Frame */
+    .map-viewer-box {
+      background-color: #E2E8F0;
       border: 3px double #808080;
-      font-family: "Courier New", Courier, monospace;
+      font-family: Arial, sans-serif;
       color: #000;
-      padding: 10px;
+      padding: 8px;
       margin-top: 20px;
     }
 
-    .mapquest-header {
-      background-color: #006633; /* Deep MapQuest Green */
+    .map-viewer-header {
+      background-color: #000080; /* Traditional Blue Windows Menu Bar */
       color: #FFFFFF;
-      padding: 5px;
-      font-family: Arial, sans-serif;
+      padding: 4px 8px;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .mapquest-logo {
-      font-size: 16px;
-      font-style: italic;
-      letter-spacing: 1px;
-    }
-
-    .mapquest-logo span {
-      color: #FFCC00; /* Yellow 'Quest' */
-    }
-
-    .mapquest-map-area {
-      background-color: #CADDF2; /* Retro water / road light blue color */
-      border: 2px inset #808080;
-      height: 220px;
-      margin: 10px 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Map Elements using inline CSS vectors */
-    .map-road-v {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 24px;
-      height: 100%;
-      left: 120px;
-      border-left: 2px solid #808080;
-      border-right: 2px solid #808080;
-    }
-
-    .map-road-h {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-      height: 24px;
-      bottom: 40px;
-      border-top: 2px solid #808080;
-      border-bottom: 2px solid #808080;
-    }
-
-    .map-route-line {
-      position: absolute;
-      border-left: 4px dashed #BE123C;
-      border-bottom: 4px dashed #BE123C;
-      left: 132px;
-      top: 50px;
-      width: 160px;
-      height: 120px;
-      z-index: 1;
-    }
-
-    .map-pin {
-      position: absolute;
-      z-index: 2;
-      padding: 2px 6px;
-      font-size: 11px;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      border: 1px solid #000;
-    }
-
-    .pin-hotel {
-      background-color: #FFFF99;
-      top: 35px;
-      left: 30px;
-    }
-
-    .pin-venue {
-      background-color: #FF9999;
-      bottom: 25px;
-      left: 230px;
-    }
-
-    .map-compass {
-      position: absolute;
-      top: 8px;
-      right: 8px;
+    .map-frame-container {
       background-color: #FFF;
-      border: 1px solid #000;
-      padding: 3px;
-      font-size: 9px;
-      text-align: center;
-      line-height: 1.1;
+      border: 2px inset #808080;
+      height: 350px;
+      margin-top: 6px;
+      position: relative;
+    }
+
+    .map-legend {
+      background-color: #FFFFF0;
+      border: 1.5px solid #808080;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 11px;
+      padding: 8px;
+      margin-top: 8px;
     }
 
     .directions-list {
@@ -428,42 +359,42 @@
             <a href="http://www.avam.org/" target="_blank" class="retro-btn-link">[ Visit AVAM Website ]</a>
           </div>
 
-          <!-- MAPQUEST CONSOLE SIMULATOR -->
-          <div class="mapquest-box">
-            <div class="mapquest-header">
-              <span class="mapquest-logo">MAP<span>QUEST</span>®</span>
-              <span style="font-size: 9px; font-weight: normal;">Directions & Map</span>
-            </div>
-            
-            <div style="font-size: 11px; margin-top: 5px; font-weight: bold;">
-              Route Map: Royal Sonesta Hotel to AVAM Barn
+          <!-- RETRO INTERACTIVE MAP VIEWER APPLICATION -->
+          <div class="map-viewer-box">
+            <div class="map-viewer-header">
+              <span>🗺️ Map Viewer</span>
             </div>
 
-            <div class="mapquest-map-area">
-              <!-- Grid Roads layout -->
-              <div class="map-road-v"></div>
-              <div class="map-road-h"></div>
-              
-              <!-- Walk Route Path -->
-              <div class="map-route-line"></div>
-              
-              <!-- Map pins -->
-              <div class="map-pin pin-hotel">
-                A: Royal Sonesta
-              </div>
-              <div class="map-pin pin-venue">
-                B: AVAM Barn
-              </div>
-
-              <!-- Compass Rose -->
-              <div class="map-compass">
-                N<br>↑<br><span style="font-size: 8px;">BALTIMORE</span>
-              </div>
+            <!-- EMBEDDED GOOGLE MAP (Plotted to Baltimore, MD with Sonesta & AVAM coordinates) -->
+            <div class="map-frame-container">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d12351.488661608775!2d-76.6163351604313!3d39.27961139158327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x89c80366b5791739%3A0x6b4c6e93172e2cfc!2sThe%20Royal%20Sonesta%20Harbor%20Court%20Baltimore%2C%20550%20Light%20St%2C%20Baltimore%2C%20MD%2021202!3m2!1d39.2842095!2d-76.6127116!4m5!1s0x89c80362f6b8c9ad%3A0x4ba801a6b0cfa0b!2sAmerican%20Visionary%20Art%20Museum%2C%20800%20Key%20Hwy%2C%20Baltimore%2C%20MD%2021230!3m2!1d39.279822!2d-76.6067098!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
 
-            <!-- STEP BY STEP INTERACTIVE DIRECTIONS -->
-            <div style="font-weight: bold; font-size: 11px; border-bottom: 1px solid #000; padding-bottom: 2px;">
-              WALKING DIRECTIONS: (Estimated Distance: 0.6 miles / Total Time: 12 minutes)
+            <!-- MAP KEY / EVENT TELEMETRY -->
+            <div class="map-legend">
+              <strong>BALTIMORE KEY LOCATIONS GRID:</strong>
+              <ul style="margin: 5px 0 0 0; padding-left: 20px;">
+                <li><span style="color: #BE123C; font-weight: bold;">[A] Hotel Block Base:</span> The Royal Sonesta (550 Light St)</li>
+                <li><span style="color: #BE123C; font-weight: bold;">[B] Main Event Barn:</span> American Visionary Art Museum (800 Key Hwy)</li>
+                <li style="color: #64748B; font-style: italic;">[C] Welcome Drinks Reception: (Coordinates to be configured soon!)</li>
+                <li style="color: #64748B; font-style: italic;">[D] Late Night Afterparty: (Coordinates to be configured soon!)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- STEP BY STEP DIRECTIONS -->
+          <div class="info-window" style="margin-top: 15px;">
+            <h2 class="info-window-header">Walking Directions</h2>
+            <div style="font-weight: bold; font-size: 11px; border-bottom: 1px solid #808080; padding-bottom: 2px;">
+              FROM ROYAL SONESTA HOTEL TO AVAM BARN (Approx. 12 Minute Walk)
             </div>
             <ol class="directions-list">
               <li>Exit <strong>The Royal Sonesta Harbor Court</strong> lobby and head south on <strong>Light St</strong> toward the Inner Harbor.</li>

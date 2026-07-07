@@ -1,0 +1,301 @@
+<!-- Retro 90s OS Stylesheets -->
+<style>
+  :root {
+    --win-gray: #c0c0c0;
+    --win-white: #ffffff;
+    --win-dark-gray: #808080;
+    --win-black: #000000;
+    --win-blue: #000080;
+    --win-text-gray: #5a5a5a;
+  }
+
+  .exe-container {
+    width: 100%;
+    max-width: 550px;
+    background-color: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-white) var(--win-dark-gray) var(--win-dark-gray) var(--win-white);
+    padding: 3px;
+    font-family: "MS Sans Serif", "Courier New", sans-serif;
+    color: var(--win-black);
+    box-shadow: 1px 1px 0px var(--win-black);
+  }
+
+  .title-bar {
+    background-color: var(--win-blue);
+    color: var(--win-white);
+    padding: 4px 6px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+
+  .title-btn {
+    background-color: var(--win-gray);
+    border: 1px solid;
+    border-color: var(--win-white) var(--win-dark-gray) var(--win-dark-gray) var(--win-white);
+    font-size: 10px;
+    width: 16px;
+    height: 14px;
+    text-align: center;
+    line-height: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--win-black);
+  }
+
+  .form-body {
+    padding: 15px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  /* Classic Windows 3D Inset Inputs */
+  .win-input, .win-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--win-white);
+    border: 2px solid;
+    border-color: var(--win-dark-gray) var(--win-white) var(--win-white) var(--win-dark-gray);
+    padding: 4px;
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--win-black);
+  }
+
+  .win-textarea {
+    resize: vertical;
+    height: 60px;
+  }
+
+  .radio-checkbox-group {
+    background: var(--win-white);
+    border: 2px solid;
+    border-color: var(--win-dark-gray) var(--win-white) var(--win-white) var(--win-dark-gray);
+    padding: 10px;
+    margin-top: 4px;
+  }
+
+  .win-option {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+
+  .win-option:last-child {
+    margin-bottom: 0;
+  }
+
+  .win-option input {
+    margin-right: 8px;
+  }
+
+  .win-divider {
+    border: none;
+    border-top: 1px solid var(--win-dark-gray);
+    border-bottom: 1px solid var(--win-white);
+    margin: 18px 0;
+  }
+
+  /* Command Execution Buttons */
+  .btn-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .win-btn {
+    background-color: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-white) var(--win-dark-gray) var(--win-dark-gray) var(--win-white);
+    padding: 4px 15px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--win-black);
+  }
+
+  .win-btn:active {
+    border-color: var(--win-dark-gray) var(--win-white) var(--win-white) var(--win-dark-gray);
+    padding: 5px 14px 3px 16px;
+  }
+
+  /* System offline toggle notice styling */
+  #decline-notice {
+    background-color: #f0f0f0;
+    border: 1px dashed var(--win-dark-gray);
+    padding: 12px;
+    font-size: 12px;
+    text-align: center;
+    color: #800000;
+  }
+</style>
+
+<!-- The Windows 95 Dialog Window Frame -->
+<div class="exe-container">
+  <div class="title-bar">
+    <span>RSVP_TERMINAL.EXE</span>
+    <div class="title-btn">X</div>
+  </div>
+
+  <div class="form-body">
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-QJJzUYHkS58Dfsp4qgn-tHgXL_AhB8aS3BaoVBfJLj1W6g/formResponse" method="POST">
+      
+      <!-- 1. Primary Guest Name -->
+      <div class="form-group">
+        <label for="primary-name">GUEST_ID / PRIMARY NAME:</label>
+        <input type="text" id="primary-name" name="entry.1103280564" class="win-input" required>
+      </div>
+
+      <!-- 2. Email Address -->
+      <div class="form-group">
+        <label for="email-address">EMAIL_ADDRESS.NET:</label>
+        <input type="email" id="email-address" name="entry.164402968" class="win-input" required>
+      </div>
+
+      <!-- 3. Mailing Address -->
+      <div class="form-group">
+        <label for="mailing-address">PHYSICAL_MAILING_LOCATION:</label>
+        <textarea id="mailing-address" name="entry.1907037494" class="win-textarea" required></textarea>
+      </div>
+
+      <!-- 4. Gatekeeper Question -->
+      <div class="form-group">
+        <label>INITIALIZE SYSTEM ACCESS PROTOCOL?</label>
+        <div class="radio-checkbox-group">
+          <label class="win-option">
+            <input type="radio" name="entry.1032168192" value="Yes" id="gatekeeper-yes" checked>
+            [•] YES, booting up wedding protocols!
+          </label>
+          <label class="win-option">
+            <input type="radio" name="entry.1032168192" value="No" id="gatekeeper-no">
+            [ ] NO, system offline (Regretfully decline).
+          </label>
+        </div>
+      </div>
+
+      <!-- CONDITIONAL LOGISTICS MATRIX WINDOW -->
+      <div id="logistics-matrix">
+        <div class="win-divider"></div>
+
+        <!-- 5. Plus One Name -->
+        <div class="form-group">
+          <label for="plus-one">ADDITIONAL_PASSENGER / PLUS ONE (OPTIONAL):</label>
+          <input type="text" id="plus-one" name="entry.530798813" class="win-input">
+        </div>
+
+        <!-- 6. Weekend Sub-Events -->
+        <div class="form-group">
+          <label>SELECT SUB-ROUTINE ATTENDANCE (CHECK ALL THAT APPLY):</label>
+          <div class="radio-checkbox-group">
+            <label class="win-option">
+              <input type="checkbox" name="entry.1385859850" value="Welcome Party (Thursday evening)">
+              [ ] Welcome Party (Thursday evening)
+            </label>
+            <label class="win-option">
+              <input type="checkbox" name="entry.1385859850" value="Wedding Ceremony & Reception">
+              [ ] Wedding Ceremony & Reception
+            </label>
+            <label class="win-option">
+              <input type="checkbox" name="entry.1385859850" value="Farewell Brunch (Saturday morning)">
+              [ ] Farewell Brunch (Saturday morning)
+            </label>
+          </div>
+        </div>
+
+        <!-- 7. Primary Meal -->
+        <div class="form-group">
+          <label>PRIMARY_GUEST_CATERING_FUEL:</label>
+          <div class="radio-checkbox-group">
+            <label class="win-option">
+              <input type="radio" name="entry.464102411" value="Chicken"> [ ] Chicken Protocol
+            </label>
+            <label class="win-option">
+              <input type="radio" name="entry.464102411" value="Beef"> [ ] Beef Protocol
+            </label>
+            <label class="win-option">
+              <input type="radio" name="entry.464102411" value="Vegetarian"> [ ] Vegetarian Protocol
+            </label>
+          </div>
+        </div>
+
+        <!-- 8. Plus One Meal -->
+        <div class="form-group">
+          <label>PLUS_ONE_CATERING_FUEL:</label>
+          <div class="radio-checkbox-group">
+            <label class="win-option">
+              <input type="radio" name="entry.1693476184" value="Chicken"> [ ] Chicken Protocol
+            </label>
+            <label class="win-option">
+              <input type="radio" name="entry.1693476184" value="Beef"> [ ] Beef Protocol
+            </label>
+            <label class="win-option">
+              <input type="radio" name="entry.1693476184" value="Vegetarian"> [ ] Vegetarian Protocol
+            </label>
+          </div>
+        </div>
+
+        <!-- 9. Dietary Restrictions -->
+        <div class="form-group">
+          <label for="diet-restrictions">REPORT SYSTEM ALLERGIES / DIETARY RESTRICTIONS:</label>
+          <textarea id="diet-restrictions" name="entry.1442025351" class="win-textarea"></textarea>
+        </div>
+      </div>
+
+      <!-- SYSTEM OFFLINE DECLINE NOTICE (HIDDEN BY DEFAULT) -->
+      <div id="decline-notice" style="display: none;">
+        <div class="win-divider"></div>
+        <strong>[NOTICE]</strong> Connection closed safely. Your contact information will be securely logged in Hannah & Andy's database, and you will be missed!
+      </div>
+
+      <div class="win-divider"></div>
+
+      <!-- 10. Other / Misc Notes (Always Visible) -->
+      <div class="form-group">
+        <label for="misc-notes">TRANSMIT ADDITIONAL COMMS / NOTES TO COUPLE:</label>
+        <textarea id="misc-notes" name="entry.1442025351" class="win-textarea"></textarea>
+      </div>
+
+      <!-- Action Footer Buttons -->
+      <div class="btn-row">
+        <button type="submit" class="win-btn">OK (Apply)</button>
+        <button type="button" class="win-btn" onclick="window.location.reload();">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 4-Line Logic Gate Switcher JavaScript -->
+<script>
+  const gatekeeperYes = document.getElementById('gatekeeper-yes');
+  const gatekeeperNo = document.getElementById('gatekeeper-no');
+  const logisticsMatrix = document.getElementById('logistics-matrix');
+  const declineNotice = document.getElementById('decline-notice');
+
+  function toggleSystemMatrix() {
+    if (gatekeeperNo.checked) {
+      logisticsMatrix.style.display = 'none';
+      declineNotice.style.display = 'block';
+    } else {
+      logisticsMatrix.style.display = 'block';
+      declineNotice.style.display = 'none';
+    }
+  }
+
+  gatekeeperYes.addEventListener('change', toggleSystemMatrix);
+  gatekeeperNo.addEventListener('change', toggleSystemMatrix);
+</script>

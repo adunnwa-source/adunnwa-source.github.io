@@ -10,9 +10,9 @@
     }
     
     body {
-      background-image: url('imagine_cloud_blue.jpg');
+      background-image: url('iridescent_marble_blue.jpg');
       background-repeat: repeat;
-      background-color: #a3c2e0;
+      background-color: #a3c2e0; /* Fallback color */
       font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-size: 13px;
       color: #0F172A; /* Deep Navy Text */
@@ -43,13 +43,51 @@
 
     /* Main Container Box */
     .main-container {
-      background-color: #F8FAFC; 
+      background-color: #c0c0c0; /* Window gray background to preserve system style consistency */
       border: 2px solid;
       border-color: #fff #808080 #808080 #fff;
-      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15);
+      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.3);
       width: 650px;
       margin: 30px auto;
-      padding: 20px;
+      padding: 3px; /* Trim structure to match .exe style windows */
+    }
+
+    /* Classic App Menu Bar (Navigation) */
+    .win-menu-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 6px;
+      border-bottom: 1px solid #808080;
+      font-size: 12px;
+      background-color: #c0c0c0;
+    }
+
+    .menu-left, .menu-right {
+      display: flex;
+      gap: 12px;
+    }
+
+    .win-menu-bar a {
+      color: #000000;
+      text-decoration: none;
+      padding: 2px 4px;
+    }
+
+    .win-menu-bar a:hover {
+      background-color: #000080; /* Win95 dark blue highlight */
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .win-menu-bar a.active {
+      font-weight: bold;
+    }
+
+    /* Page Content Body Wrapper */
+    .page-body {
+      background-color: #F8FAFC; /* Ghost white inside container for text readability */
+      padding: 15px;
     }
 
     /* Header Box */
@@ -126,57 +164,80 @@
 </head>
 <body>
 
-  <!-- Top Banner consistent with home page -->
   <div class="blink-container">
     <span class="blink-text">WEDDING FAQ</span>
   </div>
 
   <div class="main-container">
     
-    <div class="header-box">
-      <h1>Frequently Asked Questions</h1>
-      <p style="margin: 5px 0 0 0; font-style: italic;">Everything you need to know before the big day!</p>
+    <div class="win-menu-bar">
+      <div class="menu-left">
+        <a href="index.html">← Back</a>
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+      </div>
+      <div class="menu-right">
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="rsvp.html">RSVP</a>
+      </div>
     </div>
 
-    <!-- FAQ Item 1 -->
-    <div class="faq-item">
-      <p class="faq-question">Q: When should I arrive?</p>
-      <p class="faq-answer">
-        The ceremony will begin promptly at 5:00 PM on Friday, September 24, 2027. We recommend arriving 15-30 minutes early to find your seat.
-      </p>
+    <div class="page-body">
+      
+      <div class="header-box">
+        <h1>Frequently Asked Questions</h1>
+        <p style="margin: 5px 0 0 0; font-style: italic;">Everything you need to know before the big day!</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Q: When should I arrive?</p>
+        <p class="faq-answer">
+          The ceremony will begin promptly at 5:00 PM on Friday, September 24, 2027. We recommend arriving 15-30 minutes early to find your seat.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Q: Where is the venue located?</p>
+        <p class="faq-answer">
+          Both our ceremony and reception will be held at the <strong>American Visionary Art Museum (AVAM)</strong> in Baltimore, Maryland. 
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Q: What is the dress code?</p>
+        <p class="faq-answer">
+          We would love to see our family and friends get dressed up with us! The dress code is semi-formal / cocktail attire.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Q: Can I take photos during the ceremony?</p>
+        <p class="faq-answer">
+          We are having an "unplugged" ceremony. We kindly ask that all phones and cameras be put away so you can be fully present with us. You're welcome to take as many photos as you want during the reception!
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Q: Is there parking available at the museum?</p>
+        <p class="faq-answer">
+          Yes! There is parking available, but if you plan on celebrating with a few drinks at the open bar, we highly recommend taking a rideshare (Uber/Lyft) or using our hotel shuttle services.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Q: Can I bring a plus one or my kids?</p>
+        <p class="faq-answer">
+          Due to space limitations at our venue, we are only able to accommodate the guests explicitly listed on your invitation packet. When you initialize your setup on the RSVP page, it will show you your allotted spots!
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="back-btn-container">
+        <a href="index.html" class="back-btn">⬅ BACK TO HOME</a>
+      </div>
+
     </div>
-
-    <!-- FAQ Item 2 -->
-    <div class="faq-item">
-      <p class="faq-question">Q: Where is the venue located?</p>
-      <p class="faq-answer">
-        Both our ceremony and reception will be held at the <strong>American Visionary Art Museum (AVAM)</strong> in Baltimore, Maryland. 
-      </p>
-    </div>
-
-    <!-- FAQ Item 3 -->
-    <div class="faq-item">
-      <p class="faq-question">Q: What is the dress code?</p>
-      <p class="faq-answer">
-        We would love to see our family and friends get dressed up with us! The dress code is semi-formal / cocktail attire.
-      </p>
-    </div>
-
-    <!-- FAQ Item 4 -->
-    <div class="faq-item">
-      <p class="faq-question">Q: Can I take photos during the ceremony?</p>
-      <p class="faq-answer">
-        We are having an "unplugged" ceremony. We kindly ask that all phones and cameras be put away so you can be fully present with us. You're welcome to take as many photos as you want during the reception!
-      </p>
-    </div>
-
-    <hr>
-
-    <!-- Navigation Return Home Button -->
-    <div class="back-btn-container">
-      <a href="index.html" class="back-btn">⬅ BACK TO HOME</a>
-    </div>
-
   </div>
 
 </body>

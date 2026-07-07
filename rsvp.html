@@ -65,6 +65,37 @@
       color: var(--win-black);
     }
 
+    /* Classic App Menu Bar (Navigation) */
+    .win-menu-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 6px;
+      border-bottom: 1px solid var(--win-dark-gray);
+      font-size: 12px;
+    }
+
+    .menu-left, .menu-right {
+      display: flex;
+      gap: 12px;
+    }
+
+    .win-menu-bar a {
+      color: var(--win-black);
+      text-decoration: none;
+      padding: 2px 4px;
+    }
+
+    .win-menu-bar a:hover {
+      background-color: var(--win-blue);
+      color: var(--win-white);
+      cursor: pointer;
+    }
+
+    .win-menu-bar a.active {
+      font-weight: bold;
+    }
+
     .form-body {
       padding: 15px;
     }
@@ -93,8 +124,8 @@
     .form-group label {
       display: block;
       font-weight: bold;
-      font-size: 11px;
-      margin-bottom: 4px;
+      font-size: 12px;
+      margin-bottom: 6px;
     }
 
     /* Classic Windows 3D Inset Inputs */
@@ -127,7 +158,7 @@
       display: flex;
       align-items: center;
       font-size: 12px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       cursor: pointer;
     }
 
@@ -202,184 +233,29 @@
 </head>
 <body>
 
-<!-- The Windows 95 Dialog Window Frame -->
 <div class="exe-container">
   <div class="title-bar">
     <span>RSVP_TERMINAL.EXE</span>
     <div class="title-btn" onclick="if(confirm('Exit Setup Wizard?')) window.close();">X</div>
   </div>
 
-  <div class="form-body">
-    <!-- Welcome Prompt Context Banner -->
-    <div class="welcome-banner">
-      <h1>Wedding RSVP Gateway Initialization</h1>
-      Please provide your data telemetry below to update your status in Hannah & Andy's wedding database protocol. Fields marked with an asterisk are mandatory parameters.
+  <div class="win-menu-bar">
+    <div class="menu-left">
+      <a href="index.html">← Back</a>
+      <a href="index.html">Home</a>
+      <a href="story.html">Our Story</a>
     </div>
-
-    <!-- Hidden Iframe Trick to Avoid Google's Modern Redirection Screen -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location.reload(); alert('TRANSMISSION SUCCESSFUL!\nYour RSVP telemetry data has been written to the master database rows.'); }"></iframe>
-
-    <!-- Wired Target to the Google Form Endpoint -->
-    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-QJJzUYHkS58Dfsp4qgn-tHgXL_AhB8aS3BaoVBfJLj1W6g/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-      
-      <!-- 1. Primary Guest Name -->
-      <div class="form-group">
-        <label for="primary-name">GUEST_ID / PRIMARY NAME: *</label>
-        <input type="text" id="primary-name" name="entry.1103280564" class="win-input" placeholder="e.g. John Doe" required>
-      </div>
-
-      <!-- 2. Email Address -->
-      <div class="form-group">
-        <label for="email-address">EMAIL_ADDRESS.NET: *</label>
-        <input type="email" id="email-address" name="entry.164402968" class="win-input" placeholder="e.g. user@domain.com" required>
-      </div>
-
-      <!-- 3. Mailing Address -->
-      <div class="form-group">
-        <label for="mailing-address">PHYSICAL_MAILING_LOCATION: *</label>
-        <textarea id="mailing-address" name="entry.1907037494" class="win-textarea" placeholder="Street, City, State, ZIP" required></textarea>
-      </div>
-
-      <!-- 4. Gatekeeper Question -->
-      <div class="form-group">
-        <label>INITIALIZE SYSTEM ACCESS PROTOCOL? *</label>
-        <div class="radio-checkbox-group">
-          <label class="win-option">
-            <input type="radio" name="entry.1032168192" value="Yes" id="gatekeeper-yes" checked>
-            [•] YES, booting up wedding protocols!
-          </label>
-          <label class="win-option">
-            <input type="radio" name="entry.1032168192" value="No" id="gatekeeper-no">
-            [ ] NO, system offline (Regretfully decline).
-          </label>
-        </div>
-      </div>
-
-      <!-- CONDITIONAL LOGISTICS MATRIX WINDOW (COLLAPSES IF NO) -->
-      <div id="logistics-matrix">
-        <div class="win-divider"></div>
-
-        <!-- 5. Plus One Name -->
-        <div class="form-group">
-          <label for="plus-one">ADDITIONAL_PASSENGER / PLUS ONE NAME (OPTIONAL):</label>
-          <input type="text" id="plus-one" name="entry.530798813" class="win-input" placeholder="Leave blank if none">
-        </div>
-
-        <!-- 6. Weekend Sub-Events -->
-        <div class="form-group">
-          <label>SELECT SUB-ROUTINE ATTENDANCE (CHECK ALL THAT APPLY):</label>
-          <div class="radio-checkbox-group">
-            <label class="win-option">
-              <input type="checkbox" name="entry.1385859850" value="Welcome Party (Thursday evening)">
-              [ ] Welcome Party (Thursday evening)
-            </label>
-            <label class="win-option">
-              <input type="checkbox" name="entry.1385859850" value="Wedding Ceremony & Reception">
-              [ ] Wedding Ceremony & Reception
-            </label>
-            <label class="win-option">
-              <input type="checkbox" name="entry.1385859850" value="Farewell Brunch (Saturday morning)">
-              [ ] Farewell Brunch (Saturday morning)
-            </label>
-          </div>
-        </div>
-
-        <!-- 7. Primary Meal Selection -->
-        <div class="form-group">
-          <label>PRIMARY_GUEST_CATERING_FUEL:</label>
-          <div class="radio-checkbox-group">
-            <label class="win-option">
-              <input type="radio" name="entry.464102411" value="Chicken"> [ ] Chicken Protocol
-            </label>
-            <label class="win-option">
-              <input type="radio" name="entry.464102411" value="Beef"> [ ] Beef Protocol
-            </label>
-            <label class="win-option">
-              <input type="radio" name="entry.464102411" value="Vegetarian"> [ ] Vegetarian Protocol
-            </label>
-          </div>
-        </div>
-
-        <!-- 8. Plus One Meal Selection -->
-        <div class="form-group">
-          <label>PLUS_ONE_CATERING_FUEL:</label>
-          <div class="radio-checkbox-group">
-            <label class="win-option">
-              <input type="radio" name="entry.1693476184" value="Chicken"> [ ] Chicken Protocol
-            </label>
-            <label class="win-option">
-              <input type="radio" name="entry.1693476184" value="Beef"> [ ] Beef Protocol
-            </label>
-            <label class="win-option">
-              <input type="radio" name="entry.1693476184" value="Vegetarian"> [ ] Vegetarian Protocol
-            </label>
-          </div>
-        </div>
-
-        <!-- 9. Dietary Restrictions -->
-        <div class="form-group">
-          <label for="diet-restrictions">REPORT SYSTEM ALLERGIES / DIETARY RESTRICTIONS:</label>
-          <textarea id="diet-restrictions" name="entry.1442025351" class="win-textarea" placeholder="N/A if none"></textarea>
-        </div>
-      </div>
-
-      <!-- SYSTEM OFFLINE DECLINE NOTICE (SHOWN VIA JS IF "NO" CLICKED) -->
-      <div id="decline-notice" style="display: none;">
-        <div class="win-divider"></div>
-        <strong>[NOTICE]</strong> Access terminal parameters cleared safely. Your base contact info will still be logged so Hannah & Andy can transmit safe tracking updates later, but you will be deeply missed!
-      </div>
-
-      <div class="win-divider"></div>
-
-      <!-- 10. Other / Misc Notes (Always Visible) -->
-      <div class="form-group">
-        <label for="misc-notes">TRANSMIT ADDITIONAL COMMS / NOTES TO COUPLE:</label>
-        <textarea id="misc-notes" name="entry.1495594201" class="win-textarea" placeholder="Type a message, song request, or signal packet here..."></textarea>
-      </div>
-
-      <!-- Action Footer Buttons -->
-      <div class="btn-row">
-        <button type="submit" class="win-btn">OK (Apply)</button>
-        <button type="button" class="win-btn" onclick="if(confirm('Reset all values?')) window.location.reload();">Cancel</button>
-      </div>
-    </form>
-
-    <!-- Retro System Status Information Footer -->
-    <div class="status-bar">
-      <span>Object(s) selected: 1</span>
-      <span>COM Ports: Active</span>
-      <span>v1.95.2027</span>
+    <div class="menu-right">
+      <a href="rsvp.html" class="active">RSVP</a>
     </div>
   </div>
-</div>
 
-<!-- 4-Line Logic Gate Switcher JavaScript -->
-<script>
-  let submitted = false; // Tracks the iframe submit cycle hook
-  
-  const gatekeeperYes = document.getElementById('gatekeeper-yes');
-  const gatekeeperNo = document.getElementById('gatekeeper-no');
-  const logisticsMatrix = document.getElementById('logistics-matrix');
-  const declineNotice = document.getElementById('decline-notice');
+  <div class="form-body">
+    <div class="welcome-banner">
+      <h1>Are you coming?!</h1>
+      We can't wait to celebrate with you. Let us know if you can make it by updating your status below! Fields marked with an asterisk (*) are required.
+    </div>
 
-  function toggleSystemMatrix() {
-    if (gatekeeperNo.checked) {
-      logisticsMatrix.style.display = 'none';
-      declineNotice.style.display = 'block';
-      
-      // Clear secondary selections so they don't corrupt the Sheet data
-      document.querySelectorAll('#logistics-matrix input[type="text"]').forEach(el => el.value = '');
-      document.querySelectorAll('#logistics-matrix input[type="radio"], #logistics-matrix input[type="checkbox"]').forEach(el => el.checked = false);
-      document.querySelectorAll('#logistics-matrix textarea').forEach(el => el.value = '');
-    } else {
-      logisticsMatrix.style.display = 'block';
-      declineNotice.style.display = 'none';
-    }
-  }
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location.reload(); alert('TRANSMISSION SUCCESSFUL!\nYour RSVP has been written to the master database rows.'); }"></iframe>
 
-  gatekeeperYes.addEventListener('change', toggleSystemMatrix);
-  gatekeeperNo.addEventListener('change', toggleSystemMatrix);
-</script>
-
-</body>
-</html>
+    <form action="

@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hannah Lang & Andy Dunn - Wedding Website</title>
   <style>
-    /* Custom Retro Cursor Setup */
+    /* Custom Retro Cursor Setup with standard fallback */
     html, body, a, button {
       cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto;
     }
@@ -35,9 +36,14 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    /* Pure CSS Blinking Animation */
+    /* Pure CSS Safe Blinking Animation (Slower, honors accessibility settings) */
     .blink-text {
-      animation: retro-blink 1s steps(2, start) infinite;
+      animation: retro-blink 1.5s steps(2, start) infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .blink-text {
+        animation: none; /* Disables flashing for motion-sensitive guests */
+      }
     }
 
     @keyframes retro-blink {
@@ -49,37 +55,28 @@
     /* Main Structured Wrapper Box - Palette 1: Ghost White */
     .main-container {
       background-color: #F8FAFC; 
-      border: 2px solid;
+      border: 3px solid;
       border-color: #fff #808080 #808080 #fff;
       box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15);
-      width: 650px;
+      max-width: 650px;
+      width: 90%;
       margin: 30px auto;
       padding: 20px;
     }
 
-    /* Side-by-Side Flex Split */
-    .top-split-layout {
-    display: flex;
-    align-items: flex-start; /* Aligns items to the top */
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
+    /* 90s Authentic Layout Strategy using Table tags */
+    .layout-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-.left-column {
-  display: flex;
-  flex-direction: row; /* Aligns items horizontally */
-  align-items: center; /* Vertically centers them */
-  gap: 10px; /* Adds space between the title and the gif */
-}
+    .title-image {
+      max-width: 100%;
+      height: auto;
+    }
 
-.title-image {
-  max-width: 250px; 
-  height: auto;
-}
     /* Framed Detail Box - Palette 1: Muted Slate */
     .details-box {
-      flex: 1 1 auto;
       text-align: center;
       background-color: #E2E8F0; 
       border: 2px solid;
@@ -94,132 +91,201 @@
       color: #BE123C; /* Palette 1: Deep Rose Accent */
     }
 
-    /* Lowcinema-inspired Dynamic/Fuzzy Hover Link Effect */
+    /* Cohesive Retro Link Architecture */
     .retro-link-container {
       display: inline-block;
       text-align: center;
-      margin: 10px 15px;
-      text-decoration: none;
-      color: #0F172A; /* Palette 1: Deep Navy */
+      margin: 10px 10px;
+      text-decoration: underline;
+      color: #0000EE; /* Authentic Blue unvisited link */
       font-family: "Comic Sans MS", "Comic Sans", sans-serif;
       font-size: 13px;
       font-weight: bold;
-      width: 140px;
+      width: 130px;
+    }
+    .retro-link-container:visited {
+      color: #551A8B; /* Authentic Purple visited link */
     }
 
     .retro-link-thumb {
-      width: 140px;
+      width: 130px;
       height: 95px;
       border: 2px solid;
       border-color: #0a0a0a #fff #fff #0a0a0a;
       display: block;
       margin-bottom: 8px;
-      transition: filter 0.15s ease-in-out, transform 0.15s ease-in-out;
       image-rendering: pixelated; 
     }
 
-    /* Cohesive Slate/Navy shades for navigation items */
-    .thumb-rsvp { background-color: #BE123C; }    /* Deep Rose */
-    .thumb-travel { background-color: #64748B; }  /* Slate Gray */
-    .thumb-faq { background-color: #475569; }     /* Darker Slate */
+    /* Navigation Color Palette Blocks */
+    .thumb-rsvp { background-color: #BE123C; }    
+    .thumb-travel { background-color: #64748B; }  
+    .thumb-story { background-color: #475569; }   
+    .thumb-registry { background-color: #0F172A; }
+    .thumb-guestbook { background-color: #1E293B; }
 
-    /* The Fuzzy Link Animation */
-    .retro-link-container:hover .retro-link-thumb {
-      filter: blur(0.8px) contrast(1.2);
-      transform: scale(0.97);
+    /* Jarring, Period-Accurate Hover Swap Styles */
+    .retro-link-container:hover {
+      color: #BE123C !important;
     }
-
-    .retro-link-container:hover span {
-      text-decoration: underline;
-      color: #BE123C; /* Palette 1: Deep Rose Accent */
+    .retro-link-container:hover .retro-link-thumb {
+      border-color: #fff #0a0a0a #0a0a0a #fff; /* Inverts button state */
     }
 
     /* Vintage Compressed Digital Photo Placeholder */
     .photo-frame {
       width: 320px;
+      max-width: 100%;
       height: 240px;
       background-color: #1E293B; /* Palette 1: Slate Core */
       border: 3px inset #E2E8F0;
       margin: 25px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
+      display: table; /* Drop flex for safety */
+    }
+    .photo-cell {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
     }
 
     .photo-placeholder {
       color: #38BDF8; /* Sky Blue terminal font color */
       font-family: Courier, monospace;
-      text-align: center;
       font-size: 11px;
       padding: 10px;
     }
 
     hr {
       border: none;
-      border-top: 1px solid #CBD5E1;
-      border-bottom: 1px solid #fff;
+      border-top: 2px inset #E2E8F0;
       margin: 20px 0;
+    }
+
+    .counter-box {
+      font-family: Courier, monospace;
+      background-color: #000;
+      color: #00FF00;
+      padding: 4px 8px;
+      display: inline-block;
+      font-weight: bold;
+      border: 2px inset #808080;
+    }
+
+    /* MOBILE RESPONSIVENESS OVERRIDES: Forces classic tables to stack gracefully on smartphones */
+    @media screen and (max-width: 600px) {
+      .layout-table, .layout-table tbody, .layout-table tr, .layout-table td {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+      .layout-table td {
+        text-align: center !important;
+        padding: 10px 0 !important;
+      }
+      .retro-link-container {
+        width: 40% !important;
+        margin: 10px 4% !important;
+      }
+      .retro-link-thumb {
+        width: 100% !important;
+      }
+      html, body, a, button {
+        cursor: auto !important; /* Turns off cursor junk on tactile viewports */
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Full-Width Blinking Banner -->
   <div class="blink-container">
-    <span class="blink-text">WE'RE GETTING MARRIED!!!</span>
+    <span class="blink-text">*** WE'RE GETTING MARRIED!!! ***</span>
   </div>
 
   <div class="main-container">
     
-    <!-- Side-by-Side Logo & Info Box Layout -->
-<div class="top-split-layout">
-  <div class="left-column">
-    <img src="hannah-andy-title.png" alt="Hannah & Andy" class="title-image">
-    <img src="lovebirdstop.gif" alt="Love Birds" border="0">
-  </div>
-  
-  <div class="details-box">
-    <h1>We're Getting Married!</h1>
-    <p style="margin: 4px 0; font-size: 14px; font-weight: bold;">Save the Date: Sept. 24, 2027</p>
-    <p style="margin: 4px 0; font-size: 12px;">Baltimore, Maryland</p>
-    <p style="margin: 8px 0 0 0; font-size: 11px; color: #475569; font-style: italic;">
-      <strong>Venue:</strong> American Visionary Art Museum
-    </p>
-  </div>
-</div>      
+    <table class="layout-table" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top" style="padding-right: 15px; width: 55%;">
+          <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>
+                <img src="hannah-andy-title.png" alt="Hannah & Andy" class="title-image">
+              </td>
+              <td valign="bottom" style="padding-left: 5px;">
+                <img src="lovebirdstop.gif" alt="Love Birds Animated GIF" border="0">
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td valign="top" style="width: 45%;">
+          <div class="details-box">
+            <h1>We're Getting Married!</h1>
+            <p style="margin: 4px 0; font-size: 14px; font-weight: bold;">Save the Date:<br>Sept. 24, 2027</p>
+            <p style="margin: 4px 0; font-size: 12px;">Baltimore, Maryland</p>
+            <p style="margin: 8px 0 0 0; font-size: 11px; color: #475569; font-style: italic;">
+              <strong>Venue:</strong><br>American Visionary Art Museum
+            </p>
+          </div>
+        </td>
+      </tr>
+    </table>     
 
-    <!-- Vintage Camera Photo Placeholder -->
     <div class="photo-frame">
-      <div class="photo-placeholder">
-        [ HANNAH_AND_ANDY.JPG ]<br><br>
-        (Photo of us goes here)
+      <div class="photo-cell">
+        <div class="photo-placeholder">
+          [ HANNAH_AND_ANDY.JPG ]<br><br>
+          (High resolution digital compression scan loading...)
+        </div>
       </div>
     </div>
 
-    <p style="text-align: center; font-style: italic; margin: 20px 0; color: #334155;">
-      Welcome to our wedding website! We can't wait to celebrate with you.
+    <p style="text-align: center; font-style: italic; margin: 20px 0; color: #334155; font-weight: bold;">
+      Welcome to our wedding portal! We can't wait to celebrate with you. Please browse through the links below.
     </p>
+
+    <marquee scrollamount="3" style="background-color: #E2E8F0; border: 1px dashed #BE123C; font-weight: bold; color: #BE123C; padding: 3px;">
+      !! IMPORTANT UPDATE: Please lock down your hotel accommodations before August 1st, 2027 !!
+    </marquee>
 
     <hr>
 
-    <!-- Navigation Links -->
     <div style="text-align: center;">
-      <a href="#" class="retro-link-container">
+      <a href="rsvp.html" class="retro-link-container">
         <div class="retro-link-thumb thumb-rsvp"></div>
         <span>RSVP HERE!</span>
       </a>
-      <a href="#" class="retro-link-container">
+      <a href="travel.html" class="retro-link-container">
         <div class="retro-link-thumb thumb-travel"></div>
-        <span>TRAVEL DETAILS</span>
+        <span>TRAVEL & HOTELS</span>
       </a>
-      <a href="faq.html" class="retro-link-container">
-        <div class="retro-link-thumb thumb-faq"></div>
-        <span>FAQ</span>
+      <a href="story.html" class="retro-link-container">
+        <div class="retro-link-thumb thumb-story"></div>
+        <span>OUR STORY</span>
+      </a>
+      <a href="registry.html" class="retro-link-container">
+        <div class="retro-link-thumb thumb-registry"></div>
+        <span>REGISTRY WEBSITES</span>
+      </a>
+      <a href="guestbook.html" class="retro-link-container">
+        <div class="retro-link-thumb thumb-guestbook"></div>
+        <span>SIGN OUR GUESTBOOK</span>
       </a>
     </div>
+
+    <hr>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="left" valign="middle" style="font-size: 11px; color: #64748B;">
+          You are visitor number: 
+          <div class="counter-box">00421</div>
+        </td>
+        <td align="right" valign="middle">
+          <img src="netscape_badge.gif" alt="Best Viewed in Netscape Navigator 4.0" border="0" style="image-rendering: pixelated; width: 88px; height: 31px;">
+          <img src="ie_badge.gif" alt="Made with Notepad" border="0" style="image-rendering: pixelated; width: 88px; height: 31px; margin-left: 5px;">
+        </td>
+      </tr>
+    </table>
 
   </div>
 

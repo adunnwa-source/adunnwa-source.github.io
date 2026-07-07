@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hannah Lang & Andy Dunn - Travel & Lodging</title>
+  <style>
+    /* Custom Retro Cursor Setup with Standard Fallback */
+    html, body, a, button {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto;
+    }
+    
+    body {
+      /* Tiled Iridescent Marble Background Integration */
+      background-image: url('iridescent_marble_blue.jpg');
+      background-repeat: repeat;
+      background-color: #a0c2d6; 
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      font-size: 13px;
+      color: #0F172A; /* Palette 1: Deep Navy Text */
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Full-width Blinking Text Banner Alert */
+    .blink-container {
+      background-color: #0F172A; /* Palette 1: Deep Navy */
+      color: #F8FAFC; /* Palette 1: Ghost White Text */
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      padding: 8px 0;
+      text-align: center;
+      border-bottom: 3px double #F8FAFC;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Pure CSS Safe Blinking Animation (Slower, honors accessibility settings) */
+    .blink-text {
+      animation: retro-blink 2.5s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .blink-text {
+        animation: none; /* Disables flashing for motion-sensitive guests */
+      }
+    }
+
+    @keyframes retro-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; } /* Fades to 30% visibility instead of total darkness */
+    }
+    
+    /* Outer Framework Container - Palette 1: Ghost White */
+    .main-container {
+      background-color: #F8FAFC;
+      border: 3px solid;
+      border-color: #fff #808080 #808080 #fff; /* Inset frame simulation */
+      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15);
+      max-width: 800px;
+      width: 95%;
+      margin: 30px auto;
+      padding: 15px;
+    }
+
+    /* 90s Layout Architecture - Table strategy */
+    .master-layout-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    /* Option #2: Vertical Left Sidebar Command Panel */
+    .sidebar-panel {
+      width: 180px; /* Explicit width constraint */
+      background-color: #E2E8F0; /* Stark, high contrast background */
+      border: 2px inset #fff; /* Recessed look */
+      padding: 15px 10px;
+      vertical-align: top;
+    }
+
+    .sidebar-heading {
+      font-family: "Comic Sans MS", sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #0F172A;
+      text-align: center;
+      margin-bottom: 15px;
+      border-bottom: 1px dashed #64748B;
+      padding-bottom: 4px;
+    }
+
+    /* Vertical Navigation List Styles */
+    .sidebar-nav-list {
+      list-style-type: none; /* Prepares list to accept retro pixel bullets manually */
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-nav-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Period-Accurate Un-styled, Blue Underlined Link Targets */
+    .sidebar-link {
+      color: #0000EE; /* Standard authentic Blue unvisited link */
+      text-decoration: underline;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    
+    .sidebar-link:visited {
+      color: #551A8B; /* Standard purple visited link color */
+    }
+
+    /* Sudden, Jarring Color Swap on Hover */
+    .sidebar-link:hover {
+      color: #BE123C !important; /* Palette 1: Deep Rose Accent */
+    }
+
+    /* Animated Pixel Bullet Points placement */
+    .retro-bullet {
+      width: 14px;
+      height: 14px;
+      margin-right: 8px;
+      image-rendering: pixelated; /* Keeps low-fidelity look razor sharp */
+    }
+
+    /* Right Main Content Panel Area */
+    .content-panel {
+      padding-left: 20px;
+      vertical-align: top;
+    }
+
+    /* Title Block Design */
+    .page-title-box {
+      background-color: #0F172A;
+      color: #F8FAFC;
+      padding: 6px 12px;
+      font-family: "Comic Sans MS", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      border: 2px solid;
+      border-color: #fff #808080 #808080 #fff;
+    }
+
+    .page-title-controls {
+      display: flex;
+      gap: 3px;
+    }
+
+    .win95-btn {
+      background-color: #E2E8F0;
+      color: #000;
+      border: 1.5px solid;
+      border-color: #fff #808080 #808080 #fff;
+      font-size: 10px;
+      font-weight: bold;
+      width: 16px;
+      height: 14px;
+      line-height: 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    /* Formatted Content Boxes */
+    .info-window {
+      background-color: #E2E8F0;
+      border: 2px solid;
+      border-color: #fff #808080 #808080 #fff;
+      padding: 12px;
+      margin-bottom: 15px;
+    }
+
+    .info-window-header {
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      color: #BE123C; /* Deep Rose Accent */
+      margin-top: 0;
+      margin-bottom: 8px;
+      border-bottom: 2px groove #fff;
+      padding-bottom: 4px;
+    }
+
+    .info-window p {
+      margin: 6px 0;
+      line-height: 1.4;
+    }
+
+    /* Authentic 90s MapQuest Simulation Style */
+    .mapquest-box {
+      background-color: #FFFFF0; /* Ivory map page background */
+      border: 3px double #808080;
+      font-family: "Courier New", Courier, monospace;
+      color: #000;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    .mapquest-header {
+      background-color: #006633; /* Deep MapQuest Green */
+      color: #FFFFFF;
+      padding: 5px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mapquest-logo {
+      font-size: 16px;
+      font-style: italic;
+      letter-spacing: 1px;
+    }
+
+    .mapquest-logo span {
+      color: #FFCC00; /* Yellow 'Quest' */
+    }
+
+    .mapquest-map-area {
+      background-color: #CADDF2; /* Retro water / road light blue color */
+      border: 2px inset #808080;
+      height: 220px;
+      margin: 10px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Map Elements using inline CSS vectors */
+    .map-road-v {
+      position: absolute;
+      background-color: #FFFFFF;
+      width: 24px;
+      height: 100%;
+      left: 120px;
+      border-left: 2px solid #808080;
+      border-right: 2px solid #808080;
+    }
+
+    .map-road-h {
+      position: absolute;
+      background-color: #FFFFFF;
+      width: 100%;
+      height: 24px;
+      bottom: 40px;
+      border-top: 2px solid #808080;
+      border-bottom: 2px solid #808080;
+    }
+
+    .map-route-line {
+      position: absolute;
+      border-left: 4px dashed #BE123C;
+      border-bottom: 4px dashed #BE123C;
+      left: 132px;
+      top: 50px;
+      width: 160px;
+      height: 120px;
+      z-index: 1;
+    }
+
+    .map-pin {
+      position: absolute;
+      z-index: 2;
+      padding: 2px 6px;
+      font-size: 11px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      border: 1px solid #000;
+    }
+
+    .pin-hotel {
+      background-color: #FFFF99;
+      top: 35px;
+      left: 30px;
+    }
+
+    .pin-venue {
+      background-color: #FF9999;
+      bottom: 25px;
+      left: 230px;
+    }
+
+    .map-compass {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background-color: #FFF;
+      border: 1px solid #000;
+      padding: 3px;
+      font-size: 9px;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .directions-list {
+      font-size: 11px;
+      line-height: 1.5;
+      padding-left: 15px;
+      margin: 8px 0;
+    }
+
+    .directions-list li {
+      margin-bottom: 5px;
+    }
+
+    /* Retro action links */
+    .retro-btn-link {
+      display: inline-block;
+      background-color: #E2E8F0;
+      color: #0F172A;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 4px 10px;
+      border: 2px outset #fff;
+      margin-top: 5px;
+      font-size: 11px;
+    }
+
+    .retro-btn-link:active {
+      border-style: inset;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px inset #E2E8F0;
+      margin: 15px 0;
+    }
+
+    /* MOBILE VIEWPORT RESPONSIVENESS OVERRIDES: Forces frameset-table to stack */
+    @media screen and (max-width: 650px) {
+      .master-layout-table, .master-layout-table tbody, .master-layout-table tr, .master-layout-table td {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+      .sidebar-panel {
+        margin-bottom: 20px !important;
+        padding: 10px !important;
+      }
+      .sidebar-nav-list {
+        text-align: center;
+      }
+      .sidebar-nav-list li {
+        display: inline-block !important;
+        margin: 5px 10px !important;
+      }
+      .content-panel {
+        padding-left: 0 !important;
+      }
+      html, body, a, button {
+        cursor: auto !important; /* Disables problematic tracking rules on touch viewports */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blink-container">
+    <span class="blink-text">*** Hannah & Andy's Wedding: Travel & Hotel Accommodations ***</span>
+  </div>
+
+  <div class="main-container">
+    
+    <table class="master-layout-table" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <!-- NAVIGATION SIDEBAR -->
+        <td class="sidebar-panel">
+          <div class="sidebar-heading">NAVIGATION</div>
+          <ul class="sidebar-nav-list">
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> 
+              <a href="index.html" class="sidebar-link">Home</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> 
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-QJJzUYHkS58Dfsp4qgn-tHgXL_AhB8aS3BaoVBfJLj1W6g/viewform?usp=dialog" target="_blank" class="sidebar-link">RSVP</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> 
+              <a href="travel.html" class="sidebar-link" style="color: #BE123C; text-decoration: none;">Travel & Hotels</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> 
+              <a href="faq.html" class="sidebar-link">FAQ</a>
+            </li>
+          </ul>
+        </td>
+
+        <!-- MAIN CONTENT AREA -->
+        <td class="content-panel">
+          
+          <div class="page-title-box">
+            <span>Travel & Lodging Guide</span>
+            <div class="page-title-controls">
+              <div class="win95-btn">_</div>
+              <div class="win95-btn">[]</div>
+              <div class="win95-btn" onclick="window.location.href='index.html'">X</div>
+            </div>
+          </div>
+
+          <!-- THE HOTEL BASECAMP -->
+          <div class="info-window">
+            <h2 class="info-window-header">Hotel Accommodations</h2>
+            <p><strong>The Royal Sonesta Harbor Court Baltimore</strong><br>
+            550 Light St, Baltimore, MD 21202</p>
+            <p style="color: #BE123C; font-weight: bold; background-color: #FFF; padding: 10px; border: 1px dashed #BE123C; margin: 10px 0; font-size: 13px;">
+              💝 We have secured a room block at the Royal Sonesta, which is a beautiful harbor-side walk of just 12 minutes to the wedding venue!
+            </p>
+            <p>To take advantage of our special wedding rate, please use our booking link below or call the hotel directly and mention the <strong>"Lang-Dunn Wedding Block"</strong> when making your reservation.</p>
+            <a href="https://www.sonesta.com/royal-sonesta/md/baltimore/royal-sonesta-harbor-court-baltimore" target="_blank" class="retro-btn-link">[ Book Room Block Online ]</a>
+          </div>
+
+          <!-- THE WEDDING PORTAL VENUE -->
+          <div class="info-window">
+            <h2 class="info-window-header">The Wedding Venue</h2>
+            <p><strong>American Visionary Art Museum (AVAM)</strong><br>
+            800 Key Hwy, Baltimore, MD 21230</p>
+            <p>Our ceremony and reception will take place in the historic <strong>Sculpture Barn & Wildflower Garden</strong>. Get ready for a wonderful night of art, dancing, and celebrating with us!</p>
+            <a href="http://www.avam.org/" target="_blank" class="retro-btn-link">[ Visit AVAM Website ]</a>
+          </div>
+
+          <!-- MAPQUEST CONSOLE SIMULATOR -->
+          <div class="mapquest-box">
+            <div class="mapquest-header">
+              <span class="mapquest-logo">MAP<span>QUEST</span>®</span>
+              <span style="font-size: 9px; font-weight: normal;">Directions & Map</span>
+            </div>
+            
+            <div style="font-size: 11px; margin-top: 5px; font-weight: bold;">
+              Route Map: Royal Sonesta Hotel to AVAM Barn
+            </div>
+
+            <div class="mapquest-map-area">
+              <!-- Grid Roads layout -->
+              <div class="map-road-v"></div>
+              <div class="map-road-h"></div>
+              
+              <!-- Walk Route Path -->
+              <div class="map-route-line"></div>
+              
+              <!-- Map pins -->
+              <div class="map-pin pin-hotel">
+                A: Royal Sonesta
+              </div>
+              <div class="map-pin pin-venue">
+                B: AVAM Barn
+              </div>
+
+              <!-- Compass Rose -->
+              <div class="map-compass">
+                N<br>↑<br><span style="font-size: 8px;">BALTIMORE</span>
+              </div>
+            </div>
+
+            <!-- STEP BY STEP INTERACTIVE DIRECTIONS -->
+            <div style="font-weight: bold; font-size: 11px; border-bottom: 1px solid #000; padding-bottom: 2px;">
+              WALKING DIRECTIONS: (Estimated Distance: 0.6 miles / Total Time: 12 minutes)
+            </div>
+            <ol class="directions-list">
+              <li>Exit <strong>The Royal Sonesta Harbor Court</strong> lobby and head south on <strong>Light St</strong> toward the Inner Harbor.</li>
+              <li>Slight left onto the pedestrian path alongside <strong>Key Hwy</strong>, keeping the harbor water on your left.</li>
+              <li>Continue walking south down <strong>Key Hwy</strong> for about half a mile.</li>
+              <li>Arrive at the <strong>American Visionary Art Museum</strong> (800 Key Hwy). The entrance to the Sculpture Barn will be on your right.</li>
+            </ol>
+            
+            <div style="text-align: right; font-size: 9px;">
+              <a href="javascript:window.print();" style="color: #0000EE; font-weight: bold; text-decoration: underline;">[ Print These Directions ]</a>
+            </div>
+          </div>
+
+          <p style="text-align: center; font-style: italic; margin: 15px 0; color: #334155; font-weight: bold;">
+            Have questions about your travel plans? Feel free to email us or check out our FAQ page!
+          </p>
+
+          <hr>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>

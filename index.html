@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hannah Lang & Andy Dunn - Wedding Website</title>
   <style>
-    /* Custom Retro Cursor Setup with standard fallback */
+    /* Custom Retro Cursor Setup with Standard Fallback */
     html, body, a, button {
-      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto;
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; /* [cite: 20] */
     }
     
     body {
       /* Tiled Cloud Background Integration */
       background-image: url('imagine_cloud_blue.jpg');
       background-repeat: repeat;
-      background-color: #a3c2e0; /* Fallback blue */
+      background-color: #a3c2e0; 
       font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-size: 13px;
       color: #0F172A; /* Palette 1: Deep Navy Text */
@@ -24,50 +24,115 @@
 
     /* Full-width Blinking Text Banner Alert */
     .blink-container {
-      background-color: #0F172A; /* Palette 1: Deep Navy */
-      color: #F8FAFC; /* Palette 1: Ghost White Text */
-      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      padding: 8px 0;
-      text-align: center;
-      border-bottom: 3px double #F8FAFC;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: #0F172A; /* Palette 1: Deep Navy */ /* [cite: 30] */
+      color: #F8FAFC; /* Palette 1: Ghost White Text */ /* [cite: 31] */
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif; /* [cite: 31] */
+      font-size: 16px; /* [cite: 32] */
+      font-weight: bold; /* [cite: 32] */
+      letter-spacing: 2px; /* [cite: 32] */
+      padding: 8px 0; /* [cite: 32] */
+      text-align: center; /* [cite: 32] */
+      border-bottom: 3px double #F8FAFC; /* [cite: 32] */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* [cite: 32] */
     }
 
     /* Pure CSS Safe Blinking Animation (Slower, honors accessibility settings) */
     .blink-text {
-      animation: retro-blink 1.5s steps(2, start) infinite;
+      animation: retro-blink 1.5s steps(2, start) infinite; /* [cite: 19] */
     }
     @media (prefers-reduced-motion: reduce) {
       .blink-text {
-        animation: none; /* Disables flashing for motion-sensitive guests */
+        animation: none; /* Disables flashing for motion-sensitive guests */ /* [cite: 19] */
       }
     }
 
     @keyframes retro-blink {
       to {
-        visibility: hidden;
+        visibility: hidden; /* [cite: 35] */
       }
     }
 
-    /* Main Structured Wrapper Box - Palette 1: Ghost White */
+    /* Outer Framework Container - Palette 1: Ghost White */
     .main-container {
-      background-color: #F8FAFC; 
-      border: 3px solid;
-      border-color: #fff #808080 #808080 #fff;
-      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15);
-      max-width: 650px;
-      width: 90%;
-      margin: 30px auto;
-      padding: 20px;
+      background-color: #F8FAFC; /* [cite: 36] */
+      border: 3px solid; /* [cite: 37] */
+      border-color: #fff #808080 #808080 #fff; /* Inset frame simulation */ /* [cite: 37] */
+      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15); /* [cite: 37] */
+      max-width: 800px;
+      width: 95%;
+      margin: 30px auto; /* [cite: 37] */
+      padding: 15px;
     }
 
-    /* 90s Authentic Layout Strategy using Table tags */
-    .layout-table {
+    /* 90s Layout Architecture - Table strategy */
+    .master-layout-table {
       width: 100%;
       border-collapse: collapse;
+    }
+
+    /* Option #2: Vertical Left Sidebar Command Panel */
+    .sidebar-panel {
+      width: 180px; /* Explicit width constraint */
+      background-color: #E2E8F0; /* Stark, high contrast background */ /* [cite: 44, 73] */
+      border: 2px inset #fff; /* Recessed look */
+      padding: 15px 10px;
+      vertical-align: top;
+    }
+
+    .sidebar-heading {
+      font-family: "Comic Sans MS", sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #0F172A;
+      text-align: center;
+      margin-bottom: 15px;
+      border-bottom: 1px dashed #64748B;
+      padding-bottom: 4px;
+    }
+
+    /* Vertical Navigation List Styles */
+    .sidebar-nav-list {
+      list-style-type: none; /* Prepares list to accept retro pixel bullets manually */
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-nav-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Period-Accurate Un-styled, Blue Underlined Link Targets */
+    .sidebar-link {
+      color: #0000EE; /* Standard authentic Blue unvisited link */ /* [cite: 23, 74] */
+      text-decoration: underline; /* [cite: 23, 74] */
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    
+    .sidebar-link:visited {
+      color: #551A8B; /* Standard purple visited link color */
+    }
+
+    /* Sudden, Jarring Color Swap on Hover */
+    .sidebar-link:hover {
+      color: #BE123C !important; /* Palette 1: Deep Rose Accent */ /* [cite: 13] */
+    }
+
+    /* Animated Pixel Bullet Points placement */
+    .retro-bullet {
+      width: 14px;
+      height: 14px;
+      margin-right: 8px;
+      image-rendering: pixelated; /* Keeps low-fidelity look razor sharp */
+    }
+
+    /* Right Main Content Panel Area */
+    .content-panel {
+      padding-left: 20px;
+      vertical-align: top;
     }
 
     .title-image {
@@ -78,70 +143,30 @@
     /* Framed Detail Box - Palette 1: Muted Slate */
     .details-box {
       text-align: center;
-      background-color: #E2E8F0; 
-      border: 2px solid;
-      border-color: #808080 #fff #fff #808080; /* Inset box look */
-      padding: 15px;
+      background-color: #E2E8F0; /* [cite: 44] */
+      border: 2px solid; /* [cite: 44] */
+      border-color: #808080 #fff #fff #808080; /* Inset box look */ /* [cite: 44] */
+      padding: 12px;
     }
 
     .details-box h1 {
-      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
-      margin: 0 0 8px 0;
-      font-size: 20px;
-      color: #BE123C; /* Palette 1: Deep Rose Accent */
-    }
-
-    /* Cohesive Retro Link Architecture */
-    .retro-link-container {
-      display: inline-block;
-      text-align: center;
-      margin: 10px 10px;
-      text-decoration: underline;
-      color: #0000EE; /* Authentic Blue unvisited link */
-      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
-      font-size: 13px;
-      font-weight: bold;
-      width: 130px;
-    }
-    .retro-link-container:visited {
-      color: #551A8B; /* Authentic Purple visited link */
-    }
-
-    .retro-link-thumb {
-      width: 130px;
-      height: 95px;
-      border: 2px solid;
-      border-color: #0a0a0a #fff #fff #0a0a0a;
-      display: block;
-      margin-bottom: 8px;
-      image-rendering: pixelated; 
-    }
-
-    /* Navigation Color Palette Blocks */
-    .thumb-rsvp { background-color: #BE123C; }    
-    .thumb-travel { background-color: #64748B; }  
-    .thumb-story { background-color: #475569; }   
-    .thumb-registry { background-color: #0F172A; }
-    .thumb-guestbook { background-color: #1E293B; }
-
-    /* Jarring, Period-Accurate Hover Swap Styles */
-    .retro-link-container:hover {
-      color: #BE123C !important;
-    }
-    .retro-link-container:hover .retro-link-thumb {
-      border-color: #fff #0a0a0a #0a0a0a #fff; /* Inverts button state */
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif; /* [cite: 46] */
+      margin: 0 0 6px 0; /* [cite: 46] */
+      font-size: 18px;
+      color: #BE123C; /* Palette 1: Deep Rose Accent */ /* [cite: 47] */
     }
 
     /* Vintage Compressed Digital Photo Placeholder */
     .photo-frame {
       width: 320px;
       max-width: 100%;
-      height: 240px;
-      background-color: #1E293B; /* Palette 1: Slate Core */
-      border: 3px inset #E2E8F0;
-      margin: 25px auto;
-      display: table; /* Drop flex for safety */
+      height: 240px; /* [cite: 57] */
+      background-color: #1E293B; /* Palette 1: Slate Core */ /* [cite: 57] */
+      border: 3px inset #E2E8F0; /* [cite: 57] */
+      margin: 20px auto; /* [cite: 57] */
+      display: table;
     }
+    
     .photo-cell {
       display: table-cell;
       vertical-align: middle;
@@ -149,48 +174,51 @@
     }
 
     .photo-placeholder {
-      color: #38BDF8; /* Sky Blue terminal font color */
-      font-family: Courier, monospace;
-      font-size: 11px;
-      padding: 10px;
+      color: #38BDF8; /* Sky Blue terminal font color */ /* [cite: 59] */
+      font-family: Courier, monospace; /* [cite: 59] */
+      font-size: 11px; /* [cite: 60] */
+      padding: 10px; /* [cite: 60] */
     }
 
     hr {
       border: none;
       border-top: 2px inset #E2E8F0;
-      margin: 20px 0;
+      margin: 15px 0;
     }
 
     .counter-box {
       font-family: Courier, monospace;
       background-color: #000;
       color: #00FF00;
-      padding: 4px 8px;
+      padding: 2px 6px;
       display: inline-block;
       font-weight: bold;
       border: 2px inset #808080;
     }
 
-    /* MOBILE RESPONSIVENESS OVERRIDES: Forces classic tables to stack gracefully on smartphones */
-    @media screen and (max-width: 600px) {
-      .layout-table, .layout-table tbody, .layout-table tr, .layout-table td {
+    /* MOBILE VIEWPORT RESPONSIVENESS OVERRIDES: Forces frameset-table to stack */
+    @media screen and (max-width: 650px) {
+      .master-layout-table, .master-layout-table tbody, .master-layout-table tr, .master-layout-table td {
         display: block !important;
         width: 100% !important;
         box-sizing: border-box;
       }
-      .layout-table td {
-        text-align: center !important;
-        padding: 10px 0 !important;
+      .sidebar-panel {
+        margin-bottom: 20px !important;
+        padding: 10px !important;
       }
-      .retro-link-container {
-        width: 40% !important;
-        margin: 10px 4% !important;
+      .sidebar-nav-list {
+        text-align: center;
       }
-      .retro-link-thumb {
-        width: 100% !important;
+      .sidebar-nav-list li {
+        display: inline-block !important;
+        margin: 5px 10px !important;
+      }
+      .content-panel {
+        padding-left: 0 !important;
       }
       html, body, a, button {
-        cursor: auto !important; /* Turns off cursor junk on tactile viewports */
+        cursor: auto !important; /* Disables problematic tracking rules on touch viewports */ /* [cite: 20] */
       }
     }
   </style>
@@ -203,86 +231,90 @@
 
   <div class="main-container">
     
-    <table class="layout-table" border="0" cellpadding="0" cellspacing="0">
+    <table class="master-layout-table" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td valign="top" style="padding-right: 15px; width: 55%;">
-          <table border="0" cellpadding="0" cellspacing="0">
+        <td class="sidebar-panel">
+          <div class="sidebar-heading">NAVIGATION MENU</div>
+          <ul class="sidebar-nav-list">
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="index.html" class="sidebar-link">Home Portal</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="rsvp.html" class="sidebar-link">RSVP Entry</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="travel.html" class="sidebar-link">Travel & Hotels</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="story.html" class="sidebar-link">Our Story Log</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="registry.html" class="sidebar-link">Gift Registries</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="guestbook.html" class="sidebar-link">Sign Guestbook</a>
+            </li>
+          </ul>
+        </td>
+
+        <td class="content-panel">
+          
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 15px;">
             <tr>
-              <td>
-                <img src="hannah-andy-title.png" alt="Hannah & Andy" class="title-image">
+              <td valign="top" style="width: 55%;">
+                <table border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td>
+                      <img src="hannah-andy-title.png" alt="Hannah & Andy" class="title-image">
+                    </td>
+                    <td valign="bottom" style="padding-left: 5px;">
+                      <img src="lovebirdstop.gif" alt="Love Birds Animated GIF" border="0">
+                    </td>
+                  </tr>
+                </table>
               </td>
-              <td valign="bottom" style="padding-left: 5px;">
-                <img src="lovebirdstop.gif" alt="Love Birds Animated GIF" border="0">
+              <td valign="top" style="width: 45%; padding-left: 10px;">
+                <div class="details-box">
+                  <h1>We're Getting Married!</h1>
+                  <p style="margin: 4px 0; font-size: 13px; font-weight: bold;">Save the Date:<br>Sept. 24, 2027</p>
+                  <p style="margin: 4px 0; font-size: 11px;">Baltimore, Maryland</p>
+                  <p style="margin: 6px 0 0 0; font-size: 10px; color: #475569; font-style: italic;">
+                    <strong>Venue:</strong><br>American Visionary Art Museum [cite: 14]
+                  </p>
+                </div>
               </td>
             </tr>
           </table>
-        </td>
-        <td valign="top" style="width: 45%;">
-          <div class="details-box">
-            <h1>We're Getting Married!</h1>
-            <p style="margin: 4px 0; font-size: 14px; font-weight: bold;">Save the Date:<br>Sept. 24, 2027</p>
-            <p style="margin: 4px 0; font-size: 12px;">Baltimore, Maryland</p>
-            <p style="margin: 8px 0 0 0; font-size: 11px; color: #475569; font-style: italic;">
-              <strong>Venue:</strong><br>American Visionary Art Museum
-            </p>
+
+          <div class="photo-frame">
+            <div class="photo-cell">
+              <div class="photo-placeholder">
+                [ HANNAH_AND_ANDY.JPG ]<br><br>
+                (High resolution digital compression scan loading...)
+              </div>
+            </div>
           </div>
-        </td>
-      </tr>
-    </table>     
 
-    <div class="photo-frame">
-      <div class="photo-cell">
-        <div class="photo-placeholder">
-          [ HANNAH_AND_ANDY.JPG ]<br><br>
-          (High resolution digital compression scan loading...)
-        </div>
-      </div>
-    </div>
+          <p style="text-align: center; font-style: italic; margin: 15px 0; color: #334155; font-weight: bold;">
+            Welcome to our wedding command center! We can't wait to celebrate with you. Use the navigation panel on the left to see our itinerary[cite: 85].
+          </p>
 
-    <p style="text-align: center; font-style: italic; margin: 20px 0; color: #334155; font-weight: bold;">
-      Welcome to our wedding portal! We can't wait to celebrate with you. Please browse through the links below.
-    </p>
+          <marquee scrollamount="3" style="background-color: #E2E8F0; border: 1px dashed #BE123C; font-weight: bold; color: #BE123C; padding: 3px; font-size: 11px;">
+            !! ATTENTION GUESTS: Please submit your RSVP entries before the looming final deadline !!
+          </marquee>
 
-    <marquee scrollamount="3" style="background-color: #E2E8F0; border: 1px dashed #BE123C; font-weight: bold; color: #BE123C; padding: 3px;">
-      !! IMPORTANT UPDATE: Please lock down your hotel accommodations before August 1st, 2027 !!
-    </marquee>
+          <hr>
 
-    <hr>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="left" valign="middle" style="font-size: 11px; color: #64748B;">
+                Visitor Log: <div class="counter-box">00421</div> </td>
+              <td align="right" valign="middle">
+                <img src="netscape_badge.gif" alt="Best Viewed in Netscape Navigator 4.0" border="0" style="image-rendering: pixelated; width: 88px; height: 31px;"> <img src="ie_badge.gif" alt="Made with Notepad" border="0" style="image-rendering: pixelated; width: 88px; height: 31px; margin-left: 5px;">
+              </td>
+            </tr>
+          </table>
 
-    <div style="text-align: center;">
-      <a href="rsvp.html" class="retro-link-container">
-        <div class="retro-link-thumb thumb-rsvp"></div>
-        <span>RSVP HERE!</span>
-      </a>
-      <a href="travel.html" class="retro-link-container">
-        <div class="retro-link-thumb thumb-travel"></div>
-        <span>TRAVEL & HOTELS</span>
-      </a>
-      <a href="story.html" class="retro-link-container">
-        <div class="retro-link-thumb thumb-story"></div>
-        <span>OUR STORY</span>
-      </a>
-      <a href="registry.html" class="retro-link-container">
-        <div class="retro-link-thumb thumb-registry"></div>
-        <span>REGISTRY WEBSITES</span>
-      </a>
-      <a href="guestbook.html" class="retro-link-container">
-        <div class="retro-link-thumb thumb-guestbook"></div>
-        <span>SIGN OUR GUESTBOOK</span>
-      </a>
-    </div>
-
-    <hr>
-
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td align="left" valign="middle" style="font-size: 11px; color: #64748B;">
-          You are visitor number: 
-          <div class="counter-box">00421</div>
-        </td>
-        <td align="right" valign="middle">
-          <img src="netscape_badge.gif" alt="Best Viewed in Netscape Navigator 4.0" border="0" style="image-rendering: pixelated; width: 88px; height: 31px;">
-          <img src="ie_badge.gif" alt="Made with Notepad" border="0" style="image-rendering: pixelated; width: 88px; height: 31px; margin-left: 5px;">
         </td>
       </tr>
     </table>

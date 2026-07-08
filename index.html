@@ -77,8 +77,9 @@
       width: 180px; /* Explicit width constraint */
       background-color: #E2E8F0; /* Stark, high contrast background */ 
       border: 2px inset #fff; /* Recessed look */
-      padding: 15px 10px;
+      padding: 15px 10px 80px 10px; /* Added extra bottom padding to clear the secret door */
       vertical-align: top;
+      position: relative; /* Allows absolute placement of the secret door link */
     }
 
     .sidebar-heading {
@@ -129,6 +130,22 @@
       height: 14px;
       margin-right: 8px;
       image-rendering: pixelated; /* Keeps low-fidelity look razor sharp */
+    }
+
+    /* Secret Pinball Door Wrapper Styles */
+    .secret-door-link {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .secret-door-gif {
+      width: 45px; /* Perfect thumbnail sizing for a hidden badge look */
+      height: auto;
+      display: block;
+      image-rendering: pixelated;
     }
 
     /* Right Main Content Panel Area */
@@ -270,6 +287,15 @@
         display: inline-block !important;
         margin: 5px 10px !important;
       }
+      .secret-door-link {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        display: block !important;
+        margin: 15px auto 5px auto !important;
+        text-align: center;
+        width: 45px;
+      }
       .content-panel {
         padding-left: 0 !important;
       }
@@ -305,6 +331,10 @@
               <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="faq.html" class="sidebar-link">FAQ</a>
             </li>
           </ul>
+
+          <a href="pinball.html" class="secret-door-link" title="???">
+            <img src="door.gif" alt="Secret Door" class="secret-door-gif">
+          </a>
         </td>
 
         <td class="content-panel">

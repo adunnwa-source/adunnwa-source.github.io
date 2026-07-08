@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Arcade: 3D Pinball Space Cadet</title>
+  <style>
+    /* Custom Retro Cursor Setup with Standard Fallback */
+    html, body, a, button {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; 
+    }
+    
+    body {
+      /* Tiled Cloud Background Integration */
+      background-image: url('imagine_cloud_blue.jpg');
+      background-repeat: repeat;
+      background-color: #a3c2e0; 
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      font-size: 13px;
+      color: #0F172A; /* Palette 1: Deep Navy Text */
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Full-width Blinking Text Banner Alert */
+    .blink-container {
+      background-color: #0F172A; /* Palette 1: Deep Navy */ 
+      color: #F8FAFC; /* Palette 1: Ghost White Text */ 
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif; 
+      font-size: 16px; 
+      font-weight: bold; 
+      letter-spacing: 2px; 
+      padding: 8px 0; 
+      text-align: center; 
+      border-bottom: 3px double #F8FAFC; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    }
+
+    /* Pure CSS Safe Blinking Animation */
+    .blink-text {
+      animation: retro-blink 2.5s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .blink-text { animation: none; }
+    }
+
+    @keyframes retro-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    
+    /* Outer Framework Container - Palette 1: Ghost White */
+    .main-container {
+      background-color: #F8FAFC; 
+      border: 3px solid; 
+      border-color: #fff #808080 #808080 #fff; /* Inset frame simulation */ 
+      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15); 
+      max-width: 800px;
+      width: 95%;
+      margin: 30px auto; 
+      padding: 15px;
+    }
+
+    /* 90s Layout Architecture - Table strategy */
+    .master-layout-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    /* Vertical Left Sidebar Command Panel */
+    .sidebar-panel {
+      width: 180px; 
+      background-color: #E2E8F0; 
+      border: 2px inset #fff; 
+      padding: 15px 10px 80px 10px; 
+      vertical-align: top;
+      position: relative; 
+    }
+
+    .sidebar-heading {
+      font-family: "Comic Sans MS", sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #0F172A;
+      text-align: center;
+      margin-bottom: 15px;
+      border-bottom: 1px dashed #64748B;
+      padding-bottom: 4px;
+    }
+
+    /* Vertical Navigation List Styles */
+    .sidebar-nav-list {
+      list-style-type: none; 
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-nav-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Blue Underlined Link Targets */
+    .sidebar-link {
+      color: #0000EE; 
+      text-decoration: underline; 
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    
+    .sidebar-link:visited { color: #551A8B; }
+    .sidebar-link:hover { color: #BE123C !important; }
+
+    .retro-bullet {
+      width: 14px;
+      height: 14px;
+      margin-right: 8px;
+      image-rendering: pixelated;
+    }
+
+    /* Secret Link Door Anchor */
+    .secret-door-link {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .secret-door-gif {
+      width: 45px;
+      height: auto;
+      display: block;
+      image-rendering: pixelated;
+    }
+
+    /* Right Main Content Panel Area */
+    .content-panel {
+      padding-left: 20px;
+      vertical-align: top;
+    }
+
+    /* OS-Style Window Program Wrapper for the Game Frame */
+    .arcade-window {
+      background-color: #C0C0C0; /* Classic Windows 95 Desktop Gray */
+      border: 2px solid;
+      border-color: #fff #808080 #808080 #fff; /* Outset 3D effect */
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      margin: 0 auto 15px auto;
+      max-width: 508px;
+    }
+
+    .arcade-title-bar {
+      background: linear-gradient(90deg, #000080, #1084d0); /* Classic Windows Active Blue Gradient */
+      color: white;
+      padding: 3px 6px;
+      font-weight: bold;
+      font-size: 12px;
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .arcade-body {
+      padding: 4px;
+      background-color: #000; /* Dark contrast backing for the cabinet frame */
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Keyboard Instruction Terminal Box */
+    .controls-box {
+      background-color: #E2E8F0;
+      border: 2px solid;
+      border-color: #808080 #fff #fff #808080; /* Inset Box Look */
+      padding: 12px;
+      max-width: 508px;
+      margin: 15px auto;
+      box-sizing: border-box;
+    }
+
+    .controls-box h2 {
+      font-family: "Comic Sans MS", sans-serif;
+      font-size: 14px;
+      margin: 0 0 8px 0;
+      color: #BE123C;
+      text-align: center;
+    }
+
+    .controls-grid {
+      font-family: Courier, monospace;
+      font-size: 12px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .controls-grid td {
+      padding: 4px 2px;
+    }
+    
+    .key-badge {
+      background-color: #fff;
+      border: 1px solid #808080;
+      border-bottom: 2px solid #404040;
+      border-right: 2px solid #404040;
+      padding: 1px 5px;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px inset #E2E8F0;
+      margin: 15px 0;
+    }
+
+    .gif-border-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .gif-border-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      image-rendering: pixelated;
+    }
+
+    /* Mobile Viewport Stacking Rule */
+    @media screen and (max-width: 650px) {
+      .master-layout-table, .master-layout-table tbody, .master-layout-table tr, .master-layout-table td {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+      .sidebar-panel {
+        margin-bottom: 20px !important;
+        padding: 10px !important;
+      }
+      .sidebar-nav-list { text-align: center; }
+      .sidebar-nav-list li {
+        display: inline-block !important;
+        margin: 5px 10px !important;
+      }
+      .secret-door-link {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        display: block !important;
+        margin: 15px auto 5px auto !important;
+        text-align: center;
+        width: 45px;
+      }
+      .content-panel { padding-left: 0 !important; }
+      html, body, a, button { cursor: auto !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blink-container">
+    <span class="blink-text">*** SECRET ARCADE BONUS ZONE ***</span>
+  </div>
+
+  <div class="main-container">
+    
+    <table class="master-layout-table" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="sidebar-panel">
+          <div class="sidebar-heading">NAVIGATION MENU</div>
+          <ul class="sidebar-nav-list">
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="index.html" class="sidebar-link">Home</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-QJJzUYHkS58Dfsp4qgn-tHgXL_AhB8aS3BaoVBfJLj1W6g/viewform?usp=dialog" target="_blank" class="sidebar-link">RSVP</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="travel.html" class="sidebar-link">Travel & Hotels</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="faq.html" class="sidebar-link">FAQ</a>
+            </li>
+          </ul>
+
+          <a href="pinball.html" class="secret-door-link" title="You found it!">
+            <img src="door.gif" alt="Secret Door" class="secret-door-gif" style="border: 1px dashed #BE123C;">
+          </a>
+        </td>
+
+        <td class="content-panel">
+          
+          <p style="text-align: center; font-weight: bold; color: #BE123C; font-family: 'Comic Sans MS', sans-serif; font-size: 16px; margin-top: 5px; margin-bottom: 15px;">
+            🕹️ You Discovered Andy's Hidden Pinball Terminal! 🕹️
+          </p>
+
+          <div class="arcade-window">
+            <div class="arcade-title-bar">
+              <span>PINBALL.EXE - Space Cadet</span>
+              <span style="font-family: monospace; background: #C0C0C0; color: #000; border: 1px outset #fff; padding: 0 3px; font-size: 10px; cursor: pointer;">X</span>
+            </div>
+            <div class="arcade-body">
+              <iframe 
+                src="https://98.js.org/programs/pinball/space-cadet.html" 
+                width="500" 
+                height="425" 
+                style="border: none; overflow: hidden;" 
+                scrolling="no">
+              </iframe> 
+            </div>
+          </div>
+
+          <div class="controls-box">
+            <h2>Default Keyboard Controls:</h2>
+            <table class="controls-grid">
+              <tr>
+                <td style="width: 45%; text-align: right; padding-right: 10px;"><span class="key-badge">Spacebar</span></td>
+                <td style="font-weight: bold; color: #334155;">Launch Ball (Hold for power)</td>
+              </tr>
+              <tr>
+                <td style="text-align: right; padding-right: 10px;"><span class="key-badge">Z</span></td>
+                <td style="font-weight: bold; color: #334155;">Left Flipper</td>
+              </tr>
+              <tr>
+                <td style="text-align: right; padding-right: 10px;"><span class="key-badge">/</span></td>
+                <td style="font-weight: bold; color: #334155;">Right Flipper</td>
+              </tr>
+              <tr>
+                <td style="text-align: right; padding-right: 10px;"><span class="key-badge">X</span></td>
+                <td style="font-weight: bold; color: #334155;">Nudge Table Left</td>
+              </tr>
+              <tr>
+                <td style="text-align: right; padding-right: 10px;"><span class="key-badge">.</span></td>
+                <td style="font-weight: bold; color: #334155;">Nudge Table Right</td>
+              </tr>
+              <tr>
+                <td style="text-align: right; padding-right: 10px;"><span class="key-badge">F2</span></td>
+                <td style="font-weight: bold; color: #334155;">Start New Game</td>
+              </tr>
+            </table>
+          </div>
+
+          <p style="text-align: center; font-style: italic; margin: 15px 0; color: #475569; font-size: 12px;">
+            Note: Click inside the game screen before launching so it catches your keyboard buttons!
+          </p>
+
+          <hr>
+
+          <div class="gif-border-container">
+            <img src="garden.gif" alt="Decorative Divider Line" class="gif-border-image">
+          </div>
+
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>

@@ -224,6 +224,24 @@
       margin: 15px 0;
     }
 
+    /* Retro Footer GIF Divider styling */
+    .gif-border-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+      margin-top: 15px;
+      padding-bottom: 5px;
+    }
+
+    .gif-border-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      image-rendering: pixelated; /* Keeps that crisp pixel line art sharp */
+    }
+
     .counter-box {
       font-family: Courier, monospace;
       background-color: #000;
@@ -325,6 +343,11 @@
           </p>
 
           <hr>
+
+          <div class="gif-border-container">
+            <img src="garden.gif" alt="Decorative Divider Line" class="gif-border-image">
+          </div>
+
         </td>
       </tr>
     </table>

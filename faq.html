@@ -11,56 +11,27 @@
     }
     
     body {
-      /* Tiled Cloud Background Integration */
+      /* Tiled Miasma Purple Background Integration */
       background-image: url('miasma_abstract_purple.jpg');
       background-repeat: repeat;
-      background-color: #a3c2e0; 
+      background-color: #5B21B6; /* Deep purple fallback */
       font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-size: 13px;
-      color: #0F172A; /* Palette 1: Deep Navy Text */
+      color: #2E1065; /* Deep Purple Text */
       margin: 0;
       padding: 0;
     }
-
-    /* Full-width Blinking Text Banner Alert */
-    .blink-container {
-      background-color: #0F172A; /* Palette 1: Deep Navy */
-      color: #F8FAFC; /* Palette 1: Ghost White Text */
-      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      padding: 8px 0;
-      text-align: center;
-      border-bottom: 3px double #F8FAFC;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    /* Pure CSS Safe Blinking Animation (Slower, honors accessibility settings) */
-    .blink-text {
-      animation: retro-blink 2.5s ease-in-out infinite;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .blink-text {
-        animation: none; /* Disables flashing for motion-sensitive guests */
-      }
-    }
-
-    @keyframes retro-blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
     
-    /* Outer Framework Container - Palette 1: Ghost White */
+    /* Outer Framework Container - High Contrast Soft Lilac Tint */
     .main-container {
-      background-color: #F8FAFC;
+      background-color: #FDF9FF;
       border: 3px solid;
-      border-color: #fff #808080 #808080 #fff; /* Inset frame simulation */
-      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15);
+      border-color: #fff #7C3AED #7C3AED #fff; /* Inset frame simulation using purple edge tint */
+      box-shadow: 4px 4px 16px rgba(46, 16, 101, 0.3);
       max-width: 800px;
       width: 95%;
       margin: 30px auto;
-      padding: 15px;
+      padding: 20px;
     }
 
     /* 90s Layout Architecture - Table strategy */
@@ -69,10 +40,10 @@
       border-collapse: collapse;
     }
 
-    /* Option #2: Vertical Left Sidebar Command Panel */
+    /* Left Sidebar Command Panel - Retro Lavender Tint */
     .sidebar-panel {
-      width: 180px; /* Explicit width constraint */
-      background-color: #E2E8F0; /* Stark, high contrast background */
+      width: 180px; 
+      background-color: #F3E8FF; /* Muted pastel violet container */
       border: 2px inset #fff; /* Recessed look */
       padding: 15px 10px;
       vertical-align: top;
@@ -82,10 +53,10 @@
       font-family: "Comic Sans MS", sans-serif;
       font-size: 12px;
       font-weight: bold;
-      color: #0F172A;
+      color: #5B21B6;
       text-align: center;
       margin-bottom: 15px;
-      border-bottom: 1px dashed #64748B;
+      border-bottom: 1px dashed #A78BFA;
       padding-bottom: 4px;
     }
 
@@ -102,9 +73,9 @@
       align-items: center;
     }
 
-    /* Period-Accurate Un-styled, Blue Underlined Link Targets */
+    /* Period-Accurate Un-styled Link Targets */
     .sidebar-link {
-      color: #0000EE; /* Standard authentic Blue unvisited link */
+      color: #0D9488; /* Authentic Retro Teal Contrast Link */
       text-decoration: underline;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
@@ -112,12 +83,12 @@
     }
     
     .sidebar-link:visited {
-      color: #551A8B; /* Standard purple visited link color */
+      color: #7C3AED; /* Vibrant Violet visited link color */
     }
 
     /* Sudden, Jarring Color Swap on Hover */
     .sidebar-link:hover {
-      color: #BE123C !important; /* Palette 1: Deep Rose Accent */
+      color: #EA580C !important; /* Early Web Energetic Tangerine Highlight */
     }
 
     /* Animated Pixel Bullet Points placement */
@@ -134,44 +105,35 @@
       vertical-align: top;
     }
 
-    .title-image {
+    /* Centered Header Image Setup */
+    .faq-header-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .faq-gif-header {
       max-width: 100%;
       height: auto;
-    }
-
-    /* Framed Detail Box - Palette 1: Muted Slate */
-    .details-box {
-      text-align: center;
-      background-color: #E2E8F0;
-      border: 2px solid;
-      border-color: #808080 #fff #fff #808080; /* Inset box look */
-      padding: 12px;
-    }
-
-    .details-box h1 {
-      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
-      margin: 0 0 6px 0;
-      font-size: 18px;
-      color: #BE123C; /* Palette 1: Deep Rose Accent */
+      image-rendering: pixelated;
     }
 
     /* Q&A Block Styling */
     .faq-container {
-      margin-top: 25px;
+      margin-top: 15px;
     }
 
     .faq-item {
       margin-bottom: 20px;
       padding: 12px 15px;
-      background-color: #E2E8F0; /* Matching dashboard panels */
-      border: 2px dashed #64748B;
+      background-color: #F3E8FF; /* High contrast inner pastel panel */
+      border: 2px dashed #7C3AED;
     }
 
     .faq-question {
       font-family: "Comic Sans MS", "Comic Sans", cursive;
       font-size: 14px;
       font-weight: bold;
-      color: #BE123C; /* Deep Rose Accent */
+      color: #B45309; /* Deep Warm Amber Accent */
       margin-top: 0;
       margin-bottom: 6px;
     }
@@ -179,16 +141,16 @@
     .faq-answer {
       line-height: 1.5;
       margin: 0;
-      color: #0F172A;
+      color: #2E1065;
     }
 
     hr {
       border: none;
-      border-top: 2px inset #E2E8F0;
+      border-top: 2px inset #D8B4FE;
       margin: 15px 0;
     }
 
-    /* MOBILE VIEWPORT RESPONSIVENESS OVERRIDES: Forces frameset-table to stack */
+    /* MOBILE VIEWPORT RESPONSIVENESS OVERRIDES */
     @media screen and (max-width: 650px) {
       .master-layout-table, .master-layout-table tbody, .master-layout-table tr, .master-layout-table td {
         display: block !important;
@@ -210,16 +172,12 @@
         padding-left: 0 !important;
       }
       html, body, a, button {
-        cursor: auto !important; /* Disables problematic tracking rules on touch viewports */
+        cursor: auto !important;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="blink-container">
-    <span class="blink-text">*** WEDDING FREQUENTLY ASKED QUESTIONS ***</span>
-  </div>
 
   <div class="main-container">
     
@@ -245,32 +203,9 @@
 
         <td class="content-panel">
           
-          <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 15px;">
-            <tr>
-              <td valign="top" style="width: 55%;">
-                <table border="0" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td>
-                      <img src="hannah-andy-title.png" alt="Hannah & Andy" class="title-image">
-                    </td>
-                    <td valign="bottom" style="padding-left: 5px;">
-                      <img src="lovebirdstop.gif" alt="Love Birds Animated GIF" border="0">
-                    </td>
-                  </tr>
-                </table>
-              </td>
-              <td valign="top" style="width: 45%; padding-left: 10px;">
-                <div class="details-box">
-                  <h1>Save the Date:</h1>
-                  <h1>Sept. 24, 2027</h1>
-                  <p style="margin: 4px 0; font-size: 12px;">American Visionary Art Museum</p>
-                  <p style="margin: 6px 0 0 0; font-size: 11px; color: #475569; font-style: italic;">
-                    <br>Baltimore, Maryland
-                  </p>
-                </div>
-              </td>
-            </tr>
-          </table>
+          <div class="faq-header-container">
+            <img src="faq1.gif" alt="Frequently Asked Questions" class="faq-gif-header">
+          </div>
           
           <hr>
 
@@ -286,24 +221,16 @@
             <div class="faq-item">
               <p class="faq-question">Q: Where is the venue located?</p>
               <p class="faq-answer">
-                Both our ceremony and reception will be held at the <strong>American Visionary Art Museum (AVAM)</strong> in Baltimore. After our ceremony, the mueseum will be open for guests to explore. 
-              </p>
-            </div>
-
-            <div class="faq-item">
-              <p class="faq-question">Q: Where is the venue located?</p>
-              <p class="faq-answer">
-                We're keeping things close! While we won’t have a formal shuttle, our room block hotel, the Royal Sonesta Harbor Court, is just a 12-minute walk from the venue. It’s an easy stroll, but ride-shares (like Uber and Lyft) are also widely available in the area if you prefer to catch a quick ride.
+                Both our ceremony and reception will be held at the <strong>American Visionary Art Museum (AVAM)</strong> in Baltimore. After our ceremony, the museum will be open for guests to explore. 
               </p>
             </div>
 
             <div class="faq-item">
               <p class="faq-question">Q: How should I get to the venue?</p>
               <p class="faq-answer">
-                Both our ceremony and reception will be held at the <strong>American Visionary Art Museum (AVAM)</strong> in Baltimore. After our ceremony, the mueseum will be open for guests to explore. 
+                We're keeping things close! While we won’t have a formal shuttle, our room block hotel, the Royal Sonesta Harbor Court, is just a 12-minute walk from the venue. It’s an easy stroll, but ride-shares (like Uber and Lyft) are also widely available in the area if you prefer to catch a quick ride.
               </p>
             </div>
-
 
             <div class="faq-item">
               <p class="faq-question">Q: Is this indoors or outdoors?</p>
@@ -311,7 +238,6 @@
                 Our ceremony will be outdoors, with the option of having it in a covered area, if needed. The reception will be inside the Sculpture Barn at AVAM. 
               </p>
             </div>
-
 
             <div class="faq-item">
               <p class="faq-question">Q: What is the dress code?</p>
@@ -330,7 +256,7 @@
             <div class="faq-item">
               <p class="faq-question">Q: How do I submit my RSVP details?</p>
               <p class="faq-answer">
-                We are tracking responses directly via Google Forms! You can <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-QJJzUYHkS58Dfsp4qgn-tHgXL_AhB8aS3BaoVBfJLj1W6g/viewform?usp=dialog" target="_blank" style="color: #BE123C; font-weight: bold;">click right here to load up the form</a>. Feel free to send us a note if you have any other questions!
+                We are tracking responses directly via Google Forms! You can <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-QJJzUYHkS58Dfsp4qgn-tHgXL_AhB8aS3BaoVBfJLj1W6g/viewform?usp=dialog" target="_blank" style="color: #0D9488; font-weight: bold;">click right here to load up the form</a>. Feel free to send us a note if you have any other questions!
               </p>
             </div>
 

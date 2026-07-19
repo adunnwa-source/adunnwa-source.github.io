@@ -3,259 +3,384 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RSVP.EXE - Hannah & Andy's Wedding Portal</title>
+  <title>Hannah & Andy's Wedding - RSVP Portal</title>
   <style>
-    /* Global Retro Operating System Environment */
+    /* --- COLOR PALETTE (Classic Skyway) ---
+       Outer Body/Background: Main Site Palette Tiled/Styled
+       Inner Detail Blocks: Muted Slate (#E2E8F0)
+       Typography: Deep Navy (#0F172A)
+       Action / Accent Headers: Deep Rose (#BE123C)
+    */
+
     body {
-      background-color: #008080; /* Classic Windows 95 Teal Background */
+      background-color: #F8FAFC; /* Ghost White */
+      color: #0F172A; /* Deep Navy */
+      font-family: "Comic Sans MS", "Arial", "Courier New", sans-serif;
       margin: 0;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      box-sizing: border-box;
+      padding: 0;
     }
 
-    :root {
-      --win-gray: #c0c0c0;
-      --win-white: #ffffff;
-      --win-dark-gray: #808080;
-      --win-black: #000000;
-      --win-blue: #000080;
-    }
-
-    /* Main Desktop Window Frame */
-    .exe-container {
-      width: 100%;
-      max-width: 550px;
-      background-color: var(--win-gray);
-      border: 2px solid;
-      border-color: var(--win-white) var(--win-dark-gray) var(--win-dark-gray) var(--win-white);
-      padding: 3px;
-      font-family: "MS Sans Serif", "Courier New", sans-serif;
-      color: var(--win-black);
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Top Title Strip */
-    .title-bar {
-      background-color: var(--win-blue);
-      color: var(--win-white);
-      padding: 4px 6px;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      letter-spacing: 0.5px;
-    }
-
-    .title-btn {
-      background-color: var(--win-gray);
-      border: 1px solid;
-      border-color: var(--win-white) var(--win-dark-gray) var(--win-dark-gray) var(--win-white);
-      font-size: 10px;
-      width: 16px;
-      height: 14px;
-      text-align: center;
-      line-height: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      color: var(--win-black);
-    }
-
-    /* Classic App Menu Bar (Navigation) */
-    .win-menu-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 4px 6px;
-      border-bottom: 1px solid var(--win-dark-gray);
-      font-size: 12px;
-    }
-
-    .menu-left, .menu-right {
-      display: flex;
-      gap: 12px;
-    }
-
-    .win-menu-bar a {
-      color: var(--win-black);
-      text-decoration: none;
-      padding: 2px 4px;
-    }
-
-    .win-menu-bar a:hover {
-      background-color: var(--win-blue);
-      color: var(--win-white);
-      cursor: pointer;
-    }
-
-    .win-menu-bar a.active {
-      font-weight: bold;
-    }
-
-    .form-body {
-      padding: 15px;
-    }
-
-    .welcome-banner {
-      background-color: var(--win-white);
-      border: 2px inset;
-      border-color: var(--win-dark-gray) var(--win-white) var(--win-white) var(--win-dark-gray);
+    /* --- RETRO TOP NAVIGATION BAR --- */
+    .nav-banner {
+      background-color: #0F172A;
+      color: #F8FAFC;
       padding: 10px;
-      margin-bottom: 20px;
-      font-size: 12px;
-      line-height: 1.4;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      border-bottom: 3px double #BE123C;
+    }
+    .nav-banner a {
+      color: #F8FAFC;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-banner a:hover {
+      color: #E2E8F0;
+      text-decoration: underline;
     }
 
-    .welcome-banner h1 {
+    /* --- LATE-90s DIRECTORY LAYOUT CONTAINER --- */
+    .main-container {
+      max-width: 650px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #F8FAFC;
+      /* 90s Web Border Style */
+      border: 4px double #0F172A;
+      text-align: center;
+    }
+
+    h1 {
+      color: #BE123C; /* Deep Rose */
+      font-family: "Comic Sans MS", sans-serif;
+      margin-top: 10px;
+    }
+
+    p.subtitle {
+      font-family: "Courier New", monospace;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px dashed #0F172A;
+      margin: 20px 0;
+    }
+
+    /* --- INNER BOX / MUTED SLATE SECTIONS --- */
+    .detail-box {
+      background-color: #E2E8F0; /* Muted Slate */
+      border: 2px solid #0F172A;
+      padding: 20px;
+      margin: 15px auto;
+      text-align: left;
+      max-width: 550px;
+    }
+
+    .box-title {
+      color: #BE123C;
+      font-weight: bold;
       margin-top: 0;
-      margin-bottom: 5px;
-      font-size: 16px;
-      color: var(--win-blue);
+      margin-bottom: 15px;
+      font-size: 18px;
+      text-align: center;
     }
 
-    .form-group {
+    /* --- FORM PRIMITIVES & INPUTS --- */
+    .search-group {
+      text-align: center;
+    }
+    
+    input[type="text"] {
+      padding: 6px 10px;
+      font-size: 16px;
+      font-family: "Courier New", monospace;
+      border: 2px inset #A0AEC0;
+      width: 70%;
+      max-width: 300px;
+      background-color: #FFFFFF;
+      color: #0F172A;
+    }
+
+    /* 90s Web Portal Beveled Button Look */
+    .retro-btn {
+      background-color: #E2E8F0;
+      color: #0F172A;
+      border-top: 2px solid #FFFFFF;
+      border-left: 2px solid #FFFFFF;
+      border-right: 2px solid #718096;
+      border-bottom: 2px solid #718096;
+      padding: 6px 15px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: "Arial", sans-serif;
+    }
+
+    .retro-btn:active {
+      border-top: 2px solid #718096;
+      border-left: 2px solid #718096;
+      border-right: 2px solid #FFFFFF;
+      border-bottom: 2px solid #FFFFFF;
+    }
+
+    .search-btn {
+      margin-left: 5px;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 20px auto 0 auto;
+      font-size: 16px;
+      padding: 8px 25px;
+      background-color: #BE123C;
+      color: #F8FAFC;
+      border-top: 2px solid #FF8A98;
+      border-left: 2px solid #FF8A98;
+      border-right: 2px solid #4A0415;
+      border-bottom: 2px solid #4A0415;
+    }
+
+    .submit-btn:active {
+      border-top: 2px solid #4A0415;
+      border-left: 2px solid #4A0415;
+      border-right: 2px solid #FF8A98;
+      border-bottom: 2px solid #FF8A98;
+    }
+
+    /* --- DYNAMIC PARTY CONTAINER BLOCKS --- */
+    #party-container {
+      display: none; /* Initially Hidden */
+    }
+
+    .party-member-card {
+      background-color: #FFFFFF;
+      border: 1px solid #0F172A;
+      padding: 15px;
       margin-bottom: 15px;
     }
 
-    .form-group label {
-      display: block;
+    .member-name {
       font-weight: bold;
-      font-size: 12px;
-      margin-bottom: 6px;
+      font-size: 16px;
+      color: #0F172A;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #E2E8F0;
+      padding-bottom: 3px;
     }
 
-    /* Classic Windows 3D Inset Inputs */
-    .win-input, .win-textarea {
-      width: 100%;
-      box-sizing: border-box;
-      background-color: var(--win-white);
-      border: 2px solid;
-      border-color: var(--win-dark-gray) var(--win-white) var(--win-white) var(--win-dark-gray);
-      padding: 5px;
-      font-family: inherit;
-      font-size: 12px;
-      color: var(--win-black);
-    }
-
-    .win-textarea {
-      resize: vertical;
-      height: 60px;
-    }
-
-    .radio-checkbox-group {
-      background: var(--win-white);
-      border: 2px solid;
-      border-color: var(--win-dark-gray) var(--win-white) var(--win-white) var(--win-dark-gray);
-      padding: 10px;
-      margin-top: 4px;
-    }
-
-    .win-option {
-      display: flex;
-      align-items: center;
-      font-size: 12px;
-      margin-bottom: 8px;
-      cursor: pointer;
-    }
-
-    .win-option:last-child {
-      margin-bottom: 0;
-    }
-
-    .win-option input {
-      margin-right: 8px;
-    }
-
-    .win-divider {
-      border: none;
-      border-top: 1px solid var(--win-dark-gray);
-      border-bottom: 1px solid var(--win-white);
-      margin: 18px 0;
-    }
-
-    /* Action Command Buttons */
-    .btn-row {
-      display: flex;
-      justify-content: flex-end;
-      gap: 8px;
-      margin-top: 15px;
-    }
-
-    .win-btn {
-      background-color: var(--win-gray);
-      border: 2px solid;
-      border-color: var(--win-white) var(--win-dark-gray) var(--win-dark-gray) var(--win-white);
-      padding: 4px 18px;
-      font-family: inherit;
-      font-size: 12px;
-      cursor: pointer;
-      color: var(--win-black);
-      box-shadow: 0 0 0 1px var(--win-black);
-      outline: none;
-    }
-
-    .win-btn:active {
-      border-color: var(--win-dark-gray) var(--win-white) var(--win-white) var(--win-dark-gray);
-      padding: 5px 17px 3px 19px;
-    }
-
-    .win-btn:focus {
-      outline: 1px dotted var(--win-black);
-      outline-offset: -4px;
-    }
-
-    /* System notification block */
-    #decline-notice {
-      background-color: #f6f6f6;
-      border: 2px inset;
-      border-color: var(--win-dark-gray) var(--win-white) var(--win-white) var(--win-dark-gray);
-      padding: 12px;
-      font-size: 12px;
-      text-align: center;
-      color: #800000;
-    }
-
-    /* Simple Footer Status Bar */
-    .status-bar {
-      margin-top: 15px;
-      border-top: 1px solid var(--win-dark-gray);
-      padding-top: 4px;
-      font-size: 10px;
-      color: #404040;
+    /* Layout table-like grid for events without actual stiff OS tables */
+    .event-row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+    }
+
+    .event-label {
+      font-size: 14px;
+      font-family: "Arial", sans-serif;
+    }
+
+    .radio-group {
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+    }
+
+    .radio-group label {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      height: 70px;
+      border: 2px inset #A0AEC0;
+      font-family: "Courier New", monospace;
+      padding: 5px;
+    }
+
+    .error-msg {
+      color: #BE123C;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .success-box {
+      text-align: center;
+      display: none;
     }
   </style>
 </head>
 <body>
 
-<div class="exe-container">
-  <div class="title-bar">
-    <span>RSVP_TERMINAL.EXE</span>
-    <div class="title-btn" onclick="if(confirm('Exit Setup Wizard?')) window.close();">X</div>
+  <div class="nav-banner">
+    <a href="index.html">← Back to Home</a> | 
+    <a href="travel.html">Travel & Maps</a> | 
+    <a href="faq.html">ReadMe.txt (FAQ)</a>
   </div>
 
-  <div class="win-menu-bar">
-    <div class="menu-left">
-      <a href="index.html">← Back</a>
-      <a href="index.html">Home</a>
-      <a href="story.html">Our Story</a>
+  <div class="main-container">
+    <h1>The RSVP Guestbook</h1>
+    <p class="subtitle">--- Welcome to Hannah & Andy's Wedding Registry Portal v1.99 ---</p>
+    
+    <div id="search-section" class="detail-box">
+      <p class="box-title">Step 1: Locate Your Invitation</p>
+      <div class="search-group">
+        <label for="guest-name-input" style="display:block; margin-bottom:8px; font-size:14px;">Enter your full name:</label>
+        <input type="text" id="guest-name-input" placeholder="e.g. John Doe">
+        <button type="button" class="retro-btn search-btn" id="find-btn">Find My Invitation</button>
+      </div>
+      <div id="search-error" class="error-msg">⚠️ Name not found. Please try checking your spelling or typing just your primary first and last name!</div>
     </div>
-    <div class="menu-right">
-      <a href="rsvp.html" class="active">RSVP</a>
+
+    <form id="rsvp-form-flow">
+      <div id="party-container" class="detail-box">
+        <p class="box-title">Step 2: Submit Responses for Your Party</p>
+        
+        <div id="dynamic-party-members"></div>
+
+        <hr>
+
+        <label for="dietary-notes" style="font-weight:bold; font-size:14px; display:block; margin-bottom:5px;">
+          Step 3: Dietary Restrictions or Special Notes?
+        </label>
+        <textarea id="dietary-notes" name="dietary_notes" placeholder="Let us know here if anyone has allergies, food preferences, or a witty message..."></textarea>
+
+        <button type="submit" class="retro-btn submit-btn">Submit RSVP</button>
+      </div>
+    </form>
+
+    <div id="success-section" class="detail-box success-box">
+      <p class="box-title" style="color:#008000;">✨ RSVP Received Successfully! ✨</p>
+      <p>Thank you for logging your attendance in our guestbook database registry!</p>
+      <p>We look forward to celebrating with you on September 24, 2027.</p>
+      <p><a href="index.html" style="color:#BE123C; font-weight:bold;">Return to Homepage</a></p>
     </div>
+
   </div>
 
-  <div class="form-body">
-    <div class="welcome-banner">
-      <h1>Are you coming?!</h1>
-      We can't wait to celebrate with you. Let us know if you can make it by updating your status below! Fields marked with an asterisk (*) are required.
-    </div>
+  <script>
+    /* ========================================================================
+       GUEST REGISTRY CHEAT SHEET:
+       Add any household variations here. The code automatically handles matching
+       any of the secondary party names typed into Step 1 to pull up the whole group!
+       ========================================================================
+    */
+    const guestRegistry = [
+      {
+        party: ["John Doe", "Jane Doe", "Jimmy Doe"]
+      },
+      {
+        party: ["Hannah Smith", "Andy Dunn"]
+      },
+      {
+        party: ["Grandma Baker"] /* Solo Guest Example */
+      }
+    ];
 
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location.reload(); alert('TRANSMISSION SUCCESSFUL!\nYour RSVP has been written to the master database rows.'); }"></iframe>
+    // DOM Target Elements
+    const findBtn = document.getElementById('find-btn');
+    const nameInput = document.getElementById('guest-name-input');
+    const searchError = document.getElementById('search-error');
+    const partyContainer = document.getElementById('party-container');
+    const dynamicPartyMembers = document.getElementById('dynamic-party-members');
+    const rsvpFormFlow = document.getElementById('rsvp-form-flow');
+    const successSection = document.getElementById('success-section');
+    const searchSection = document.getElementById('search-section');
 
-    <form action="
+    // Event Listener for Invitation Lookup
+    findBtn.addEventListener('click', lookupParty);
+    nameInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        lookupParty();
+      }
+    });
+
+    function lookupParty() {
+      const searchName = nameInput.value.trim().toLowerCase();
+      searchError.style.display = 'none';
+      
+      if (!searchName) return;
+
+      // Scan through arrays to find if searched string resides anywhere inside a party array
+      const matchedRecord = guestRegistry.find(entry => 
+        entry.party.some(name => name.toLowerCase() === searchName)
+      );
+
+      if (matchedRecord) {
+        generatePartyFields(matchedRecord.party);
+        // Smoothly reveal step components
+        partyContainer.style.display = 'block';
+        // Bring focal point down to selection box
+        partyContainer.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        partyContainer.style.display = 'none';
+        searchError.style.display = 'block';
+      }
+    }
+
+    // Step 2 & 3 Generator: Inject clean list inputs per household member safely
+    function generatePartyFields(partyArray) {
+      dynamicPartyMembers.innerHTML = ''; // Wipe memory clear
+
+      partyArray.forEach((member, index) => {
+        // Safe programmatic clean tokens for tracking input values uniqueness
+        const safeId = `member_${index}`;
+
+        const card = document.createElement('div');
+        card.className = 'party-member-card';
+
+        card.innerHTML = `
+          <div class="member-name">${member}</div>
+          
+          <div class="event-row">
+            <span class="event-label">🎉 Welcome Party</span>
+            <div class="radio-group">
+              <label><input type="radio" name="${safeId}_welcome" value="Yes" required> Attending</label>
+              <label><input type="radio" name="${safeId}_welcome" value="No"> Unable to attend</label>
+            </div>
+          </div>
+
+          <div class="event-row">
+            <span class="event-label">⛪ Wedding Reception</span>
+            <div class="radio-group">
+              <label><input type="radio" name="${safeId}_reception" value="Yes" required> Attending</label>
+              <label><input type="radio" name="${safeId}_reception" value="No"> Unable to attend</label>
+            </div>
+          </div>
+
+          <div class="event-row">
+            <span class="event-label">☕ Farewell Brunch</span>
+            <div class="radio-group">
+              <label><input type="radio" name="${safeId}_brunch" value="Yes" required> Attending</label>
+              <label><input type="radio" name="${safeId}_brunch" value="No"> Unable to attend</label>
+            </div>
+          </div>
+        `;
+        dynamicPartyMembers.appendChild(card);
+      });
+    }
+
+    // Handle Form submission action
+    rsvpFormFlow.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Collect data payload logs to send to your backend registry mechanism later if needed
+      const formDataCollected = {};
+      
+      // Toggle views smoothly down to execution finish text frames
+      searchSection.style.display = 'none';
+      partyContainer.style.display = 'none';
+      successSection.style.display = 'block';
+      successSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

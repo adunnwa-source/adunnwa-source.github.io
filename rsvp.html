@@ -5,22 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hannah & Andy's Wedding - RSVP Portal</title>
   <style>
-    /* --- COLOR PALETTE (Classic Skyway) ---
-       Outer Body/Background: Main Site Palette Tiled/Styled
-       Inner Detail Blocks: Muted Slate (#E2E8F0)
-       Typography: Deep Navy (#0F172A)
-       Action / Accent Headers: Deep Rose (#BE123C)
-    */
-
     body {
-      background-color: #F8FAFC; /* Ghost White */
-      color: #0F172A; /* Deep Navy */
+      background-color: #F8FAFC; 
+      color: #0F172A; 
       font-family: "Comic Sans MS", "Arial", "Courier New", sans-serif;
       margin: 0;
       padding: 0;
     }
-
-    /* --- RETRO TOP NAVIGATION BAR --- */
     .nav-banner {
       background-color: #0F172A;
       color: #F8FAFC;
@@ -29,68 +20,30 @@
       font-size: 14px;
       border-bottom: 3px double #BE123C;
     }
-    .nav-banner a {
-      color: #F8FAFC;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .nav-banner a:hover {
-      color: #E2E8F0;
-      text-decoration: underline;
-    }
+    .nav-banner a { color: #F8FAFC; text-decoration: none; font-weight: bold; }
+    .nav-banner a:hover { color: #E2E8F0; text-decoration: underline; }
 
-    /* --- LATE-90s DIRECTORY LAYOUT CONTAINER --- */
     .main-container {
       max-width: 650px;
       margin: 40px auto;
       padding: 20px;
       background-color: #F8FAFC;
-      /* 90s Web Border Style */
       border: 4px double #0F172A;
       text-align: center;
     }
+    h1 { color: #BE123C; font-family: "Comic Sans MS", sans-serif; margin-top: 10px; }
+    p.subtitle { font-family: "Courier New", monospace; font-size: 13px; margin-bottom: 25px; }
+    hr { border: none; border-top: 2px dashed #0F172A; margin: 20px 0; }
 
-    h1 {
-      color: #BE123C; /* Deep Rose */
-      font-family: "Comic Sans MS", sans-serif;
-      margin-top: 10px;
-    }
-
-    p.subtitle {
-      font-family: "Courier New", monospace;
-      font-size: 13px;
-      margin-bottom: 25px;
-    }
-
-    hr {
-      border: none;
-      border-top: 2px dashed #0F172A;
-      margin: 20px 0;
-    }
-
-    /* --- INNER BOX / MUTED SLATE SECTIONS --- */
     .detail-box {
-      background-color: #E2E8F0; /* Muted Slate */
+      background-color: #E2E8F0; 
       border: 2px solid #0F172A;
       padding: 20px;
       margin: 15px auto;
       text-align: left;
       max-width: 550px;
     }
-
-    .box-title {
-      color: #BE123C;
-      font-weight: bold;
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 18px;
-      text-align: center;
-    }
-
-    /* --- FORM PRIMITIVES & INPUTS --- */
-    .search-group {
-      text-align: center;
-    }
+    .box-title { color: #BE123C; font-weight: bold; margin-top: 0; margin-bottom: 15px; font-size: 18px; text-align: center; }
     
     input[type="text"] {
       padding: 6px 10px;
@@ -99,192 +52,96 @@
       border: 2px inset #A0AEC0;
       width: 70%;
       max-width: 300px;
-      background-color: #FFFFFF;
-      color: #0F172A;
     }
-
-    /* 90s Web Portal Beveled Button Look */
     .retro-btn {
-      background-color: #E2E8F0;
-      color: #0F172A;
-      border-top: 2px solid #FFFFFF;
-      border-left: 2px solid #FFFFFF;
-      border-right: 2px solid #718096;
-      border-bottom: 2px solid #718096;
-      padding: 6px 15px;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      font-family: "Arial", sans-serif;
+      background-color: #E2E8F0; color: #0F172A;
+      border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF;
+      border-right: 2px solid #718096; border-bottom: 2px solid #718096;
+      padding: 6px 15px; font-size: 14px; font-weight: bold; cursor: pointer;
     }
-
     .retro-btn:active {
-      border-top: 2px solid #718096;
-      border-left: 2px solid #718096;
-      border-right: 2px solid #FFFFFF;
-      border-bottom: 2px solid #FFFFFF;
+      border-top: 2px solid #718096; border-left: 2px solid #718096;
+      border-right: 2px solid #FFFFFF; border-bottom: 2px solid #FFFFFF;
     }
-
-    .search-btn {
-      margin-left: 5px;
-    }
-
     .submit-btn {
-      display: block;
-      margin: 20px auto 0 auto;
-      font-size: 16px;
-      padding: 8px 25px;
-      background-color: #BE123C;
-      color: #F8FAFC;
-      border-top: 2px solid #FF8A98;
-      border-left: 2px solid #FF8A98;
-      border-right: 2px solid #4A0415;
-      border-bottom: 2px solid #4A0415;
+      display: block; margin: 20px auto 0 auto; font-size: 16px; padding: 8px 25px;
+      background-color: #BE123C; color: #F8FAFC;
+      border-top: 2px solid #FF8A98; border-left: 2px solid #FF8A98;
+      border-right: 2px solid #4A0415; border-bottom: 2px solid #4A0415;
     }
-
-    .submit-btn:active {
-      border-top: 2px solid #4A0415;
-      border-left: 2px solid #4A0415;
-      border-right: 2px solid #FF8A98;
-      border-bottom: 2px solid #FF8A98;
-    }
-
-    /* --- DYNAMIC PARTY CONTAINER BLOCKS --- */
-    #party-container {
-      display: none; /* Initially Hidden */
-    }
-
-    .party-member-card {
-      background-color: #FFFFFF;
-      border: 1px solid #0F172A;
-      padding: 15px;
-      margin-bottom: 15px;
-    }
-
-    .member-name {
-      font-weight: bold;
-      font-size: 16px;
-      color: #0F172A;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #E2E8F0;
-      padding-bottom: 3px;
-    }
-
-    /* Layout table-like grid for events without actual stiff OS tables */
-    .event-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 6px 0;
-    }
-
-    .event-label {
-      font-size: 14px;
-      font-family: "Arial", sans-serif;
-    }
-
-    .radio-group {
-      font-family: "Courier New", monospace;
-      font-size: 14px;
-    }
-
-    .radio-group label {
-      margin-left: 10px;
-      cursor: pointer;
-    }
-
-    textarea {
-      width: 100%;
-      box-sizing: border-box;
-      height: 70px;
-      border: 2px inset #A0AEC0;
-      font-family: "Courier New", monospace;
-      padding: 5px;
-    }
-
-    .error-msg {
-      color: #BE123C;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 10px;
-      font-size: 14px;
-      display: none;
-    }
-
-    .success-box {
-      text-align: center;
-      display: none;
-    }
+    #party-container { display: none; }
+    .party-member-card { background-color: #FFFFFF; border: 1px solid #0F172A; padding: 15px; margin-bottom: 15px; }
+    .member-name { font-weight: bold; font-size: 16px; color: #0F172A; margin-bottom: 10px; border-bottom: 1px solid #E2E8F0; padding-bottom: 3px; }
+    .event-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
+    .radio-group { font-family: "Courier New", monospace; font-size: 14px; }
+    .radio-group label { margin-left: 10px; cursor: pointer; }
+    textarea { width: 100%; box-sizing: border-box; height: 70px; border: 2px inset #A0AEC0; font-family: "Courier New", monospace; padding: 5px; }
+    .error-msg { color: #BE123C; font-weight: bold; text-align: center; margin-top: 10px; display: none; }
+    .success-box { text-align: center; display: none; }
   </style>
 </head>
 <body>
 
   <div class="nav-banner">
-    <a href="index.html">← Back to Home</a> | 
-    <a href="travel.html">Travel & Maps</a> | 
-    <a href="faq.html">ReadMe.txt (FAQ)</a>
+    <a href="index.html">← Back to Home</a> | <a href="travel.html">Travel</a> | <a href="faq.html">ReadMe.txt</a>
   </div>
 
   <div class="main-container">
     <h1>The RSVP Guestbook</h1>
-    <p class="subtitle">--- Welcome to Hannah & Andy's Wedding Registry Portal v1.99 ---</p>
+    <p class="subtitle">--- Hannah & Andy's Wedding Registry Portal v1.99 ---</p>
     
     <div id="search-section" class="detail-box">
       <p class="box-title">Step 1: Locate Your Invitation</p>
-      <div class="search-group">
+      <div style="text-align:center;">
         <label for="guest-name-input" style="display:block; margin-bottom:8px; font-size:14px;">Enter your full name:</label>
         <input type="text" id="guest-name-input" placeholder="e.g. John Doe">
-        <button type="button" class="retro-btn search-btn" id="find-btn">Find My Invitation</button>
+        <button type="button" class="retro-btn" id="find-btn">Find Invitation</button>
       </div>
-      <div id="search-error" class="error-msg">⚠️ Name not found. Please try checking your spelling or typing just your primary first and last name!</div>
+      <div id="search-error" class="error-msg">⚠️ Name not found. Please verify spelling!</div>
     </div>
 
     <form id="rsvp-form-flow">
       <div id="party-container" class="detail-box">
         <p class="box-title">Step 2: Submit Responses for Your Party</p>
-        
         <div id="dynamic-party-members"></div>
-
         <hr>
-
         <label for="dietary-notes" style="font-weight:bold; font-size:14px; display:block; margin-bottom:5px;">
           Step 3: Dietary Restrictions or Special Notes?
         </label>
-        <textarea id="dietary-notes" name="dietary_notes" placeholder="Let us know here if anyone has allergies, food preferences, or a witty message..."></textarea>
-
+        <textarea id="dietary-notes" name="dietary_notes"></textarea>
         <button type="submit" class="retro-btn submit-btn">Submit RSVP</button>
       </div>
     </form>
 
     <div id="success-section" class="detail-box success-box">
       <p class="box-title" style="color:#008000;">✨ RSVP Received Successfully! ✨</p>
-      <p>Thank you for logging your attendance in our guestbook database registry!</p>
-      <p>We look forward to celebrating with you on September 24, 2027.</p>
-      <p><a href="index.html" style="color:#BE123C; font-weight:bold;">Return to Homepage</a></p>
+      <p>Thank you for logging your attendance into our database registry!</p>
     </div>
-
   </div>
 
   <script>
-    /* ========================================================================
-       GUEST REGISTRY CHEAT SHEET:
-       Add any household variations here. The code automatically handles matching
-       any of the secondary party names typed into Step 1 to pull up the whole group!
-       ========================================================================
-    */
+    // 1. GUEST REGISTRY LIST
     const guestRegistry = [
-      {
-        party: ["John Doe", "Jane Doe", "Jimmy Doe"]
-      },
-      {
-        party: ["Hannah Smith", "Andy Dunn"]
-      },
-      {
-        party: ["Grandma Baker"] /* Solo Guest Example */
-      }
+      { party: ["John Doe", "Jane Doe", "Baby Doe", "Child Doe", "Guest Four", "Guest Five", "Guest Six"] }, // Max 7 Example
+      { party: ["Hannah Smith", "Andy Dunn"] }
     ];
 
-    // DOM Target Elements
+    // 2. GOOGLE FORM FIELD DICTIONARY
+    // Replace the 'entry.XXXXXX' strings below with your real Google Form field entry numbers!
+    const GOOGLE_FORM_MAPPING = {
+      formActionUrl: "https://docs.google.com/forms/d/e/1bw1Not1TqVexq7Ui6ka1LODOTtiAMmoFAfS81BvqTYc/formResponse",
+      dietaryNotes: "entry.1103280564",
+      guests: [
+        { name: "entry.164402968", welcome: "entry.1907037494", reception: "entry.1032168192", brunch: "entry.530798813" }, // Guest 1
+        { name: "entry.1385859850", welcome: "entry.464102411", reception: "entry.199290415", brunch: "entry.343885505" }, // Guest 2
+        { name: "entry.1463976152", welcome: "entry.1258190177", reception: "entry.287483051", brunch: "entry.90971672" }, // Guest 3
+        { name: "entry.217087870", welcome: "entry.43738917", reception: "entry.1787984321", brunch: "entry.1816210258" }, // Guest 4
+        { name: "entry.1439185885", welcome: "entry.1977103729", reception: "entry.702296625", brunch: "entry.1311634172" }, // Guest 5
+        { name: "entry.1875660564", welcome: "entry.1552347569", reception: "entry.1301851850", brunch: "entry.1880897239" }, // Guest 6
+        { name: "entry.350848720", welcome: "entry.199332524", reception: "entry.1846662175", brunch: "entry.20934639" }  // Guest 7
+      ]
+    };
+
     const findBtn = document.getElementById('find-btn');
     const nameInput = document.getElementById('guest-name-input');
     const searchError = document.getElementById('search-error');
@@ -294,31 +151,23 @@
     const successSection = document.getElementById('success-section');
     const searchSection = document.getElementById('search-section');
 
-    // Event Listener for Invitation Lookup
+    let currentActiveParty = [];
+
     findBtn.addEventListener('click', lookupParty);
-    nameInput.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        lookupParty();
-      }
-    });
 
     function lookupParty() {
       const searchName = nameInput.value.trim().toLowerCase();
       searchError.style.display = 'none';
-      
       if (!searchName) return;
 
-      // Scan through arrays to find if searched string resides anywhere inside a party array
       const matchedRecord = guestRegistry.find(entry => 
         entry.party.some(name => name.toLowerCase() === searchName)
       );
 
       if (matchedRecord) {
-        generatePartyFields(matchedRecord.party);
-        // Smoothly reveal step components
+        currentActiveParty = matchedRecord.party;
+        generatePartyFields(currentActiveParty);
         partyContainer.style.display = 'block';
-        // Bring focal point down to selection box
         partyContainer.scrollIntoView({ behavior: 'smooth' });
       } else {
         partyContainer.style.display = 'none';
@@ -326,41 +175,32 @@
       }
     }
 
-    // Step 2 & 3 Generator: Inject clean list inputs per household member safely
     function generatePartyFields(partyArray) {
-      dynamicPartyMembers.innerHTML = ''; // Wipe memory clear
-
+      dynamicPartyMembers.innerHTML = '';
       partyArray.forEach((member, index) => {
-        // Safe programmatic clean tokens for tracking input values uniqueness
-        const safeId = `member_${index}`;
-
         const card = document.createElement('div');
         card.className = 'party-member-card';
-
         card.innerHTML = `
           <div class="member-name">${member}</div>
-          
           <div class="event-row">
             <span class="event-label">🎉 Welcome Party</span>
             <div class="radio-group">
-              <label><input type="radio" name="${safeId}_welcome" value="Yes" required> Attending</label>
-              <label><input type="radio" name="${safeId}_welcome" value="No"> Unable to attend</label>
+              <label><input type="radio" name="member_${index}_welcome" value="Yes" required> Yes</label>
+              <label><input type="radio" name="member_${index}_welcome" value="No"> No</label>
             </div>
           </div>
-
           <div class="event-row">
             <span class="event-label">⛪ Wedding Reception</span>
             <div class="radio-group">
-              <label><input type="radio" name="${safeId}_reception" value="Yes" required> Attending</label>
-              <label><input type="radio" name="${safeId}_reception" value="No"> Unable to attend</label>
+              <label><input type="radio" name="member_${index}_reception" value="Yes" required> Yes</label>
+              <label><input type="radio" name="member_${index}_reception" value="No"> No</label>
             </div>
           </div>
-
           <div class="event-row">
             <span class="event-label">☕ Farewell Brunch</span>
             <div class="radio-group">
-              <label><input type="radio" name="${safeId}_brunch" value="Yes" required> Attending</label>
-              <label><input type="radio" name="${safeId}_brunch" value="No"> Unable to attend</label>
+              <label><input type="radio" name="member_${index}_brunch" value="Yes" required> Yes</label>
+              <label><input type="radio" name="member_${index}_brunch" value="No"> No</label>
             </div>
           </div>
         `;
@@ -368,18 +208,52 @@
       });
     }
 
-    // Handle Form submission action
+    // 3. BACKGROUND SUBMISSION LOGIC
     rsvpFormFlow.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      // Collect data payload logs to send to your backend registry mechanism later if needed
-      const formDataCollected = {};
+      const formData = new FormData();
       
-      // Toggle views smoothly down to execution finish text frames
-      searchSection.style.display = 'none';
-      partyContainer.style.display = 'none';
-      successSection.style.display = 'block';
-      successSection.scrollIntoView({ behavior: 'smooth' });
+      // Global field mapping
+      formData.append(GOOGLE_FORM_MAPPING.dietaryNotes, document.getElementById('dietary-notes').value);
+
+      // Loop through up to 7 slots in the Google Form mapping array
+      for (let i = 0; i < 7; i++) {
+        const slotMapping = GOOGLE_FORM_MAPPING.guests[i];
+        
+        if (i < currentActiveParty.length) {
+          // If a real guest exists for this slot, harvest values from page UI elements
+          const welcomeVal = document.querySelector(`input[name="member_${i}_welcome"]:checked`).value;
+          const receptionVal = document.querySelector(`input[name="member_${i}_reception"]:checked`).value;
+          const brunchVal = document.querySelector(`input[name="member_${i}_brunch"]:checked`).value;
+
+          formData.append(slotMapping.name, currentActiveParty[i]);
+          formData.append(slotMapping.welcome, welcomeVal);
+          formData.append(slotMapping.reception, receptionVal);
+          formData.append(slotMapping.brunch, brunchVal);
+        } else {
+          // If party size is smaller than 7, explicitly pass empty strings to remaining column inputs
+          formData.append(slotMapping.name, "");
+          formData.append(slotMapping.welcome, "");
+          formData.append(slotMapping.reception, "");
+          formData.append(slotMapping.brunch, "");
+        }
+      }
+
+      // Quietly fire data payload to Google Sheet architecture endpoint
+      fetch(GOOGLE_FORM_MAPPING.formActionUrl, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      }).then(() => {
+        searchSection.style.display = 'none';
+        partyContainer.style.display = 'none';
+        successSection.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }).catch(err => {
+        alert("A network transmission anomaly occurred. Please try again!");
+        console.error(err);
+      });
     });
   </script>
 </body>

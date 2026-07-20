@@ -3,196 +3,429 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hannah & Andy's Wedding - RSVP Portal</title>
+  <title>RSVP - Hannah Lang & Andy Dunn Wedding</title>
   <style>
+    /* Custom Retro Cursor Setup with Standard Fallback */
+    html, body, a, button {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v16.043l4.113-3.882 3.195 7.126 3.167-1.42-3.14-7.013h5.452z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto; 
+    }
+    
     body {
-      background-color: #F8FAFC; 
-      color: #0F172A; 
-      font-family: "Comic Sans MS", "Arial", "Courier New", sans-serif;
+      background-image: url('imagine_cloud_blue.jpg');
+      background-repeat: repeat;
+      background-color: #a3c2e0; 
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+      font-size: 13px;
+      color: #0F172A; /* Palette 1: Deep Navy Text */
       margin: 0;
       padding: 0;
     }
-    .nav-banner {
-      background-color: #0F172A;
-      color: #F8FAFC;
-      padding: 10px;
-      font-family: "Courier New", monospace;
-      font-size: 14px;
-      border-bottom: 3px double #BE123C;
-    }
-    .nav-banner a { color: #F8FAFC; text-decoration: none; font-weight: bold; }
-    .nav-banner a:hover { color: #E2E8F0; text-decoration: underline; }
 
+    /* Full-width Blinking Text Banner Alert */
+    .blink-container {
+      background-color: #0F172A; /* Palette 1: Deep Navy */ 
+      color: #F8FAFC; /* Palette 1: Ghost White Text */ 
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif; 
+      font-size: 16px; 
+      font-weight: bold; 
+      letter-spacing: 2px; 
+      padding: 8px 0; 
+      text-align: center; 
+      border-bottom: 3px double #F8FAFC; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    }
+
+    .blink-text {
+      animation: retro-blink 2.5s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .blink-text { animation: none; }
+    }
+
+    @keyframes retro-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    
+    /* Outer Framework Container */
     .main-container {
-      max-width: 650px;
-      margin: 40px auto;
+      background-color: #F8FAFC; 
+      border: 3px solid; 
+      border-color: #fff #808080 #808080 #fff; /* Inset frame simulation */ 
+      box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15); 
+      max-width: 800px;
+      width: 95%;
+      margin: 30px auto; 
+      padding: 15px;
+    }
+
+    .master-layout-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    /* Left Sidebar Command Panel */
+    .sidebar-panel {
+      width: 180px; 
+      background-color: #E2E8F0; 
+      border: 2px inset #fff; 
+      padding: 15px 10px 80px 10px; 
+      vertical-align: top;
+      position: relative; 
+    }
+
+    .sidebar-heading {
+      font-family: "Comic Sans MS", sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #0F172A;
+      text-align: center;
+      margin-bottom: 15px;
+      border-bottom: 1px dashed #64748B;
+      padding-bottom: 4px;
+    }
+
+    .sidebar-nav-list {
+      list-style-type: none; 
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-nav-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar-link {
+      color: #0000EE; 
+      text-decoration: underline; 
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    
+    .sidebar-link:visited { color: #551A8B; }
+    .sidebar-link:hover { color: #BE123C !important; }
+
+    .retro-bullet {
+      width: 14px;
+      height: 14px;
+      margin-right: 8px;
+      image-rendering: pixelated;
+    }
+
+    .secret-door-link {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      display: inline-block;
+    }
+
+    .secret-door-gif {
+      width: 45px; 
+      height: auto;
+      image-rendering: pixelated;
+    }
+
+    /* Right Main Content Panel Area */
+    .content-panel {
+      padding-left: 20px;
+      vertical-align: top;
+    }
+
+    /* Dialog Box Styling for Forms */
+    .details-box {
+      width: 100%;
+      background-color: #E2E8F0; 
+      border: 2px solid; 
+      border-color: #fff #808080 #808080 #fff; /* Raised button panel look */ 
       padding: 20px;
-      background-color: #F8FAFC;
-      border: 4px double #0F172A;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    .details-box h2 {
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif; 
+      margin: 0 0 10px 0; 
+      font-size: 18px;
+      color: #BE123C; 
       text-align: center;
     }
-    h1 { color: #BE123C; font-family: "Comic Sans MS", sans-serif; margin-top: 10px; }
-    p.subtitle { font-family: "Courier New", monospace; font-size: 13px; margin-bottom: 25px; }
-    hr { border: none; border-top: 2px dashed #0F172A; margin: 20px 0; }
 
-    .detail-box {
-      background-color: #E2E8F0; 
-      border: 2px solid #0F172A;
-      padding: 20px;
-      margin: 15px auto;
-      text-align: left;
-      max-width: 550px;
+    /* Retro Input Controls */
+    .search-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
     }
-    .box-title { color: #BE123C; font-weight: bold; margin-top: 0; margin-bottom: 15px; font-size: 18px; text-align: center; }
-    
-    input[type="text"] {
-      padding: 6px 10px;
-      font-size: 16px;
-      font-family: "Courier New", monospace;
-      border: 2px inset #A0AEC0;
-      width: 70%;
-      max-width: 300px;
+
+    .retro-input {
+      flex-grow: 1;
+      padding: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      border: 2px inset #fff;
+      background-color: #FFFFFF;
+      color: #0F172A;
     }
+
     .retro-btn {
-      background-color: #E2E8F0; color: #0F172A;
-      border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF;
-      border-right: 2px solid #718096; border-bottom: 2px solid #718096;
-      padding: 6px 15px; font-size: 14px; font-weight: bold; cursor: pointer;
+      background-color: #CBD5E1;
+      border: 2px solid;
+      border-color: #fff #808080 #808080 #fff;
+      font-family: "MS Sans Serif", Geneva, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 6px 15px;
+      color: #0F172A;
     }
+
     .retro-btn:active {
-      border-top: 2px solid #718096; border-left: 2px solid #718096;
-      border-right: 2px solid #FFFFFF; border-bottom: 2px solid #FFFFFF;
+      border-color: #808080 #fff #fff #808080;
+      padding: 7px 14px 5px 16px;
     }
-    .submit-btn {
-      display: block; margin: 20px auto 0 auto; font-size: 16px; padding: 8px 25px;
-      background-color: #BE123C; color: #F8FAFC;
-      border-top: 2px solid #FF8A98; border-left: 2px solid #FF8A98;
-      border-right: 2px solid #4A0415; border-bottom: 2px solid #4A0415;
+
+    /* Interactive RSVP System Components */
+    .party-member-card {
+      background-color: #F1F5F9;
+      border: 2px inset #fff;
+      padding: 15px;
+      margin-bottom: 15px;
     }
-    #party-container { display: none; }
-    .party-member-card { background-color: #FFFFFF; border: 1px solid #0F172A; padding: 15px; margin-bottom: 15px; }
-    .member-name { font-weight: bold; font-size: 16px; color: #0F172A; margin-bottom: 10px; border-bottom: 1px solid #E2E8F0; padding-bottom: 3px; }
-    .event-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
-    .radio-group { font-family: "Courier New", monospace; font-size: 14px; }
-    .radio-group label { margin-left: 10px; cursor: pointer; }
-    textarea { width: 100%; box-sizing: border-box; height: 70px; border: 2px inset #A0AEC0; font-family: "Courier New", monospace; padding: 5px; }
-    .error-msg { color: #BE123C; font-weight: bold; text-align: center; margin-top: 10px; display: none; }
-    .success-box { text-align: center; display: none; }
+
+    .member-name {
+      font-size: 15px;
+      font-weight: bold;
+      color: #BE123C;
+      border-bottom: 1px dashed #94A3B8;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    .event-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      background: #E2E8F0;
+      padding: 6px 10px;
+      border: 1px solid #CBD5E1;
+    }
+
+    .radio-group label {
+      margin-left: 10px;
+      font-weight: bold;
+    }
+
+    .textarea-retro {
+      width: 100%;
+      height: 60px;
+      box-sizing: border-box;
+      border: 2px inset #fff;
+      font-family: Arial, sans-serif;
+      padding: 5px;
+      resize: vertical;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px inset #E2E8F0;
+      margin: 15px 0;
+    }
+
+    .gif-border-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .gif-border-image {
+      max-width: 100%;
+      height: auto;
+      image-rendering: pixelated;
+    }
+
+    /* Utilities */
+    .hidden { display: none !important; }
+
+    /* RESPONSIVENESS OVERRIDES */
+    @media screen and (max-width: 650px) {
+      .master-layout-table, .master-layout-table tbody, .master-layout-table tr, .master-layout-table td {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+      .sidebar-panel {
+        margin-bottom: 20px !important;
+        padding: 10px !important;
+      }
+      .sidebar-nav-list { text-align: center; }
+      .sidebar-nav-list li {
+        display: inline-block !important;
+        margin: 5px 10px !important;
+      }
+      .secret-door-link { display: none !important; }
+      .content-panel { padding-left: 0 !important; }
+      .search-row { flex-direction: column; }
+      html, body, a, button { cursor: auto !important; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="nav-banner">
-    <a href="index.html">← Back to Home</a> | <a href="travel.html">Travel</a> | <a href="faq.html">ReadMe.txt</a>
+  <div class="blink-container">
+    <span class="blink-text">*** SECURE ONLINE RSVP PORTAL ***</span>
   </div>
 
   <div class="main-container">
-    <h1>The RSVP Guestbook</h1>
-    <p class="subtitle">--- Hannah & Andy's Wedding Registry Portal v1.99 ---</p>
     
-    <div id="search-section" class="detail-box">
-      <p class="box-title">Step 1: Locate Your Invitation</p>
-      <div style="text-align:center;">
-        <label for="guest-name-input" style="display:block; margin-bottom:8px; font-size:14px;">Enter your full name:</label>
-        <input type="text" id="guest-name-input" placeholder="e.g. John Doe">
-        <button type="button" class="retro-btn" id="find-btn">Find Invitation</button>
-      </div>
-      <div id="search-error" class="error-msg">⚠️ Name not found. Please verify spelling!</div>
-    </div>
+    <table class="master-layout-table" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <!-- Sidebar Navigation -->
+        <td class="sidebar-panel">
+          <div class="sidebar-heading">NAVIGATION</div>
+          <ul class="sidebar-nav-list">
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="index.html" class="sidebar-link">Home</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="rsvp.html" class="sidebar-link">RSVP</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="travel.html" class="sidebar-link">Travel & Hotels</a>
+            </li>
+            <li>
+              <img src="heart_bullet.gif" alt="*" class="retro-bullet"> <a href="faq.html" class="sidebar-link">FAQ</a>
+            </li>
+          </ul>
 
-    <form id="rsvp-form-flow">
-      <div id="party-container" class="detail-box">
-        <p class="box-title">Step 2: Submit Responses for Your Party</p>
-        <div id="dynamic-party-members"></div>
-        <hr>
-        <label for="dietary-notes" style="font-weight:bold; font-size:14px; display:block; margin-bottom:5px;">
-          Step 3: Dietary Restrictions or Special Notes?
-        </label>
-        <textarea id="dietary-notes" name="dietary_notes"></textarea>
-        <button type="submit" class="retro-btn submit-btn">Submit RSVP</button>
-      </div>
-    </form>
+          <a href="pinball.html" class="secret-door-link" title="???">
+            <img src="door.gif" alt="Secret Door" class="secret-door-gif">
+          </a>
+        </td>
 
-    <div id="success-section" class="detail-box success-box">
-      <p class="box-title" style="color:#008000;">✨ RSVP Received Successfully! ✨</p>
-      <p>Thank you for logging your attendance into our database registry!</p>
-    </div>
+        <!-- Main Form Area -->
+        <td class="content-panel">
+          
+          <!-- STAGE 1: SEARCH WINDOW -->
+          <div id="searchStage" class="details-box">
+            <h2>Find Your Invitation</h2>
+            <p>Please enter your first and last name as written on your invitation envelope to access your party's RSVP dashboard:</p>
+            
+            <div class="search-row">
+              <input type="text" id="nameInput" class="retro-input" placeholder="Type name here... (e.g., Tommy Williams)" autocomplete="off">
+              <button type="button" id="searchBtn" class="retro-btn">SEARCH</button>
+            </div>
+          </div>
+
+          <!-- STAGE 2: DYNAMIC EVENT SELECTION FORM -->
+          <form id="rsvpForm" class="details-box hidden">
+            <h2>Your RSVP Dashboard</h2>
+            <p style="text-align: center; font-style: italic; margin-bottom: 15px;">Please select attendance choices for each member of your household:</p>
+            
+            <!-- JavaScript loads active household cards inside here -->
+            <div id="dynamicPartyMembers"></div>
+
+            <!-- Global dietary block -->
+            <div style="margin-top: 15px;">
+              <label style="font-weight: bold; display: block; margin-bottom: 5px;">Dietary Restrictions or Extra Comments:</label>
+              <textarea id="dietaryNotesField" class="textarea-retro" placeholder="Allergies, food requirements, or messages..."></textarea>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+              <button type="submit" class="retro-btn" style="font-size: 14px; padding: 8px 25px;">SUBMIT DIGITAL RSVP</button>
+            </div>
+          </form>
+
+          <!-- STAGE 3: SUCCESS PANEL -->
+          <div id="successStage" class="details-box hidden" style="text-align: center;">
+            <h2>✨ RSVP Received Successfully! ✨</h2>
+            <img src="lovebirdstop.gif" alt="Love Birds" style="margin: 10px 0;">
+            <p style="font-size: 14px; font-weight: bold;">Thank you! Your information has been transmitted directly into our guest spreadsheet.</p>
+            <p>We look forward to seeing you in Baltimore on Sept. 24, 2027!</p>
+          </div>
+
+          <hr>
+
+          <div class="gif-border-container">
+            <img src="garden.gif" alt="Decorative Divider Line" class="gif-border-image">
+          </div>
+
+        </td>
+      </tr>
+    </table>
   </div>
 
+  <!-- CORE ENGINE SCRIPT SECTION -->
   <script>
-
-    // 1. GUEST REGISTRY LIST
-const guestRegistry = [
-  // Group 1: Dunns & Langs
-  { party: ["Pamela Dunn", "Dennis Dunn", "Chris Dunn"] },
-  { party: ["Michael Lang", "Kelly Lang", "Olivia Lang", "Anya Lang"] },
-  { party: ["Estelle Lang"] },
-  { party: ["Jared Lang", "Abby Trzyzewski"] },
-  { party: ["Noah Lang", "Jenna Bergman"] },
-  { party: ["Gabriel Lang", "Maya Richman"] },
-  { party: ["Matt Lang", "Ksenia Lang", "Drew Lang", "Jeremy Lang"] },
-  { party: ["Jeffrey Lang", "Leslie Cohen"] },
-
-  // Group 2: Hennessey, Hoffman, Conners, & Campbell
-  { party: ["Edward Hennessey", "Catherine Hennessey"] },
-  { party: ["Mike Hoffman", "Colleen Hoffman"] },
-  { party: ["Chuck Conners", "Gerry Conners"] },
-  { party: ["Kristin Campbell"] },
-
-  // Group 3: Fleet, Breslin, Maloney, & Willey/Wittman
-  { party: ["Charles Fleet", "Susan Fleet"] },
-  { party: ["Martha Breslin", "Vince Breslin"] },
-  { party: ["Tom Breslin", "Alli Breslin"] },
-  { party: ["Molly Maloney", "Andy Maloney"] },
-  { party: ["Beth Willey", "Rob Willey"] },
-  { party: ["Diane Wittman", "Ben Wittman"] },
-  { party: ["Dan Willey", "Westleigh Morin"] },
-
-  // Group 4: Eaton-Rosen, Robinson, Franco, & Hurley
-  { party: ["Janet Eaton-Rosen", "Stuart Eaton-Rosen"] },
-  { party: ["Zach Eaton-Rosen", "Emma Eaton-Rosen"] },
-  { party: ["Sam Eaton-Rosen", "Calinda Robinson"] },
-  { party: ["Karin Franco", "Carlos Franco"] },
-  { party: ["Greg Hurley", "Jess Hurley"] },
-
-  // Group 5: Collins, Arndt, Hall, Walsh, & Feldman
-  { party: ["Katelin Collins", "Bill Collins"] },
-  { party: ["Brad Arndt", "Sarah Hall", "Will Arndt", "Lily Arndt"] },
-  { party: ["Deborah Hall"] },
-  { party: ["Rachel Walsh", "Dan Sullivan", "Ian Walsh", "Liam Walsh", "Mia Walsh", "Owen Walsh"] },
-  { party: ["Amy Hall", "Kristen Ploetz", "Nathan Feldman", "Luke Feldman", "Kieran Feldman"] },
-  { party: ["Mike Feldman", "Mike Feldman Guest"] },
-
-  // Group 6: Friends & Couples
-  { party: ["Robin Parillo"] },
-  { party: ["Connor Van Scyoc"] },
-  { party: ["Zane Moses", "Victoria Hammit"] },
-  { party: ["Jake Griffith"] },
-  { party: ["Tim Raymond", "Laura Stock"] },
-  { party: ["Sebastian Romo", "Oriane Rutsche"] },
-  { party: ["Griffin Wong"] },
-  { party: ["Bobo \"Tommy\" Williams"] },
-  { party: ["Andrew Cloutier", "Andrew Cloutier Guest"] },
-  { party: ["Chris Whalen"] },
-  { party: ["JP Gutierrez", "Larissa Gutierrez"] },
-  { party: ["Will Masters", "Erica Rausch"] },
-  { party: ["Freddy Mesmer"] },
-  { party: ["Robin Marx", "Davey Segal"] },
-  { party: ["Samantha Falberg", "Zach Falberg"] },
-  { party: ["Ariel Michaelson", "Jared Loiben"] },
-  { party: ["Desiree Shields", "Nick McFall"] },
-  { party: ["Alice Greninger", "Michael Greninger"] },
-  { party: ["Carly Pflaum", "Brian Pflaum"] },
-  { party: ["Rebecca Tiernan", "Jake Tiernan"] },
-  { party: ["Jessica Hatfield", "Brad Guest"] },
-  { party: ["Martyna Kot"] },
-  { party: ["Matt Vuono", "Emma Horsey"] },
-  { party: ["Brandon Stock", "Bailey King"] },
-  { party: ["Chris Barranco"] }
-];
+    // 1. DYNAMIC GUEST REGISTRY DATA
+    const guestRegistry = [
+      { party: ["Pamela Dunn", "Dennis Dunn", "Chris Dunn"] },
+      { party: ["Michael Lang", "Kelly Lang", "Olivia Lang", "Anya Lang"] },
+      { party: ["Estelle Lang"] },
+      { party: ["Jared Lang", "Abby Trzyzewski"] },
+      { party: ["Noah Lang", "Jenna Bergman"] },
+      { party: ["Gabriel Lang", "Maya Richman"] },
+      { party: ["Matt Lang", "Ksenia Lang", "Drew Lang", "Jeremy Lang"] },
+      { party: ["Jeffrey Lang", "Leslie Cohen"] },
+      { party: ["Edward Hennessey", "Catherine Hennessey"] },
+      { party: ["Mike Hoffman", "Colleen Hoffman"] },
+      { party: ["Chuck Conners", "Gerry Conners"] },
+      { party: ["Kristin Campbell"] },
+      { party: ["Charles Fleet", "Susan Fleet"] },
+      { party: ["Martha Breslin", "Vince Breslin"] },
+      { party: ["Tom Breslin", "Alli Breslin"] },
+      { party: ["Molly Maloney", "Andy Maloney"] },
+      { party: ["Beth Willey", "Rob Willey"] },
+      { party: ["Diane Wittman", "Ben Wittman"] },
+      { party: ["Dan Willey", "Westleigh Morin"] },
+      { party: ["Janet Eaton-Rosen", "Stuart Eaton-Rosen"] },
+      { party: ["Zach Eaton-Rosen", "Emma Eaton-Rosen"] },
+      { party: ["Sam Eaton-Rosen", "Calinda Robinson"] },
+      { party: ["Karin Franco", "Carlos Franco"] },
+      { party: ["Greg Hurley", "Jess Hurley"] },
+      { party: ["Katelin Collins", "Bill Collins"] },
+      { party: ["Brad Arndt", "Sarah Hall", "Will Arndt", "Lily Arndt"] },
+      { party: ["Deborah Hall"] },
+      { party: ["Rachel Walsh", "Dan Sullivan", "Ian Walsh", "Liam Walsh", "Mia Walsh", "Owen Walsh"] },
+      { party: ["Amy Hall", "Kristen Ploetz", "Nathan Feldman", "Luke Feldman", "Kieran Feldman"] },
+      { party: ["Mike Feldman", "Mike Feldman Guest"] },
+      { party: ["Robin Parillo"] },
+      { party: ["Connor Van Scyoc"] },
+      { party: ["Zane Moses", "Victoria Hammit"] },
+      { party: ["Jake Griffith"] },
+      { party: ["Tim Raymond", "Laura Stock"] },
+      { party: ["Sebastian Romo", "Oriane Rutsche"] },
+      { party: ["Griffin Wong"] },
+      { 
+        party: [
+          { name: "Bobo \"Tommy\" Williams", aliases: ["Tommy Williams", "Bobo Williams", "Tom Williams", "Thomas Williams"] }
+        ] 
+      },
+      { party: ["Andrew Cloutier", "Andrew Cloutier Guest"] },
+      { party: ["Chris Whalen"] },
+      { party: ["JP Gutierrez", "Larissa Gutierrez"] },
+      { party: ["Will Masters", "Erica Rausch"] },
+      { party: ["Freddy Mesmer"] },
+      { party: ["Robin Marx", "Davey Segal"] },
+      { party: ["Samantha Falberg", "Zach Falberg"] },
+      { party: ["Ariel Michaelson", "Jared Loiben"] },
+      { party: ["Desiree Shields", "Nick McFall"] },
+      { party: ["Alice Greninger", "Michael Greninger"] },
+      { party: ["Carly Pflaum", "Brian Pflaum"] },
+      { party: ["Rebecca Tiernan", "Jake Tiernan"] },
+      { party: ["Jessica Hatfield", "Brad Guest"] },
+      { party: ["Martyna Kot"] },
+      { party: ["Matt Vuono", "Emma Horsey"] },
+      { party: ["Brandon Stock", "Bailey King"] },
+      { party: ["Chris Barranco"] }
+    ];
 
     // 2. GOOGLE FORM FIELD DICTIONARY
-    // Replace the 'entry.XXXXXX' strings below with your real Google Form field entry numbers!
     const GOOGLE_FORM_MAPPING = {
       formActionUrl: "https://docs.google.com/forms/d/e/1FAIpQLSf-QJJzUYHkS58Dfsp4qgn-tHgXL_AhB8aS3BaoVBfJLj1W6g/formResponse",
       dietaryNotes: "entry.1103280564",
@@ -207,39 +440,57 @@ const guestRegistry = [
       ]
     };
 
-    const findBtn = document.getElementById('find-btn');
-    const nameInput = document.getElementById('guest-name-input');
-    const searchError = document.getElementById('search-error');
-    const partyContainer = document.getElementById('party-container');
-    const dynamicPartyMembers = document.getElementById('dynamic-party-members');
-    const rsvpFormFlow = document.getElementById('rsvp-form-flow');
-    const successSection = document.getElementById('success-section');
-    const searchSection = document.getElementById('search-section');
+    // DOM Target Selectors
+    const nameInput = document.getElementById('nameInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchStage = document.getElementById('searchStage');
+    const rsvpForm = document.getElementById('rsvpForm');
+    const dynamicPartyMembers = document.getElementById('dynamicPartyMembers');
+    const successStage = document.getElementById('successStage');
 
-    let currentActiveParty = [];
+    let activeParty = [];
 
-    findBtn.addEventListener('click', lookupParty);
+    // KEY INTERACTION: Search Trigger Function
+    function executeSearch() {
+      const searchInputVal = nameInput.value.trim().toLowerCase();
+      if (!searchInputVal) {
+        alert("Please enter a name first!");
+        return;
+      }
 
-    function lookupParty() {
-      const searchName = nameInput.value.trim().toLowerCase();
-      searchError.style.display = 'none';
-      if (!searchName) return;
+      const foundGroup = guestRegistry.find(group => {
+        return group.party.some(member => {
+          if (typeof member === 'object') {
+            const nameMatch = member.name.toLowerCase().includes(searchInputVal);
+            const aliasMatch = member.aliases && member.aliases.some(alias => alias.toLowerCase().includes(searchInputVal));
+            return nameMatch || aliasMatch;
+          }
+          return member.toLowerCase().includes(searchInputVal);
+        });
+      });
 
-      const matchedRecord = guestRegistry.find(entry => 
-        entry.party.some(name => name.toLowerCase() === searchName)
-      );
-
-      if (matchedRecord) {
-        currentActiveParty = matchedRecord.party;
-        generatePartyFields(currentActiveParty);
-        partyContainer.style.display = 'block';
-        partyContainer.scrollIntoView({ behavior: 'smooth' });
+      if (foundGroup) {
+        activeParty = foundGroup.party.map(member => typeof member === 'object' ? member.name : member);
+        generatePartyFields(activeParty);
+        searchStage.classList.add('hidden');
+        rsvpForm.classList.remove('hidden');
       } else {
-        partyContainer.style.display = 'none';
-        searchError.style.display = 'block';
+        alert("Invitation not found. Please try checking your spelling or use your formal name!");
       }
     }
 
+    // Connect Search Execution to Click
+    searchBtn.addEventListener('click', executeSearch);
+
+    // KEY INTERACTION: Hooking Up the 'Enter' Keyboard Command
+    nameInput.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Stop form submission flags
+        executeSearch();
+      }
+    });
+
+    // Generate Layout Cards
     function generatePartyFields(partyArray) {
       dynamicPartyMembers.innerHTML = '';
       partyArray.forEach((member, index) => {
@@ -247,22 +498,23 @@ const guestRegistry = [
         card.className = 'party-member-card';
         card.innerHTML = `
           <div class="member-name">${member}</div>
+          <input type="hidden" name="guest_name_${index}" value="${member}">
           <div class="event-row">
-            <span class="event-label">🎉 Welcome Party</span>
+            <span>🎉 Welcome Party</span>
             <div class="radio-group">
               <label><input type="radio" name="member_${index}_welcome" value="Yes" required> Yes</label>
               <label><input type="radio" name="member_${index}_welcome" value="No"> No</label>
             </div>
           </div>
           <div class="event-row">
-            <span class="event-label">⛪ Wedding Reception</span>
+            <span>⛪ Wedding Reception</span>
             <div class="radio-group">
               <label><input type="radio" name="member_${index}_reception" value="Yes" required> Yes</label>
               <label><input type="radio" name="member_${index}_reception" value="No"> No</label>
             </div>
           </div>
           <div class="event-row">
-            <span class="event-label">☕ Farewell Brunch</span>
+            <span>☕ Farewell Brunch</span>
             <div class="radio-group">
               <label><input type="radio" name="member_${index}_brunch" value="Yes" required> Yes</label>
               <label><input type="radio" name="member_${index}_brunch" value="No"> No</label>
@@ -273,50 +525,48 @@ const guestRegistry = [
       });
     }
 
-    // 3. BACKGROUND SUBMISSION LOGIC
-    rsvpFormFlow.addEventListener('submit', function(e) {
+    // Submit Action Packager to Google Forms
+    rsvpForm.addEventListener('submit', function(e) {
       e.preventDefault();
-
-      const formData = new FormData();
       
-      // Global field mapping
-      formData.append(GOOGLE_FORM_MAPPING.dietaryNotes, document.getElementById('dietary-notes').value);
+      const formData = new FormData();
+      formData.append(GOOGLE_FORM_MAPPING.dietaryNotes, document.getElementById('dietaryNotesField').value);
 
-      // Loop through up to 7 slots in the Google Form mapping array
-      for (let i = 0; i < 7; i++) {
-        const slotMapping = GOOGLE_FORM_MAPPING.guests[i];
-        
-        if (i < currentActiveParty.length) {
-          // If a real guest exists for this slot, harvest values from page UI elements
-          const welcomeVal = document.querySelector(`input[name="member_${i}_welcome"]:checked`).value;
-          const receptionVal = document.querySelector(`input[name="member_${i}_reception"]:checked`).value;
-          const brunchVal = document.querySelector(`input[name="member_${i}_brunch"]:checked`).value;
+      activeParty.forEach((member, index) => {
+        if (index < GOOGLE_FORM_MAPPING.guests.length) {
+          const mapping = GOOGLE_FORM_MAPPING.guests[index];
+          
+          const welcomeAns = document.querySelector(`input[name="member_${index}_welcome"]:checked`).value;
+          const receptionAns = document.querySelector(`input[name="member_${index}_reception"]:checked`).value;
+          const brunchAns = document.querySelector(`input[name="member_${index}_brunch"]:checked`).value;
 
-          formData.append(slotMapping.name, currentActiveParty[i]);
-          formData.append(slotMapping.welcome, welcomeVal);
-          formData.append(slotMapping.reception, receptionVal);
-          formData.append(slotMapping.brunch, brunchVal);
-        } else {
-          // If party size is smaller than 7, explicitly pass empty strings to remaining column inputs
-          formData.append(slotMapping.name, "");
-          formData.append(slotMapping.welcome, "");
-          formData.append(slotMapping.reception, "");
-          formData.append(slotMapping.brunch, "");
+          formData.append(mapping.name, member);
+          formData.append(mapping.welcome, welcomeAns);
+          formData.append(mapping.reception, receptionAns);
+          formData.append(mapping.brunch, brunchAns);
         }
+      });
+
+      // Clear extra empty array entries for smaller parties
+      for (let i = activeParty.length; i < GOOGLE_FORM_MAPPING.guests.length; i++) {
+        const mapping = GOOGLE_FORM_MAPPING.guests[i];
+        formData.append(mapping.name, "");
+        formData.append(mapping.welcome, "");
+        formData.append(mapping.reception, "");
+        formData.append(mapping.brunch, "");
       }
 
-      // Quietly fire data payload to Google Sheet architecture endpoint
       fetch(GOOGLE_FORM_MAPPING.formActionUrl, {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-      }).then(() => {
-        searchSection.style.display = 'none';
-        partyContainer.style.display = 'none';
-        successSection.style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }).catch(err => {
-        alert("A network transmission anomaly occurred. Please try again!");
+        mode: 'no-cors',
+        body: formData
+      })
+      .then(() => {
+        rsvpForm.classList.add('hidden');
+        successStage.classList.remove('hidden');
+      })
+      .catch(err => {
+        alert("Transmission error! Check your network connection.");
         console.error(err);
       });
     });

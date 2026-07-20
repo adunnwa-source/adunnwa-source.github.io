@@ -186,6 +186,25 @@
       padding: 7px 14px 5px 16px;
     }
 
+    /* Back Button Custom Styling */
+    .back-btn {
+      background-color: #CBD5E1;
+      border: 2px solid;
+      border-color: #fff #808080 #808080 #fff;
+      font-family: "MS Sans Serif", Geneva, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 8px;
+      color: #475569;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    .back-btn:active {
+      border-color: #808080 #fff #fff #808080;
+      padding: 4px 7px 2px 9px;
+    }
+
     /* Interactive RSVP System Components */
     .party-member-card {
       background-color: #F1F5F9;
@@ -324,6 +343,9 @@
 
           <!-- STAGE 2: DYNAMIC EVENT SELECTION FORM -->
           <form id="rsvpForm" class="details-box hidden">
+            <!-- Retro Navigation Arrow back to Search Stage -->
+            <button type="button" id="backToSearchBtn" class="back-btn">← BACK TO SEARCH</button>
+
             <h2>Your RSVP Dashboard</h2>
             <p style="text-align: center; font-style: italic; margin-bottom: 15px;">Please select attendance choices for each member of your household:</p>
             
@@ -443,6 +465,7 @@
     // DOM Target Selectors
     const nameInput = document.getElementById('nameInput');
     const searchBtn = document.getElementById('searchBtn');
+    const backToSearchBtn = document.getElementById('backToSearchBtn');
     const searchStage = document.getElementById('searchStage');
     const rsvpForm = document.getElementById('rsvpForm');
     const dynamicPartyMembers = document.getElementById('dynamicPartyMembers');
@@ -488,6 +511,15 @@
         event.preventDefault(); // Stop form submission flags
         executeSearch();
       }
+    });
+
+    // 🔙 BACK INTERACTION: Return to search bar stage
+    backToSearchBtn.addEventListener('click', function() {
+      rsvpForm.classList.add('hidden');
+      searchStage.classList.remove('hidden');
+      dynamicPartyMembers.innerHTML = ''; // Clear loaded cards
+      activeParty = []; // Reset tracked selections
+      nameInput.focus(); // Snap focus back onto entry text box
     });
 
     // Generate Layout Cards

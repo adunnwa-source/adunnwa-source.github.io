@@ -120,11 +120,76 @@
   </div>
 
   <script>
+
     // 1. GUEST REGISTRY LIST
-    const guestRegistry = [
-      { party: ["John Doe", "Jane Doe", "Baby Doe", "Child Doe", "Guest Four", "Guest Five", "Guest Six"] }, // Max 7 Example
-      { party: ["Hannah Smith", "Andy Dunn"] }
-    ];
+const guestRegistry = [
+  // Group 1: Dunns & Langs
+  { party: ["Pamela Dunn", "Dennis Dunn", "Chris Dunn"] },
+  { party: ["Michael Lang", "Kelly Lang", "Olivia Lang", "Anya Lang"] },
+  { party: ["Estelle Lang"] },
+  { party: ["Jared Lang", "Abby Trzyzewski"] },
+  { party: ["Noah Lang", "Jenna Bergman"] },
+  { party: ["Gabriel Lang", "Maya Richman"] },
+  { party: ["Matt Lang", "Ksenia Lang", "Drew Lang", "Jeremy Lang"] },
+  { party: ["Jeffrey Lang", "Leslie Cohen"] },
+
+  // Group 2: Hennessey, Hoffman, Conners, & Campbell
+  { party: ["Edward Hennessey", "Catherine Hennessey"] },
+  { party: ["Mike Hoffman", "Colleen Hoffman"] },
+  { party: ["Chuck Conners", "Gerry Conners"] },
+  { party: ["Kristin Campbell"] },
+
+  // Group 3: Fleet, Breslin, Maloney, & Willey/Wittman
+  { party: ["Charles Fleet", "Susan Fleet"] },
+  { party: ["Martha Breslin", "Vince Breslin"] },
+  { party: ["Tom Breslin", "Alli Breslin"] },
+  { party: ["Molly Maloney", "Andy Maloney"] },
+  { party: ["Beth Willey", "Rob Willey"] },
+  { party: ["Diane Wittman", "Ben Wittman"] },
+  { party: ["Dan Willey", "Westleigh Morin"] },
+
+  // Group 4: Eaton-Rosen, Robinson, Franco, & Hurley
+  { party: ["Janet Eaton-Rosen", "Stuart Eaton-Rosen"] },
+  { party: ["Zach Eaton-Rosen", "Emma Eaton-Rosen"] },
+  { party: ["Sam Eaton-Rosen", "Calinda Robinson"] },
+  { party: ["Karin Franco", "Carlos Franco"] },
+  { party: ["Greg Hurley", "Jess Hurley"] },
+
+  // Group 5: Collins, Arndt, Hall, Walsh, & Feldman
+  { party: ["Katelin Collins", "Bill Collins"] },
+  { party: ["Brad Arndt", "Sarah Hall", "Will Arndt", "Lily Arndt"] },
+  { party: ["Deborah Hall"] },
+  { party: ["Rachel Walsh", "Dan Sullivan", "Ian Walsh", "Liam Walsh", "Mia Walsh", "Owen Walsh"] },
+  { party: ["Amy Hall", "Kristen Ploetz", "Nathan Feldman", "Luke Feldman", "Kieran Feldman"] },
+  { party: ["Mike Feldman", "Mike Feldman Guest"] },
+
+  // Group 6: Friends & Couples
+  { party: ["Robin Parillo"] },
+  { party: ["Connor Van Scyoc"] },
+  { party: ["Zane Moses", "Victoria Hammit"] },
+  { party: ["Jake Griffith"] },
+  { party: ["Tim Raymond", "Laura Stock"] },
+  { party: ["Sebastian Romo", "Oriane Rutsche"] },
+  { party: ["Griffin Wong"] },
+  { party: ["Bobo \"Tommy\" Williams"] },
+  { party: ["Andrew Cloutier", "Andrew Cloutier Guest"] },
+  { party: ["Chris Whalen"] },
+  { party: ["JP Gutierrez", "Larissa Gutierrez"] },
+  { party: ["Will Masters", "Erica Rausch"] },
+  { party: ["Freddy Mesmer"] },
+  { party: ["Robin Marx", "Davey Segal"] },
+  { party: ["Samantha Falberg", "Zach Falberg"] },
+  { party: ["Ariel Michaelson", "Jared Loiben"] },
+  { party: ["Desiree Shields", "Nick McFall"] },
+  { party: ["Alice Greninger", "Michael Greninger"] },
+  { party: ["Carly Pflaum", "Brian Pflaum"] },
+  { party: ["Rebecca Tiernan", "Jake Tiernan"] },
+  { party: ["Jessica Hatfield", "Brad Guest"] },
+  { party: ["Martyna Kot"] },
+  { party: ["Matt Vuono", "Emma Horsey"] },
+  { party: ["Brandon Stock", "Bailey King"] },
+  { party: ["Chris Barranco"] }
+];
 
     // 2. GOOGLE FORM FIELD DICTIONARY
     // Replace the 'entry.XXXXXX' strings below with your real Google Form field entry numbers!

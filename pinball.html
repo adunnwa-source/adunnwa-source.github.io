@@ -440,8 +440,8 @@
     // CONFIGURATION (JSONBin.io Database Connection)
     // -------------------------------------------------------------
     const BIN_ID = '6a714118da38895dfeb6198a'; 
-    const API_KEY = '$2a$10$kNBID4tc2GOnzI1sQZ8s1OaiyocqIPH19FsbnSjfNlYtKFST6YjCe'; // Replace with your Master Key from JSONBin dashboard
-    const API_URL = `https://api.jsonbin.io/v3/b/${6a714118da38895dfeb6198a}`;
+    const API_KEY = '$2a$10$kNBID4tc2GOnzI1sQZ8s1OaiyocqIPH19FsbnSjfNlYtKFST6YjCe'; 
+    const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 
     const scoreForm = document.getElementById('scoreForm');
     const highScoreBody = document.getElementById('highScoreBody');
@@ -462,7 +462,7 @@
 
     // Fetch and display ranked scores from database
     async function fetchScores() {
-      if (API_KEY === '$2a$10$kNBID4tc2GOnzI1sQZ8s1OaiyocqIPH19FsbnSjfNlYtKFST6YjCe') {
+      if (!API_KEY || API_KEY === 'YOUR_MASTER_KEY_HERE') {
         renderTable(defaultScores);
         return;
       }
@@ -514,11 +514,11 @@
 
       const newEntry = { name, score, date };
 
-      if (API_KEY === 'YOUR_MASTER_KEY_HERE') {
+      if (!API_KEY || API_KEY === 'YOUR_MASTER_KEY_HERE') {
         defaultScores.push(newEntry);
         renderTable(defaultScores);
         scoreForm.reset();
-        alert("Score added locally! Replace YOUR_MASTER_KEY_HERE in the code to enable live online sync.");
+        alert("Score added locally!");
         return;
       }
 

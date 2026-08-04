@@ -11,21 +11,20 @@
     }
     
     body {
-      /* Tiled Cloud Background Integration */
       background-image: url('imagine_cloud_blue.jpg');
       background-repeat: repeat;
       background-color: #a3c2e0; 
       font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-size: 13px;
-      color: #0F172A; /* Palette 1: Deep Navy Text */
+      color: #0F172A;
       margin: 0;
       padding: 0;
     }
 
     /* Full-width Blinking Text Banner Alert */
     .blink-container {
-      background-color: #0F172A; /* Palette 1: Deep Navy */ 
-      color: #F8FAFC; /* Palette 1: Ghost White Text */ 
+      background-color: #0F172A; 
+      color: #F8FAFC; 
       font-family: "Comic Sans MS", "Comic Sans", sans-serif; 
       font-size: 16px; 
       font-weight: bold; 
@@ -36,7 +35,6 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
     }
 
-    /* Pure CSS Safe Blinking Animation */
     .blink-text {
       animation: retro-blink 2.5s ease-in-out infinite;
     }
@@ -49,11 +47,11 @@
       50% { opacity: 0.3; }
     }
     
-    /* Outer Framework Container - Palette 1: Ghost White */
+    /* Outer Framework Container */
     .main-container {
       background-color: #F8FAFC; 
       border: 3px solid; 
-      border-color: #fff #808080 #808080 #fff; /* Inset frame simulation */ 
+      border-color: #fff #808080 #808080 #fff; 
       box-shadow: 2px 2px 12px rgba(15, 23, 42, 0.15); 
       max-width: 800px;
       width: 95%;
@@ -61,7 +59,6 @@
       padding: 15px;
     }
 
-    /* 90s Layout Architecture - Table strategy */
     .master-layout-table {
       width: 100%;
       border-collapse: collapse;
@@ -78,7 +75,7 @@
     }
 
     .sidebar-heading {
-      font-family: "Comic Sans MS", sans-serif;
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-size: 12px;
       font-weight: bold;
       color: #0F172A;
@@ -88,7 +85,6 @@
       padding-bottom: 4px;
     }
 
-    /* Vertical Navigation List Styles */
     .sidebar-nav-list {
       list-style-type: none; 
       padding: 0;
@@ -101,7 +97,6 @@
       align-items: center;
     }
 
-    /* Blue Underlined Link Targets */
     .sidebar-link {
       color: #0000EE; 
       text-decoration: underline; 
@@ -120,7 +115,6 @@
       image-rendering: pixelated;
     }
 
-    /* Secret Link Door Anchor */
     .secret-door-link {
       position: absolute;
       bottom: 10px;
@@ -142,18 +136,18 @@
       vertical-align: top;
     }
 
-    /* OS-Style Window Program Wrapper for the Game Frame */
+    /* OS-Style Window Program Wrapper */
     .arcade-window {
-      background-color: #C0C0C0; /* Classic Windows 95 Desktop Gray */
+      background-color: #C0C0C0; 
       border: 2px solid;
-      border-color: #fff #808080 #808080 #fff; /* Outset 3D effect */
+      border-color: #fff #808080 #808080 #fff; 
       box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
       margin: 0 auto 15px auto;
       max-width: 508px;
     }
 
     .arcade-title-bar {
-      background: linear-gradient(90deg, #000080, #1084d0); /* Classic Windows Active Blue Gradient */
+      background: linear-gradient(90deg, #000080, #1084d0); 
       color: white;
       padding: 3px 6px;
       font-weight: bold;
@@ -166,16 +160,16 @@
 
     .arcade-body {
       padding: 4px;
-      background-color: #000; /* Dark contrast backing for the cabinet frame */
+      background-color: #000; 
       display: flex;
       justify-content: center;
     }
 
-    /* Keyboard Instruction Terminal Box */
+    /* Keyboard Instruction Box & High Score Window */
     .controls-box {
       background-color: #E2E8F0;
       border: 2px solid;
-      border-color: #808080 #fff #fff #808080; /* Inset Box Look */
+      border-color: #808080 #fff #fff #808080; 
       padding: 12px;
       max-width: 508px;
       margin: 15px auto;
@@ -183,7 +177,7 @@
     }
 
     .controls-box h2 {
-      font-family: "Comic Sans MS", sans-serif;
+      font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
       font-size: 14px;
       margin: 0 0 8px 0;
       color: #BE123C;
@@ -211,6 +205,61 @@
       border-radius: 3px;
     }
 
+    /* Retro High Score Table & Form Styling */
+    .highscore-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Courier, monospace;
+      background-color: #000;
+      color: #00FF00;
+      border: 2px inset #808080;
+      margin-top: 10px;
+    }
+
+    .highscore-table th {
+      background-color: #000080;
+      color: #FFF;
+      text-align: left;
+      padding: 4px 8px;
+      font-family: "MS Sans Serif", Tahoma, sans-serif;
+      font-size: 11px;
+    }
+
+    .highscore-table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .score-form {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .retro-input {
+      border: 2px inset #fff;
+      padding: 4px 6px;
+      font-family: Courier, monospace;
+      font-size: 12px;
+      background: #fff;
+    }
+
+    .retro-btn {
+      background-color: #CBD5E1;
+      border: 2px solid;
+      border-color: #fff #808080 #808080 #fff;
+      font-family: "MS Sans Serif", Geneva, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 10px;
+      cursor: pointer;
+    }
+
+    .retro-btn:active {
+      border-color: #808080 #fff #fff #808080;
+    }
+
     hr {
       border: none;
       border-top: 2px inset #E2E8F0;
@@ -233,7 +282,6 @@
       image-rendering: pixelated;
     }
 
-    /* Mobile Viewport Stacking Rule */
     @media screen and (max-width: 650px) {
       .master-layout-table, .master-layout-table tbody, .master-layout-table tr, .master-layout-table td {
         display: block !important;
@@ -297,7 +345,7 @@
 
         <td class="content-panel">
           
-          <p style="text-align: center; font-weight: bold; color: #BE123C; font-family: 'Comic Sans MS', sans-serif; font-size: 16px; margin-top: 5px; margin-bottom: 15px;">
+          <p style="text-align: center; font-weight: bold; color: #BE123C; font-family: 'MS Sans Serif', Tahoma, sans-serif; font-size: 15px; margin-top: 5px; margin-bottom: 15px;">
             🕹️ You Discovered Andy's Hidden Pinball Terminal! 🕹️
           </p>
 
@@ -347,6 +395,31 @@
             </table>
           </div>
 
+          <!-- HIGH SCORE GUESTBOOK MODULE -->
+          <div class="controls-box">
+            <h2>🏆 Hall of Fame & High Scores 🏆</h2>
+            
+            <form id="scoreForm" class="score-form">
+              <input type="text" id="playerName" class="retro-input" placeholder="Your Name" style="flex: 1; min-width: 110px;" required maxlength="15">
+              <input type="number" id="playerScore" class="retro-input" placeholder="Score" style="width: 100px;" required min="0" max="999999999">
+              <button type="submit" class="retro-btn">POST SCORE</button>
+            </form>
+
+            <table class="highscore-table">
+              <thead>
+                <tr>
+                  <th style="width: 10%;">#</th>
+                  <th style="width: 40%;">PLAYER</th>
+                  <th style="width: 25%;">SCORE</th>
+                  <th style="width: 25%;">DATE</th>
+                </tr>
+              </thead>
+              <tbody id="highScoreBody">
+                <tr><td colspan="4" style="text-align: center; color: #888;">Loading live scores...</td></tr>
+              </tbody>
+            </table>
+          </div>
+
           <p style="text-align: center; font-style: italic; margin: 15px 0; color: #475569; font-size: 12px;">
             Note: Click inside the game screen before launching so it catches your keyboard buttons!
           </p>
@@ -362,5 +435,123 @@
     </table>
   </div>
 
+  <script>
+    // -------------------------------------------------------------
+    // CONFIGURATION (JSONBin.io Database Connection)
+    // -------------------------------------------------------------
+    const BIN_ID = '6a714118da38895dfeb6198a'; 
+    const API_KEY = '$2a$10$kNBID4tc2GOnzI1sQZ8s1OaiyocqIPH19FsbnSjfNlYtKFST6YjCe'; // Replace with your Master Key from JSONBin dashboard
+    const API_URL = `https://api.jsonbin.io/v3/b/${6a714118da38895dfeb6198a}`;
+
+    const scoreForm = document.getElementById('scoreForm');
+    const highScoreBody = document.getElementById('highScoreBody');
+
+    // Default arcade scores fallback
+    const defaultScores = [
+      { name: "Andy D.", score: 2500000, date: "08/01/26" },
+      { name: "Hannah L.", score: 1850000, date: "08/02/26" }
+    ];
+
+    // Helper to safely extract scores array regardless of format
+    function extractArray(record) {
+      if (Array.isArray(record)) return record;
+      if (record && Array.isArray(record.scores)) return record.scores;
+      if (record && Array.isArray(record.record)) return record.record;
+      return [];
+    }
+
+    // Fetch and display ranked scores from database
+    async function fetchScores() {
+      if (API_KEY === '$2a$10$kNBID4tc2GOnzI1sQZ8s1OaiyocqIPH19FsbnSjfNlYtKFST6YjCe') {
+        renderTable(defaultScores);
+        return;
+      }
+
+      try {
+        const response = await fetch(`${API_URL}/latest`, {
+          headers: { 'X-Master-Key': API_KEY }
+        });
+        const data = await response.json();
+        const scores = extractArray(data.record);
+        renderTable(scores.length ? scores : defaultScores);
+      } catch (err) {
+        console.error("Error fetching scores:", err);
+        renderTable(defaultScores);
+      }
+    }
+
+    // Render sorted entries into the HTML table
+    function renderTable(scores) {
+      scores.sort((a, b) => b.score - a.score);
+
+      highScoreBody.innerHTML = '';
+      if (scores.length === 0) {
+        highScoreBody.innerHTML = '<tr><td colspan="4" style="text-align: center;">No high scores yet!</td></tr>';
+        return;
+      }
+
+      scores.slice(0, 10).forEach((entry, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="color: #FFD700;">${idx + 1}</td>
+          <td style="color: #FFF;">${escapeHtml(entry.name)}</td>
+          <td>${Number(entry.score).toLocaleString()}</td>
+          <td style="color: #888; font-size: 11px;">${entry.date}</td>
+        `;
+        highScoreBody.appendChild(tr);
+      });
+    }
+
+    // Submit new high score to database
+    scoreForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('playerName').value.trim();
+      const score = parseInt(document.getElementById('playerScore').value, 10);
+      const date = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' });
+
+      if (!name || isNaN(score)) return;
+
+      const newEntry = { name, score, date };
+
+      if (API_KEY === 'YOUR_MASTER_KEY_HERE') {
+        defaultScores.push(newEntry);
+        renderTable(defaultScores);
+        scoreForm.reset();
+        alert("Score added locally! Replace YOUR_MASTER_KEY_HERE in the code to enable live online sync.");
+        return;
+      }
+
+      try {
+        const getRes = await fetch(`${API_URL}/latest`, { headers: { 'X-Master-Key': API_KEY } });
+        const getData = await getRes.json();
+        let currentScores = extractArray(getData.record);
+
+        currentScores.push(newEntry);
+
+        await fetch(API_URL, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Master-Key': API_KEY
+          },
+          body: JSON.stringify(currentScores)
+        });
+
+        scoreForm.reset();
+        fetchScores();
+      } catch (err) {
+        alert("Failed to save score online. Please check your Master Key!");
+        console.error(err);
+      }
+    });
+
+    // Simple security sanitizer
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m]));
+    }
+
+    fetchScores();
+  </script>
 </body>
 </html>
